@@ -10,4 +10,4 @@ df = samsung.history(period="1mo")
 # 특정 날짜 범위 데이터
 df_range = apple.history(start="2023-01-01", end="2023-12-31")
 
-print(df.head())
+print(df_range.head())
