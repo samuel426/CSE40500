@@ -2,9 +2,9 @@ import os
 import yfinance as yf
 import pandas as pd
 
-# 1. 수집할 종목과 폴더 이름 매칭
+# 1. 수집할 종목과 폴더 이름 매칭 (✅ S&P500 제거, ✅ KOSPI 추가)
 tickers = {
-    "S&P500": "^GSPC",
+    "KOSPI": "^KS11",       # 코스피 종합지수
     "Apple": "AAPL",
     "NASDAQ": "^IXIC",
     "Tesla": "TSLA",
@@ -16,7 +16,7 @@ root_dir = "data"
 
 # 3. 데이터 수집 및 저장
 for folder_name, ticker_symbol in tickers.items():
-    print(f"Downloading data for {folder_name} ({ticker_symbol})...")
+    print(f"📥 Downloading data for {folder_name} ({ticker_symbol})...")
     
     # 3-1. 다운로드
     df = yf.download(
@@ -40,6 +40,6 @@ for folder_name, ticker_symbol in tickers.items():
     file_path = os.path.join(save_path, "ohlcv.csv")
     df.to_csv(file_path)
     
-    print(f"Saved to {file_path}")
+    print(f"✅ Saved to {file_path}")
 
-print("✅ 모든 데이터 다운로드 및 저장 완료.")
+print("🎯 모든 데이터 다운로드 및 저장 완료.")

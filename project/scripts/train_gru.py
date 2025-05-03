@@ -21,7 +21,7 @@ LR = 0.001
 DATA_ROOT = "./data"
 MODEL_ROOT = "./models/GRU"
 
-TICKERS = ["S&P500", "Apple", "NASDAQ", "Tesla", "Samsung"]
+TICKERS = ["KOSPI", "Apple", "NASDAQ", "Tesla", "Samsung"]
 
 # =======================
 # 2. GRU 모델 정의

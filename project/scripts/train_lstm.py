@@ -18,7 +18,7 @@ LR = 0.001
 
 DATA_ROOT = "./data"
 MODEL_ROOT = "./models/LSTM"
-TICKERS = ["S&P500", "Apple", "NASDAQ", "Tesla", "Samsung"]
+TICKERS = ["KOSPI", "Apple", "NASDAQ", "Tesla", "Samsung"]
 
 # LSTM 모델 정의
 class LSTMModel(nn.Module):
