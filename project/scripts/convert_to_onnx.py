@@ -44,9 +44,10 @@ class GRUModel(nn.Module):
         self.conv = nn.Conv2d(64, 1, kernel_size=1)
 
     def forward(self, x):
-        _, h_n = self.gru(x)      # h_n: [layers, B, 64]
-        h = h_n[-1].unsqueeze(-1).unsqueeze(-1)  # [B, 64, 1, 1]
-        return self.conv(h).squeeze()            # [B]
+        _, h_n = self.gru(x)                         # [layers, B, 64]
+        h = h_n[-1].unsqueeze(-1).unsqueeze(-1)      # [B, 64, 1, 1]
+        y = self.conv(h)                             # [B, 1, 1, 1]
+        return y                                     # ★ squeeze 하지 마세요!
 
 MODEL_CLASSES = {
     "LSTM": LSTMModel,
