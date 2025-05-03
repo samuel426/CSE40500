@@ -1,0 +1,11 @@
+network_groups:
+  - name: sp500_lstm
+    network_path: onnx_models/LSTM/S&P500.onnx
+    input_shape:
+      input: [1, 60, 5]
+    output_shape:
+      output: [1, 1]
+    device:
+      target: hailo8
+    quantization:
+      type: full_integer
