@@ -11,7 +11,7 @@ from common.dataset import StockDataset
 # 설정
 DEVICE = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 INPUT_SIZE = 5
-SEQ_LEN = 20        # 두 파일 모두
+SEQ_LEN = 15        # 두 파일 모두
 BATCH_SIZE = 32
 EPOCHS = 30
 LR = 0.001

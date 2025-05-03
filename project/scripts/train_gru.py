@@ -27,16 +27,22 @@ TICKERS = ["KOSPI", "Apple", "NASDAQ", "Tesla", "Samsung"]
 # 2. GRU 모델 정의
 # =======================
 class GRUModel(nn.Module):
+    """
+    GRU → hidden → 1×1 Conv → 종가 1 값
+    Hailo SDK가 Gemm을 1×1 Conv 로 인식하도록 4‑D 텐서로 변형.
+    """
     def __init__(self):
-        super(GRUModel, self).__init__()
-        self.gru = nn.GRU(INPUT_SIZE, 64, num_layers=2, batch_first=True)
-        self.fc = nn.Linear(64, 1)
+        super().__init__()
+        self.gru  = nn.GRU(INPUT_SIZE, 64, num_layers=2, batch_first=True)
+        self.conv = nn.Conv2d(64, 1, kernel_size=1)  # 1×1 conv == Linear
 
     def forward(self, x):
-        out, _ = self.gru(x)
-        out = out[:, -1, :]  # 마지막 타임스텝
-        out = self.fc(out)
-        return out
+        _, h_n = self.gru(x)          # h_n shape: [num_layers, B, 64]
+        h = h_n[-1]                   # [B, 64]
+        h = h.unsqueeze(-1).unsqueeze(-1)  # [B, 64, 1, 1]
+        y = self.conv(h)              # [B, 1, 1, 1]
+        return y.squeeze()            # [B]
+
 
 # =======================
 # 3. 학습 함수

@@ -1,63 +1,56 @@
 # scripts/convert_to_onnx.py
-
+"""
+ONNX 변환 스크립트 (Hailo‑8 호환)
+--------------------------------------------------
+* **Bi‑LSTM 제외** – SDK 3.31 기준 미지원
+* **LSTM SEQ_LEN 15** – unroll 레이어 < 300 개로 제한
+"""
 import os
 import torch
 import torch.nn as nn
 
 # =======================
-# 1. 설정
+# 1. 공통 설정
 # =======================
-DEVICE = torch.device("cuda" if torch.cuda.is_available() else "cpu")
-MODEL_ROOT = "./models"
-ONNX_ROOT  = "./onnx_models"
+DEVICE      = torch.device("cuda" if torch.cuda.is_available() else "cpu")
+MODEL_ROOT  = "./models"      # .pth 저장 폴더
+ONNX_ROOT   = "./onnx_models" # .onnx 출력 폴더
 
-SEQ_LEN    = 20
-INPUT_SIZE = 5
+SEQ_LEN     = 15  # ⚠ LSTM unroll 제한에 맞춰 15 step
+INPUT_SIZE  = 5   # OHLCV
 
-# ✅ 학습·변환 대상 종목 (S&P500 제거, KOSPI 추가)
-TICKERS = ["KOSPI", "Apple", "NASDAQ", "Tesla", "Samsung"]
-MODEL_TYPES = ["LSTM", "GRU", "BiLSTM"]  # BiLSTM 은 Hailo 미지원 가능성 有 
+TICKERS     = ["KOSPI", "Apple", "NASDAQ", "Tesla", "Samsung"]
+MODEL_TYPES = ["LSTM", "GRU"]  # ✅ BiLSTM 제거
 
 # =======================
 # 2. 모델 정의
 # =======================
 class LSTMModel(nn.Module):
+    """ 2‑layer LSTM → 마지막 hidden → Linear(64→1) """
     def __init__(self):
         super().__init__()
         self.lstm = nn.LSTM(INPUT_SIZE, 64, num_layers=2, batch_first=True)
         self.fc   = nn.Linear(64, 1)
 
     def forward(self, x):
-        out, _ = self.lstm(x)
-        out    = out[:, -1, :]
-        return self.fc(out)
+        out, _ = self.lstm(x)     # out: [B, T, 64]
+        return self.fc(out[:, -1, :])
 
 class GRUModel(nn.Module):
+    """ 2‑layer GRU + 1×1 Conv to satisfy Hailo parser """
     def __init__(self):
         super().__init__()
-        self.gru = nn.GRU(INPUT_SIZE, 64, num_layers=2, batch_first=True)
-        self.fc  = nn.Linear(64, 1)
+        self.gru  = nn.GRU(INPUT_SIZE, 64, num_layers=2, batch_first=True)
+        self.conv = nn.Conv2d(64, 1, kernel_size=1)
 
     def forward(self, x):
-        out, _ = self.gru(x)
-        out    = out[:, -1, :]
-        return self.fc(out)
-
-class BiLSTMModel(nn.Module):
-    def __init__(self):
-        super().__init__()
-        self.lstm = nn.LSTM(INPUT_SIZE, 64, num_layers=2, batch_first=True, bidirectional=True)
-        self.fc   = nn.Linear(64 * 2, 1)
-
-    def forward(self, x):
-        out, _ = self.lstm(x)
-        out    = out[:, -1, :]
-        return self.fc(out)
+        _, h_n = self.gru(x)      # h_n: [layers, B, 64]
+        h = h_n[-1].unsqueeze(-1).unsqueeze(-1)  # [B, 64, 1, 1]
+        return self.conv(h).squeeze()            # [B]
 
 MODEL_CLASSES = {
-    "LSTM":  LSTMModel,
-    "GRU":   GRUModel,
-    "BiLSTM":BiLSTMModel,
+    "LSTM": LSTMModel,
+    "GRU":  GRUModel,
 }
 
 # =======================
@@ -73,7 +66,7 @@ def convert(model_type: str, ticker: str):
     onnx_path  = os.path.join(onnx_dir,  f"{ticker}.onnx")
 
     if not os.path.exists(model_path):
-        print(f"❌ Model file not found: {model_path}")
+        print(f"❌ {model_path} not found – skip")
         return
 
     model = MODEL_CLASSES[model_type]()
@@ -88,15 +81,14 @@ def convert(model_type: str, ticker: str):
         onnx_path,
         input_names=["input"],
         output_names=["output"],
-        opset_version=14,          # Hailo 3.31 권장 opset
-        do_constant_folding=False, # ⚠ LSTM 내부 파라미터 유지필수
-        dynamic_axes=None          # 고정 shape → Hailo 호환
+        opset_version=14,          # Hailo 3.31 호환
+        do_constant_folding=False, # LSTM 파라미터 보존
+        dynamic_axes=None
     )
-
-    print(f"✅ Converted {model_type}-{ticker} → {onnx_path}")
+    print(f"✅ Converted {model_type}‑{ticker} → {onnx_path}")
 
 # =======================
-# 4. 메인 실행
+# 4. 메인
 # =======================
 
 def main():
