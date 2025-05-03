@@ -29,11 +29,12 @@ class GRUModel(nn.Module):
         self.gru  = nn.GRU(INPUT_SIZE, 64, num_layers=2, batch_first=True)
         self.conv = nn.Conv2d(64, 1, kernel_size=1)
 
-    def forward(self, x):                       # x : [B,15,5]
-        _, h_n = self.gru(x)                    # h_n: [2,B,64]
-        h = h_n[-1].unsqueeze(-1).unsqueeze(-1) # [B,64,1,1]
-        y = self.conv(h)                        # [B,1,1,1]
-        return y                                # 그대로 반환
+    def forward(self, x):
+        out, _ = self.gru(x)                          # [B, SEQ_LEN, 64]
+        h = out[:, -1, :]                             # 마지막 시점의 hidden state만 사용
+        h = h.unsqueeze(-1).unsqueeze(-1)             # [B, 64, 1, 1]
+        y = self.conv(h)                              # [B, 1, 1, 1]
+        return y                                      # shape: [B,1,1,1] 유지
 
 # ---------- 학습 루프 ----------
 def train(model, train_loader, val_loader, save_path):
@@ -80,7 +81,7 @@ def main():
 
         # ➡ 숫자 아닌 행 삭제 (Ticker 문자열 등)
         df = df[pd.to_numeric(df["Open"], errors="coerce").notnull()].astype(float)
-        
+
         # 30‑30‑40 split
         n = len(df); s1, s2 = int(n*0.3), int(n*0.6)
         train_ds = StockDataset(df.iloc[:s1], seq_len=SEQ_LEN)
