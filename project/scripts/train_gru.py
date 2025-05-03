@@ -13,7 +13,7 @@ from common.dataset import StockDataset
 # =======================
 DEVICE = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 INPUT_SIZE = 5
-SEQ_LEN = 60
+SEQ_LEN = 15
 BATCH_SIZE = 32
 EPOCHS = 30
 LR = 0.001
@@ -37,11 +37,10 @@ class GRUModel(nn.Module):
         self.conv = nn.Conv2d(64, 1, kernel_size=1)  # 1×1 conv == Linear
 
     def forward(self, x):
-        _, h_n = self.gru(x)          # h_n shape: [num_layers, B, 64]
-        h = h_n[-1]                   # [B, 64]
-        h = h.unsqueeze(-1).unsqueeze(-1)  # [B, 64, 1, 1]
-        y = self.conv(h)              # [B, 1, 1, 1]
-        return y.squeeze()            # [B]
+        _, h_n = self.gru(x)              # [layers, B, 64]
+        h = h_n[-1].unsqueeze(-1).unsqueeze(-1)  # [B, 64, 1, 1]
+        y = self.conv(h)                  # [B, 1, 1, 1]
+        return y.view(-1, 1)              # [B, 1]
 
 
 # =======================
