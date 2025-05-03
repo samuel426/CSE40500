@@ -11,7 +11,7 @@ DEVICE = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 MODEL_ROOT = "./models"
 ONNX_ROOT  = "./onnx_models"
 
-SEQ_LEN    = 60
+SEQ_LEN    = 30
 INPUT_SIZE = 5
 
 # ✅ 학습·변환 대상 종목 (S&P500 제거, KOSPI 추가)
