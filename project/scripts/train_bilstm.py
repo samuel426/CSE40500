@@ -1,5 +1,4 @@
-# scripts/train_bilstm.py
-
+# ✅ BiLSTM 모델을 Hailo-8 최적화 구조로 리팩토링
 import os
 import numpy as np
 import pandas as pd
@@ -8,122 +7,86 @@ import torch.nn as nn
 from torch.utils.data import DataLoader
 from common.dataset import StockDataset
 
-# =======================
-# 1. 설정
-# =======================
-DEVICE = torch.device("cuda" if torch.cuda.is_available() else "cpu")
-INPUT_SIZE = 5
-SEQ_LEN = 60
-BATCH_SIZE = 32
-EPOCHS = 30
-LR = 0.001
+# ---------- 설정 ----------
+DEVICE      = torch.device("cuda" if torch.cuda.is_available() else "cpu")
+INPUT_SIZE  = 5
+SEQ_LEN     = 10          # ⚠️ Hailo 최적화: 시퀀스 길이 10
+BATCH_SIZE  = 32
+EPOCHS      = 30
+LR          = 0.001
 
-DATA_ROOT = "./data"
-MODEL_ROOT = "./models/BiLSTM"
+DATA_ROOT   = "./data"
+MODEL_ROOT  = "./models/BiLSTM"
+TICKERS     = ["KOSPI", "Apple", "NASDAQ", "Tesla", "Samsung"]
 
-TICKERS = ["KOSPI", "Apple", "NASDAQ", "Tesla", "Samsung"]
-
-# =======================
-# 2. Bi-LSTM 모델 정의
-# =======================
+# ---------- BiLSTM 모델 (Hailo 호환) ----------
 class BiLSTMModel(nn.Module):
     def __init__(self):
-        super(BiLSTMModel, self).__init__()
-        self.lstm = nn.LSTM(INPUT_SIZE, 64, num_layers=2, batch_first=True, bidirectional=True)
-        self.fc = nn.Linear(64 * 2, 1)  # 양방향이므로 hidden_size x2
+        super().__init__()
+        self.lstm = nn.LSTM(INPUT_SIZE, 16, num_layers=1, batch_first=True, bidirectional=True)
+        self.fc   = nn.Linear(32, 1)  # 16 * 2 방향
 
     def forward(self, x):
-        out, _ = self.lstm(x)
-        out = out[:, -1, :]
-        out = self.fc(out)
-        return out
+        out, _ = self.lstm(x)                # [B, SEQ_LEN, 32]
+        return self.fc(out[:, -1, :])        # [B, 1]
 
-# =======================
-# 3. 학습 함수
-# =======================
+# ---------- 학습 루프 ----------
 def train(model, train_loader, val_loader, save_path):
     model = model.to(DEVICE)
-    criterion = nn.MSELoss()
-    optimizer = torch.optim.Adam(model.parameters(), lr=LR)
+    crit  = nn.MSELoss()
+    opt   = torch.optim.Adam(model.parameters(), lr=LR)
 
-    best_val_loss = np.inf
-
+    best = np.inf
     for epoch in range(EPOCHS):
-        model.train()
-        total_loss = 0.0
+        # --- train ---
+        model.train(); train_loss = 0
+        for x, t in train_loader:
+            x, t = x.to(DEVICE), t.to(DEVICE)
+            opt.zero_grad()
+            out = model(x).squeeze()
+            loss = crit(out, t)
+            loss.backward(); opt.step()
+            train_loss += loss.item()
+        train_loss /= len(train_loader)
 
-        for inputs, targets in train_loader:
-            inputs, targets = inputs.to(DEVICE), targets.to(DEVICE)
-
-            optimizer.zero_grad()
-            outputs = model(inputs)
-            loss = criterion(outputs, targets)
-            loss.backward()
-            optimizer.step()
-
-            total_loss += loss.item()
-
-        avg_train_loss = total_loss / len(train_loader)
-
-        # Validation
-        model.eval()
-        total_val_loss = 0.0
+        # --- val ---
+        model.eval(); val_loss = 0
         with torch.no_grad():
-            for inputs, targets in val_loader:
-                inputs, targets = inputs.to(DEVICE), targets.to(DEVICE)
-                outputs = model(inputs)
-                loss = criterion(outputs, targets)
-                total_val_loss += loss.item()
+            for x, t in val_loader:
+                x, t = x.to(DEVICE), t.to(DEVICE)
+                out = model(x).squeeze()
+                val_loss += crit(out, t).item()
+        val_loss /= len(val_loader)
 
-        avg_val_loss = total_val_loss / len(val_loader)
-        print(f"Epoch [{epoch+1}/{EPOCHS}] Train Loss: {avg_train_loss:.6f}  Val Loss: {avg_val_loss:.6f}")
+        print(f"[{epoch+1:02}/{EPOCHS}] train {train_loss:.6f} | val {val_loss:.6f}")
 
-        # 최적 모델 저장
-        if avg_val_loss < best_val_loss:
-            best_val_loss = avg_val_loss
+        if val_loss < best:
+            best = val_loss
             torch.save(model.state_dict(), save_path)
-            print(f"✅ Best model saved to {save_path}")
+            print(f"✅ saved: {save_path}")
 
-# =======================
-# 4. 데이터 로딩 및 학습 실행
-# =======================
+# ---------- 실행 ----------
 def main():
     os.makedirs(MODEL_ROOT, exist_ok=True)
 
-    for ticker in TICKERS:
-        print(f"=== Training {ticker} ===")
-        data_path = os.path.join(DATA_ROOT, ticker, "ohlcv.csv")
-        df = pd.read_csv(
-            data_path,
-            skiprows=3,  # (3줄 무시: Ticker + Date + 공백 줄)
-            header=None,  # 헤더 없다고 선언
-            names=["Open", "High", "Low", "Close", "Volume"],  # 열 이름 직접 지정
-            index_col=None
-        )
+    for tk in TICKERS:
+        print(f"=== {tk} ===")
+        df = pd.read_csv(os.path.join(DATA_ROOT, tk, "ohlcv.csv"), index_col=0)
 
+        df = df[pd.to_numeric(df["Open"], errors="coerce").notnull()].astype(float)
 
-        total_len = len(df)
-        split1 = int(total_len * 0.3)
-        split2 = int(total_len * 0.6)
+        n = len(df); s1, s2 = int(n*0.3), int(n*0.6)
+        train_ds = StockDataset(df.iloc[:s1], seq_len=SEQ_LEN)
+        val_ds   = StockDataset(df.iloc[s1:s2], seq_len=SEQ_LEN)
 
-        df_train = df.iloc[:split1]
-        df_val = df.iloc[split1:split2]
-
-        train_dataset = StockDataset(df_train)
-        val_dataset = StockDataset(df_val)
-
-        train_loader = DataLoader(train_dataset, batch_size=BATCH_SIZE, shuffle=True)
-        val_loader = DataLoader(val_dataset, batch_size=BATCH_SIZE, shuffle=False)
+        tr_loader = DataLoader(train_ds, batch_size=BATCH_SIZE, shuffle=True)
+        va_loader = DataLoader(val_ds, batch_size=BATCH_SIZE)
 
         model = BiLSTMModel()
+        path  = os.path.join(MODEL_ROOT, f"{tk}.pth")
+        train(model, tr_loader, va_loader, path)
 
-        save_path = os.path.join(MODEL_ROOT, f"{ticker}.pth")
-        train(model, train_loader, val_loader, save_path)
+    print("🎯 BiLSTM 학습 완료")
 
-    print("🎯 모든 Bi-LSTM 모델 학습 완료.")
-
-# =======================
-# 5. 시작
-# =======================
 if __name__ == "__main__":
     main()

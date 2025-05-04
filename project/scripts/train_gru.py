@@ -1,4 +1,4 @@
-# scripts/train_gru.py
+# ✅ GRU 모델을 Hailo-8 최적화 구조로 리팩토링
 import os
 import numpy as np
 import pandas as pd
@@ -10,7 +10,7 @@ from common.dataset import StockDataset
 # ---------- 설정 ----------
 DEVICE      = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 INPUT_SIZE  = 5
-SEQ_LEN     = 15          # ✔ 15‑step
+SEQ_LEN     = 10          # ⚠️ Hailo 최적화: 시퀀스 길이 10
 BATCH_SIZE  = 32
 EPOCHS      = 30
 LR          = 0.001
@@ -19,22 +19,17 @@ DATA_ROOT   = "./data"
 MODEL_ROOT  = "./models/GRU"
 TICKERS     = ["KOSPI", "Apple", "NASDAQ", "Tesla", "Samsung"]
 
-# ---------- GRU 모델 ----------
+# ---------- GRU 모델 (Hailo 호환) ----------
 class GRUModel(nn.Module):
-    """
-    GRU → 1×1 Conv (Linear) → [B,1,1,1]  **squeeze 안함** (N,C,H,W 형태 유지)
-    """
     def __init__(self):
         super().__init__()
-        self.gru  = nn.GRU(INPUT_SIZE, 64, num_layers=2, batch_first=True)
-        self.conv = nn.Conv2d(64, 1, kernel_size=1)
+        self.gru  = nn.GRU(INPUT_SIZE, 32, num_layers=1, batch_first=True)
+        self.conv = nn.Conv2d(32, 1, kernel_size=1)
 
     def forward(self, x):
-        out, _ = self.gru(x)                          # [B, SEQ_LEN, 64]
-        h = out[:, -1, :]                             # 마지막 시점의 hidden state만 사용
-        h = h.unsqueeze(-1).unsqueeze(-1)             # [B, 64, 1, 1]
-        y = self.conv(h)                              # [B, 1, 1, 1]
-        return y                                      # shape: [B,1,1,1] 유지
+        out, _ = self.gru(x)                          # [B, SEQ_LEN, 32]
+        h = out[:, -1, :].unsqueeze(-1).unsqueeze(-1) # [B, 32, 1, 1]
+        return self.conv(h)                           # [B, 1, 1, 1]
 
 # ---------- 학습 루프 ----------
 def train(model, train_loader, val_loader, save_path):
@@ -77,12 +72,10 @@ def main():
 
     for tk in TICKERS:
         print(f"=== {tk} ===")
-        df = pd.read_csv(os.path.join(DATA_ROOT, tk, "ohlcv.csv"), index_col=0)  # ✔ skiprows 제거
+        df = pd.read_csv(os.path.join(DATA_ROOT, tk, "ohlcv.csv"), index_col=0)
 
-        # ➡ 숫자 아닌 행 삭제 (Ticker 문자열 등)
         df = df[pd.to_numeric(df["Open"], errors="coerce").notnull()].astype(float)
 
-        # 30‑30‑40 split
         n = len(df); s1, s2 = int(n*0.3), int(n*0.6)
         train_ds = StockDataset(df.iloc[:s1], seq_len=SEQ_LEN)
         val_ds   = StockDataset(df.iloc[s1:s2], seq_len=SEQ_LEN)
