@@ -22,13 +22,15 @@ TICKERS     = ["KOSPI", "Apple", "NASDAQ", "Tesla", "Samsung"]
 # ---------- LSTM 모델 (Hailo 호환) ----------
 class LSTMModel(nn.Module):
     def __init__(self):
-        super().__init__()
-        self.lstm = nn.LSTM(INPUT_SIZE, 32, num_layers=1, batch_first=True)
-        self.fc   = nn.Linear(32, 1)
+        super(LSTMModel, self).__init__()
+        self.lstm = nn.LSTM(INPUT_SIZE, 64, num_layers=2, batch_first=True)  # ✅ 변경됨
+        self.fc   = nn.Linear(64, 1)
 
     def forward(self, x):
-        out, _ = self.lstm(x)               # [B, SEQ_LEN, 32]
-        return self.fc(out[:, -1, :])       # [B, 1]
+        out, _ = self.lstm(x)
+        out = out[:, -1, :]
+        return self.fc(out)
+
 
 # ---------- 학습 루프 ----------
 def train(model, train_loader, val_loader, save_path):
