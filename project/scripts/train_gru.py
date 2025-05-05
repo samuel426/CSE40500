@@ -6,9 +6,10 @@ import torch.nn as nn
 from torch.utils.data import DataLoader
 from common.dataset import StockDataset
 
+# 설정
 DEVICE = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 INPUT_SIZE = 5
-SEQ_LEN = 15
+SEQ_LEN = 10
 BATCH_SIZE = 32
 EPOCHS = 30
 LR = 0.001
@@ -17,17 +18,21 @@ DATA_ROOT = "./data"
 MODEL_ROOT = "./models/GRU"
 TICKERS = ["KOSPI", "Apple", "NASDAQ", "Tesla", "Samsung"]
 
+# Hailo-호환 GRU 모델
 class GRUModel(nn.Module):
     def __init__(self):
         super().__init__()
-        self.gru = nn.GRU(INPUT_SIZE, 64, num_layers=2, batch_first=True)
-        self.conv = nn.Conv2d(64, 1, kernel_size=1)
+        self.conv1d = nn.Conv1d(INPUT_SIZE, 16, kernel_size=3, padding=1)
+        self.relu = nn.ReLU()
+        self.gru = nn.GRU(16, 32, num_layers=1, batch_first=True)
+        self.fc = nn.Linear(32, 1)
 
     def forward(self, x):
+        x = x.permute(0, 2, 1)              # [B, C, T]
+        x = self.relu(self.conv1d(x))       # [B, 16, T]
+        x = x.permute(0, 2, 1)              # [B, T, 16]
         out, _ = self.gru(x)
-        h = out[:, -1, :].unsqueeze(-1).unsqueeze(-1)  # ✅ 수정된 부분
-        y = self.conv(h)
-        return y  # [B, 1, 1, 1]
+        return self.fc(out[:, -1, :])
 
 def train(model, train_loader, val_loader, save_path):
     model = model.to(DEVICE)
@@ -36,17 +41,20 @@ def train(model, train_loader, val_loader, save_path):
 
     best = np.inf
     for epoch in range(EPOCHS):
-        model.train(); train_loss = 0
+        model.train()
+        train_loss = 0
         for x, t in train_loader:
             x, t = x.to(DEVICE), t.to(DEVICE)
             opt.zero_grad()
             out = model(x).squeeze()
             loss = crit(out, t)
-            loss.backward(); opt.step()
+            loss.backward()
+            opt.step()
             train_loss += loss.item()
         train_loss /= len(train_loader)
 
-        model.eval(); val_loss = 0
+        model.eval()
+        val_loss = 0
         with torch.no_grad():
             for x, t in val_loader:
                 x, t = x.to(DEVICE), t.to(DEVICE)
@@ -54,7 +62,7 @@ def train(model, train_loader, val_loader, save_path):
                 val_loss += crit(out, t).item()
         val_loss /= len(val_loader)
 
-        print(f"[{epoch+1:02}/{EPOCHS}] train {train_loss:.6f} | val {val_loss:.6f}")
+        print(f"[{epoch+1}/{EPOCHS}] train: {train_loss:.6f}, val: {val_loss:.6f}")
 
         if val_loss < best:
             best = val_loss
@@ -70,11 +78,11 @@ def main():
         df = df[pd.to_numeric(df["Open"], errors="coerce").notnull()].astype(float)
 
         n = len(df); s1, s2 = int(n*0.3), int(n*0.6)
-        train_ds = StockDataset(df.iloc[:s1], seq_len=SEQ_LEN)
-        val_ds = StockDataset(df.iloc[s1:s2], seq_len=SEQ_LEN)
+        train_ds = StockDataset(df.iloc[:s1], SEQ_LEN)
+        val_ds = StockDataset(df.iloc[s1:s2], SEQ_LEN)
 
-        tr_loader = DataLoader(train_ds, batch_size=BATCH_SIZE, shuffle=True)
-        va_loader = DataLoader(val_ds, batch_size=BATCH_SIZE)
+        tr_loader = DataLoader(train_ds, BATCH_SIZE, shuffle=True)
+        va_loader = DataLoader(val_ds, BATCH_SIZE)
 
         model = GRUModel()
         path = os.path.join(MODEL_ROOT, f"{tk}.pth")
