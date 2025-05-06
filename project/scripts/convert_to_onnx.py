@@ -2,7 +2,7 @@ import os
 import torch
 from train_gru import GRUModel
 from train_bilstm import BiLSTMModel
-from train_lstm import LSTMModel  # 기존 LSTM 추가
+from train_lstm import LSTMModel
 
 DEVICE = torch.device("cpu")
 SEQ_LEN = 10
@@ -21,7 +21,8 @@ def convert(model_type, ticker):
     model.load_state_dict(torch.load(model_path, map_location=DEVICE))
     model.eval()
 
-    dummy = torch.randn(1, SEQ_LEN, INPUT_SIZE)
+    dummy_seq_len = 5 if model_type == "BiLSTM" else SEQ_LEN
+    dummy = torch.randn(1, dummy_seq_len, INPUT_SIZE)
     onnx_dir = f"./onnx_models/{model_type}"
     os.makedirs(onnx_dir, exist_ok=True)
 
@@ -33,8 +34,7 @@ def convert(model_type, ticker):
         input_names=["input"],
         output_names=["output"],
         opset_version=14,
-        do_constant_folding=False,
-        dynamic_axes=None
+        do_constant_folding=True
     )
 
     print(f"{model_type}-{ticker} ONNX 변환 완료 ➡️ {onnx_path}")

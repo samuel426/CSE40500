@@ -6,10 +6,9 @@ import torch.nn as nn
 from torch.utils.data import DataLoader
 from common.dataset import StockDataset
 
-# 설정
 DEVICE = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 INPUT_SIZE = 5
-SEQ_LEN = 5  # 반복 수를 줄이기 위해 시퀀스 길이 감소
+SEQ_LEN = 5  # 반복 수 줄임
 BATCH_SIZE = 32
 EPOCHS = 30
 LR = 0.001
@@ -18,19 +17,23 @@ DATA_ROOT = "./data"
 MODEL_ROOT = "./models/BiLSTM"
 TICKERS = ["KOSPI", "Apple", "NASDAQ", "Tesla", "Samsung"]
 
-# 수동 BiLSTM 모델
 class BiLSTMModel(nn.Module):
     def __init__(self):
         super().__init__()
-        self.lstm_f = nn.LSTM(INPUT_SIZE, 16, num_layers=1, batch_first=True)
-        self.lstm_b = nn.LSTM(INPUT_SIZE, 16, num_layers=1, batch_first=True)
+        self.forward_lstm = nn.LSTM(INPUT_SIZE, 16, batch_first=True)
+        self.backward_lstm = nn.LSTM(INPUT_SIZE, 16, batch_first=True)
         self.fc = nn.Linear(32, 1)
 
     def forward(self, x):
-        out_f, (hn_f, _) = self.lstm_f(x)
-        out_b, (hn_b, _) = self.lstm_b(torch.flip(x, dims=[1]))
-        h = torch.cat((hn_f[0], hn_b[0]), dim=1)
+        forward_out, (h_f, _) = self.forward_lstm(x)
+        reversed_x = torch.flip(x, dims=[1])
+        backward_out, (h_b, _) = self.backward_lstm(reversed_x)
+        h = torch.cat((h_f[-1], h_b[-1]), dim=1)
         return self.fc(h)
+
+# 학습 함수는 기존과 동일
+# main 함수도 동일하게 ticker별 학습 및 저장
+
 
 def train(model, train_loader, val_loader, save_path):
     model = model.to(DEVICE)

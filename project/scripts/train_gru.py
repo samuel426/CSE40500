@@ -6,7 +6,6 @@ import torch.nn as nn
 from torch.utils.data import DataLoader
 from common.dataset import StockDataset
 
-# 설정
 DEVICE = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 INPUT_SIZE = 5
 SEQ_LEN = 10
@@ -18,19 +17,26 @@ DATA_ROOT = "./data"
 MODEL_ROOT = "./models/GRU"
 TICKERS = ["KOSPI", "Apple", "NASDAQ", "Tesla", "Samsung"]
 
-# Hailo-호환 GRU 모델
 class GRUModel(nn.Module):
     def __init__(self):
         super().__init__()
-        self.linear = nn.Linear(INPUT_SIZE, 16)
+        self.flatten = nn.Flatten(start_dim=1)
+        self.fc1 = nn.Linear(SEQ_LEN * INPUT_SIZE, 64)
         self.relu = nn.ReLU()
-        self.gru = nn.GRU(16, 32, num_layers=1, batch_first=True)
-        self.fc = nn.Linear(32, 1)
+        self.gru = nn.GRU(64, 32, num_layers=1, batch_first=True)
+        self.fc2 = nn.Linear(32, 1)
 
     def forward(self, x):
-        x = self.relu(self.linear(x))       # [B, T, 16]
+        B, T, C = x.shape
+        x = self.flatten(x)
+        x = self.relu(self.fc1(x))
+        x = x.view(B, 1, -1)
         out, _ = self.gru(x)
-        return self.fc(out[:, -1, :])
+        return self.fc2(out[:, -1, :])
+
+# 학습 함수는 기존과 동일
+# main 함수도 동일하게 ticker별 학습 및 저장
+
 
 def train(model, train_loader, val_loader, save_path):
     model = model.to(DEVICE)
