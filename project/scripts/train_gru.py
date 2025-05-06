@@ -6,6 +6,7 @@ import torch.nn as nn
 from torch.utils.data import DataLoader
 from common.dataset import StockDataset
 
+# 설정
 DEVICE = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 INPUT_SIZE = 5
 SEQ_LEN = 10
@@ -17,17 +18,19 @@ DATA_ROOT = "./data"
 MODEL_ROOT = "./models/GRU"
 TICKERS = ["KOSPI", "Apple", "NASDAQ", "Tesla", "Samsung"]
 
+# Hailo-호환 GRU 모델
 class GRUModel(nn.Module):
     def __init__(self):
         super().__init__()
-        self.gru = nn.GRU(INPUT_SIZE, 32, batch_first=True)
-        self.flatten = nn.Flatten()
+        self.linear = nn.Linear(INPUT_SIZE, 16)
+        self.relu = nn.ReLU()
+        self.gru = nn.GRU(16, 32, num_layers=1, batch_first=True)
         self.fc = nn.Linear(32, 1)
 
     def forward(self, x):
+        x = self.relu(self.linear(x))       # [B, T, 16]
         out, _ = self.gru(x)
-        out = self.flatten(out[:, -1:, :])  # [B, 1, 32] → [B, 32]
-        return self.fc(out)
+        return self.fc(out[:, -1, :])
 
 def train(model, train_loader, val_loader, save_path):
     model = model.to(DEVICE)
@@ -66,18 +69,23 @@ def train(model, train_loader, val_loader, save_path):
 
 def main():
     os.makedirs(MODEL_ROOT, exist_ok=True)
+
     for tk in TICKERS:
         print(f"=== {tk} ===")
         df = pd.read_csv(os.path.join(DATA_ROOT, tk, "ohlcv.csv"), index_col=0)
         df = df[pd.to_numeric(df["Open"], errors="coerce").notnull()].astype(float)
-        n = len(df); s1, s2 = int(n * 0.3), int(n * 0.6)
+
+        n = len(df); s1, s2 = int(n*0.3), int(n*0.6)
         train_ds = StockDataset(df.iloc[:s1], SEQ_LEN)
         val_ds = StockDataset(df.iloc[s1:s2], SEQ_LEN)
+
         tr_loader = DataLoader(train_ds, BATCH_SIZE, shuffle=True)
         va_loader = DataLoader(val_ds, BATCH_SIZE)
+
         model = GRUModel()
         path = os.path.join(MODEL_ROOT, f"{tk}.pth")
         train(model, tr_loader, va_loader, path)
+
     print("🎯 GRU 학습 완료")
 
 if __name__ == "__main__":
