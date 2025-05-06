@@ -31,6 +31,7 @@ def convert(model_type, ticker):
         opset_version=14,
         export_params=True
     )
+
     print(f"✅ ONNX export 완료: {onnx_path}")
 
 def main():

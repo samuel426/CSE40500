@@ -27,9 +27,10 @@ class BiLSTMModel(nn.Module):
 
     def forward(self, x):
         out_f, (h_f, _) = self.forward_lstm(x)
-        out_b, (h_b, _) = self.backward_lstm(torch.flip(x, [1]))
+        out_b, (h_b, _) = self.backward_lstm(torch.flip(x, [1]))  # 역방향 처리
         h = torch.cat((h_f[-1], h_b[-1]), dim=1)
         return self.fc(h)
+
 
 
 # 학습 함수는 기존과 동일

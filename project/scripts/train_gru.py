@@ -30,6 +30,7 @@ class GRUModel(nn.Module):
         return self.fc(out[:, -1, :])
 
 
+
 # 학습 함수는 기존과 동일
 # main 함수도 동일하게 ticker별 학습 및 저장
 
