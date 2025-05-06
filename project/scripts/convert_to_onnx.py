@@ -17,27 +17,21 @@ MODEL_CLASSES = {
 
 def convert(model_type, ticker):
     model = MODEL_CLASSES[model_type]()
-    model_path = f"./models/{model_type}/{ticker}.pth"
-    model.load_state_dict(torch.load(model_path, map_location=DEVICE))
+    path = f"./models/{model_type}/{ticker}.pth"
+    model.load_state_dict(torch.load(path, map_location=DEVICE))
     model.eval()
 
-    dummy_seq_len = 5 if model_type == "BiLSTM" else SEQ_LEN
-    dummy = torch.randn(1, dummy_seq_len, INPUT_SIZE)
-    onnx_dir = f"./onnx_models/{model_type}"
-    os.makedirs(onnx_dir, exist_ok=True)
+    dummy_input = torch.randn(1, SEQ_LEN, INPUT_SIZE)
+    onnx_path = f"./onnx_models/{model_type}/{ticker}.onnx"
+    os.makedirs(os.path.dirname(onnx_path), exist_ok=True)
 
-    onnx_path = os.path.join(onnx_dir, f"{ticker}.onnx")
     torch.onnx.export(
-        model,
-        dummy,
-        onnx_path,
-        input_names=["input"],
-        output_names=["output"],
+        model, dummy_input, onnx_path,
+        input_names=["input"], output_names=["output"],
         opset_version=14,
-        do_constant_folding=True
+        export_params=True
     )
-
-    print(f"{model_type}-{ticker} ONNX 변환 완료 ➡️ {onnx_path}")
+    print(f"✅ ONNX export 완료: {onnx_path}")
 
 def main():
     for m in MODEL_CLASSES:

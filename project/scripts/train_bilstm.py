@@ -17,19 +17,20 @@ DATA_ROOT = "./data"
 MODEL_ROOT = "./models/BiLSTM"
 TICKERS = ["KOSPI", "Apple", "NASDAQ", "Tesla", "Samsung"]
 
+# BiLSTM → 수동 양방향 처리 구조
 class BiLSTMModel(nn.Module):
     def __init__(self):
         super().__init__()
-        self.forward_lstm = nn.LSTM(INPUT_SIZE, 16, batch_first=True)
-        self.backward_lstm = nn.LSTM(INPUT_SIZE, 16, batch_first=True)
+        self.forward_lstm = nn.LSTM(input_size=5, hidden_size=16, batch_first=True)
+        self.backward_lstm = nn.LSTM(input_size=5, hidden_size=16, batch_first=True)
         self.fc = nn.Linear(32, 1)
 
     def forward(self, x):
-        forward_out, (h_f, _) = self.forward_lstm(x)
-        reversed_x = torch.flip(x, dims=[1])
-        backward_out, (h_b, _) = self.backward_lstm(reversed_x)
+        out_f, (h_f, _) = self.forward_lstm(x)
+        out_b, (h_b, _) = self.backward_lstm(torch.flip(x, [1]))
         h = torch.cat((h_f[-1], h_b[-1]), dim=1)
         return self.fc(h)
+
 
 # 학습 함수는 기존과 동일
 # main 함수도 동일하게 ticker별 학습 및 저장

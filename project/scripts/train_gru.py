@@ -17,22 +17,18 @@ DATA_ROOT = "./data"
 MODEL_ROOT = "./models/GRU"
 TICKERS = ["KOSPI", "Apple", "NASDAQ", "Tesla", "Samsung"]
 
+# GRU 구조에서 Conv 제거, FC로 단순화
 class GRUModel(nn.Module):
     def __init__(self):
         super().__init__()
-        self.flatten = nn.Flatten(start_dim=1)
-        self.fc1 = nn.Linear(SEQ_LEN * INPUT_SIZE, 64)
-        self.relu = nn.ReLU()
-        self.gru = nn.GRU(64, 32, num_layers=1, batch_first=True)
-        self.fc2 = nn.Linear(32, 1)
+        self.flatten = nn.Flatten()
+        self.gru = nn.GRU(input_size=5, hidden_size=32, batch_first=True)
+        self.fc = nn.Linear(32, 1)
 
     def forward(self, x):
-        B, T, C = x.shape
-        x = self.flatten(x)
-        x = self.relu(self.fc1(x))
-        x = x.view(B, 1, -1)
         out, _ = self.gru(x)
-        return self.fc2(out[:, -1, :])
+        return self.fc(out[:, -1, :])
+
 
 # 학습 함수는 기존과 동일
 # main 함수도 동일하게 ticker별 학습 및 저장
