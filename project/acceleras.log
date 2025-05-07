@@ -1,0 +1,16 @@
+2025-05-06 11:26:40,640 - INFO - conv_stripped_op.py:630 - No shifts available for layer lstm_apple/conv6/conv_op, using max shift instead. delta=0.0391
+2025-05-06 11:26:41,474 - INFO - conv_stripped_op.py:630 - No shifts available for layer lstm_apple/conv50/conv_op, using max shift instead. delta=0.0532
+2025-05-06 11:26:42,311 - INFO - conv_stripped_op.py:630 - No shifts available for layer lstm_apple/conv50/conv_op, using max shift instead. delta=0.0137
+2025-05-06 11:26:47,740 - INFO - conv_stripped_op.py:630 - No shifts available for layer lstm_apple/conv50/conv_op, using max shift instead. delta=0.0006
+2025-05-06 11:38:37,357 - INFO - conv_stripped_op.py:630 - No shifts available for layer lstm_samsung/conv98/conv_op, using max shift instead. delta=0.0050
+2025-05-06 11:38:37,815 - INFO - conv_stripped_op.py:630 - No shifts available for layer lstm_samsung/conv114/conv_op, using max shift instead. delta=0.0057
+2025-05-06 11:38:38,280 - INFO - conv_stripped_op.py:630 - No shifts available for layer lstm_samsung/conv114/conv_op, using max shift instead. delta=0.0029
+2025-05-06 11:38:38,409 - INFO - conv_stripped_op.py:630 - No shifts available for layer lstm_samsung/conv110/conv_op, using max shift instead. delta=0.0026
+2025-05-06 22:02:12,893 - INFO - conv_stripped_op.py:630 - No shifts available for layer lstm_apple/conv6/conv_op, using max shift instead. delta=0.0391
+2025-05-06 22:02:13,816 - INFO - conv_stripped_op.py:630 - No shifts available for layer lstm_apple/conv50/conv_op, using max shift instead. delta=0.0532
+2025-05-06 22:02:14,782 - INFO - conv_stripped_op.py:630 - No shifts available for layer lstm_apple/conv50/conv_op, using max shift instead. delta=0.0137
+2025-05-06 22:02:24,150 - INFO - conv_stripped_op.py:630 - No shifts available for layer lstm_apple/conv50/conv_op, using max shift instead. delta=0.0006
+2025-05-06 22:16:15,458 - INFO - conv_stripped_op.py:630 - No shifts available for layer lstm_samsung/conv98/conv_op, using max shift instead. delta=0.0050
+2025-05-06 22:16:15,983 - INFO - conv_stripped_op.py:630 - No shifts available for layer lstm_samsung/conv114/conv_op, using max shift instead. delta=0.0057
+2025-05-06 22:16:16,505 - INFO - conv_stripped_op.py:630 - No shifts available for layer lstm_samsung/conv114/conv_op, using max shift instead. delta=0.0029
+2025-05-06 22:16:16,659 - INFO - conv_stripped_op.py:630 - No shifts available for layer lstm_samsung/conv110/conv_op, using max shift instead. delta=0.0026

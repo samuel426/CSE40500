@@ -1,4 +1,4 @@
-# ✅ LSTM 모델을 Hailo-8 최적화 구조로 리팩토링
+# train_lstm.py
 import os
 import numpy as np
 import pandas as pd
@@ -10,7 +10,7 @@ from common.dataset import StockDataset
 # ---------- 설정 ----------
 DEVICE      = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 INPUT_SIZE  = 5
-SEQ_LEN     = 10          # ⚠️ Hailo 최적화: 시퀀스 길이 10
+SEQ_LEN     = 10
 BATCH_SIZE  = 32
 EPOCHS      = 30
 LR          = 0.001
@@ -23,49 +23,51 @@ TICKERS     = ["KOSPI", "Apple", "NASDAQ", "Tesla", "Samsung"]
 class LSTMModel(nn.Module):
     def __init__(self):
         super(LSTMModel, self).__init__()
-        self.lstm = nn.LSTM(INPUT_SIZE, 64, num_layers=2, batch_first=True)  # ✅ 변경됨
+        self.lstm = nn.LSTM(INPUT_SIZE, 64, num_layers=2, batch_first=True)
         self.fc   = nn.Linear(64, 1)
 
     def forward(self, x):
         out, _ = self.lstm(x)
-        out = out[:, -1, :]
+        out = out[:, -1, :]            # 마지막 타임스텝의 출력
         return self.fc(out)
-
 
 # ---------- 학습 루프 ----------
 def train(model, train_loader, val_loader, save_path):
     model = model.to(DEVICE)
-    crit  = nn.MSELoss()
-    opt   = torch.optim.Adam(model.parameters(), lr=LR)
+    criterion = nn.MSELoss()
+    optimizer = torch.optim.Adam(model.parameters(), lr=LR)
 
-    best = np.inf
-    for epoch in range(EPOCHS):
-        # --- train ---
-        model.train(); train_loss = 0
-        for x, t in train_loader:
-            x, t = x.to(DEVICE), t.to(DEVICE)
-            opt.zero_grad()
-            out = model(x).squeeze()
-            loss = crit(out, t)
-            loss.backward(); opt.step()
+    best_loss = float('inf')
+    for epoch in range(1, EPOCHS+1):
+        # -- train --
+        model.train()
+        train_loss = 0.0
+        for x, y in train_loader:
+            x, y = x.to(DEVICE), y.to(DEVICE)
+            optimizer.zero_grad()
+            pred = model(x).squeeze()
+            loss = criterion(pred, y)
+            loss.backward()
+            optimizer.step()
             train_loss += loss.item()
         train_loss /= len(train_loader)
 
-        # --- val ---
-        model.eval(); val_loss = 0
+        # -- val --
+        model.eval()
+        val_loss = 0.0
         with torch.no_grad():
-            for x, t in val_loader:
-                x, t = x.to(DEVICE), t.to(DEVICE)
-                out = model(x).squeeze()
-                val_loss += crit(out, t).item()
+            for x, y in val_loader:
+                x, y = x.to(DEVICE), y.to(DEVICE)
+                pred = model(x).squeeze()
+                val_loss += criterion(pred, y).item()
         val_loss /= len(val_loader)
 
-        print(f"[{epoch+1:02}/{EPOCHS}] train {train_loss:.6f} | val {val_loss:.6f}")
+        print(f"[{epoch:02}/{EPOCHS}] train={train_loss:.6f} | val={val_loss:.6f}")
 
-        if val_loss < best:
-            best = val_loss
+        if val_loss < best_loss:
+            best_loss = val_loss
             torch.save(model.state_dict(), save_path)
-            print(f"✅ saved: {save_path}")
+            print(f"✅ saved {save_path}")
 
 # ---------- 실행 ----------
 def main():
@@ -73,22 +75,45 @@ def main():
 
     for tk in TICKERS:
         print(f"=== {tk} ===")
-        df = pd.read_csv(os.path.join(DATA_ROOT, tk, "ohlcv.csv"), index_col=0)
+        # CSV 로드: 첫 두 줄 스킵, 세 번째 줄부터 Date 포함
+        df = pd.read_csv(
+            os.path.join(DATA_ROOT, tk, "ohlcv.csv"),
+            skiprows=2,
+            names=['Date', 'Open', 'High', 'Low', 'Close', 'Volume']
+        )
+        df.set_index('Date', inplace=True)
+        df = df.apply(pd.to_numeric, errors='coerce').dropna()
 
-        df = df[pd.to_numeric(df["Open"], errors="coerce").notnull()].astype(float)
+        # 30%-30%-40% 분할
+        n = len(df)
+        s1, s2 = int(n*0.3), int(n*0.6)
 
-        n = len(df); s1, s2 = int(n*0.3), int(n*0.6)
         train_ds = StockDataset(df.iloc[:s1], seq_len=SEQ_LEN)
         val_ds   = StockDataset(df.iloc[s1:s2], seq_len=SEQ_LEN)
+        test_ds  = StockDataset(df.iloc[s2:], seq_len=SEQ_LEN)
 
         tr_loader = DataLoader(train_ds, batch_size=BATCH_SIZE, shuffle=True)
-        va_loader = DataLoader(val_ds, batch_size=BATCH_SIZE)
+        va_loader = DataLoader(val_ds,   batch_size=BATCH_SIZE)
+        te_loader = DataLoader(test_ds,  batch_size=BATCH_SIZE)
 
-        model = LSTMModel()
-        path  = os.path.join(MODEL_ROOT, f"{tk}.pth")
-        train(model, tr_loader, va_loader, path)
+        # 모델 학습
+        model_path = os.path.join(MODEL_ROOT, f"{tk}.pth")
+        train(LSTMModel(), tr_loader, va_loader, model_path)
 
-    print("🎯 LSTM 학습 완료")
+        # 테스트셋 평가
+        model = LSTMModel().to(DEVICE)
+        model.load_state_dict(torch.load(model_path))
+        model.eval()
+        test_loss = 0.0
+        with torch.no_grad():
+            for x, y in te_loader:
+                x, y = x.to(DEVICE), y.to(DEVICE)
+                pred = model(x).squeeze()
+                test_loss += nn.MSELoss()(pred, y).item()
+        test_loss /= len(te_loader)
+        print(f"--- Test Loss for {tk}: {test_loss:.6f} ---\n")
+
+    print("🎯 LSTM Training & Testing Complete")
 
 if __name__ == "__main__":
     main()

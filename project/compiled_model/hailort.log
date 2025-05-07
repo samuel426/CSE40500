@@ -1,0 +1,4 @@
+[2025-05-06 22:19:27.196] [34034] [HailoRT] [error] [hef.cpp:612] [parse_hef_file] Unsupported hef version 1079009656
+[2025-05-06 22:19:27.196] [34034] [HailoRT] [error] [hef.cpp:1060] [Impl] Failed parsing HEF file
+[2025-05-06 22:19:27.196] [34034] [HailoRT] [error] [hef.cpp:333] [create] Failed creating HEF
+[2025-05-06 22:19:27.198] [34034] [HailoRT] [error] [hef.cpp:168] [create] CHECK_SUCCESS failed with status=HAILO_HEF_NOT_SUPPORTED(92)
