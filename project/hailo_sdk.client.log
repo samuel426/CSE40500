@@ -1762,3 +1762,198 @@
 2025-05-06 23:02:22,470 - INFO - parser.py:197 - Restored ONNX model BiLSTM_KOSPI (completion time: 00:00:00.02)
 2025-05-06 23:02:22,577 - INFO - parser.py:220 - Extracted ONNXRuntime meta-data for Hailo model (completion time: 00:00:00.13)
 2025-05-06 23:02:22,626 - INFO - parser.py:278 - Simplified ONNX model for a parsing retry attempt (completion time: 00:00:00.17)
+2025-05-07 13:28:27,237 - INFO - parser.py:162 - Translation started on ONNX model GRU_KOSPI
+2025-05-07 13:28:27,268 - INFO - parser.py:197 - Restored ONNX model GRU_KOSPI (completion time: 00:00:00.03)
+2025-05-07 13:28:27,367 - INFO - parser.py:220 - Extracted ONNXRuntime meta-data for Hailo model (completion time: 00:00:00.13)
+2025-05-07 13:28:27,404 - INFO - parser.py:278 - Simplified ONNX model for a parsing retry attempt (completion time: 00:00:00.17)
+2025-05-07 13:28:29,464 - INFO - parser.py:162 - Translation started on ONNX model GRU_Apple
+2025-05-07 13:28:29,471 - INFO - parser.py:197 - Restored ONNX model GRU_Apple (completion time: 00:00:00.01)
+2025-05-07 13:28:29,506 - INFO - parser.py:220 - Extracted ONNXRuntime meta-data for Hailo model (completion time: 00:00:00.04)
+2025-05-07 13:28:29,533 - INFO - parser.py:278 - Simplified ONNX model for a parsing retry attempt (completion time: 00:00:00.07)
+2025-05-07 13:28:34,064 - INFO - parser.py:162 - Translation started on ONNX model GRU_NASDAQ
+2025-05-07 13:28:34,082 - INFO - parser.py:197 - Restored ONNX model GRU_NASDAQ (completion time: 00:00:00.02)
+2025-05-07 13:28:34,115 - INFO - parser.py:220 - Extracted ONNXRuntime meta-data for Hailo model (completion time: 00:00:00.05)
+2025-05-07 13:28:34,149 - INFO - parser.py:278 - Simplified ONNX model for a parsing retry attempt (completion time: 00:00:00.08)
+2025-05-07 13:28:38,748 - INFO - parser.py:162 - Translation started on ONNX model GRU_Tesla
+2025-05-07 13:28:38,766 - INFO - parser.py:197 - Restored ONNX model GRU_Tesla (completion time: 00:00:00.02)
+2025-05-07 13:28:38,798 - INFO - parser.py:220 - Extracted ONNXRuntime meta-data for Hailo model (completion time: 00:00:00.05)
+2025-05-07 13:28:38,825 - INFO - parser.py:278 - Simplified ONNX model for a parsing retry attempt (completion time: 00:00:00.08)
+2025-05-07 13:28:43,427 - INFO - parser.py:162 - Translation started on ONNX model GRU_Samsung
+2025-05-07 13:28:43,433 - INFO - parser.py:197 - Restored ONNX model GRU_Samsung (completion time: 00:00:00.01)
+2025-05-07 13:28:43,474 - INFO - parser.py:220 - Extracted ONNXRuntime meta-data for Hailo model (completion time: 00:00:00.05)
+2025-05-07 13:28:43,503 - INFO - parser.py:278 - Simplified ONNX model for a parsing retry attempt (completion time: 00:00:00.08)
+2025-05-07 13:28:48,150 - INFO - parser.py:162 - Translation started on ONNX model LSTM_KOSPI
+2025-05-07 13:28:48,171 - INFO - parser.py:197 - Restored ONNX model LSTM_KOSPI (completion time: 00:00:00.02)
+2025-05-07 13:28:48,215 - INFO - parser.py:220 - Extracted ONNXRuntime meta-data for Hailo model (completion time: 00:00:00.06)
+2025-05-07 13:28:48,256 - INFO - parser.py:278 - Simplified ONNX model for a parsing retry attempt (completion time: 00:00:00.11)
+2025-05-07 13:28:48,872 - INFO - parser.py:378 - Start nodes mapped from original model: 'input': 'LSTM_KOSPI/input_layer1'.
+2025-05-07 13:28:48,873 - INFO - parser.py:379 - End nodes mapped from original model: '/fc/Gemm'.
+2025-05-07 13:28:48,959 - INFO - parser.py:292 - Translation completed on ONNX model LSTM_KOSPI (completion time: 00:00:00.81)
+2025-05-07 13:28:50,672 - INFO - client_runner.py:1876 - Saved HAR to: /home/samuel/grad/git/CSE40500/project/compiled_model/LSTM_KOSPI.har
+2025-05-07 13:28:55,215 - INFO - parser.py:162 - Translation started on ONNX model LSTM_Apple
+2025-05-07 13:28:55,236 - INFO - parser.py:197 - Restored ONNX model LSTM_Apple (completion time: 00:00:00.02)
+2025-05-07 13:28:55,283 - INFO - parser.py:220 - Extracted ONNXRuntime meta-data for Hailo model (completion time: 00:00:00.07)
+2025-05-07 13:28:55,337 - INFO - parser.py:278 - Simplified ONNX model for a parsing retry attempt (completion time: 00:00:00.12)
+2025-05-07 13:28:55,845 - INFO - parser.py:378 - Start nodes mapped from original model: 'input': 'LSTM_Apple/input_layer1'.
+2025-05-07 13:28:55,845 - INFO - parser.py:379 - End nodes mapped from original model: '/fc/Gemm'.
+2025-05-07 13:28:55,926 - INFO - parser.py:292 - Translation completed on ONNX model LSTM_Apple (completion time: 00:00:00.71)
+2025-05-07 13:28:57,627 - INFO - client_runner.py:1876 - Saved HAR to: /home/samuel/grad/git/CSE40500/project/compiled_model/LSTM_Apple.har
+2025-05-07 13:28:59,743 - INFO - parser.py:162 - Translation started on ONNX model LSTM_NASDAQ
+2025-05-07 13:28:59,764 - INFO - parser.py:197 - Restored ONNX model LSTM_NASDAQ (completion time: 00:00:00.02)
+2025-05-07 13:28:59,806 - INFO - parser.py:220 - Extracted ONNXRuntime meta-data for Hailo model (completion time: 00:00:00.06)
+2025-05-07 13:28:59,845 - INFO - parser.py:278 - Simplified ONNX model for a parsing retry attempt (completion time: 00:00:00.10)
+2025-05-07 13:29:00,377 - INFO - parser.py:378 - Start nodes mapped from original model: 'input': 'LSTM_NASDAQ/input_layer1'.
+2025-05-07 13:29:00,378 - INFO - parser.py:379 - End nodes mapped from original model: '/fc/Gemm'.
+2025-05-07 13:29:00,462 - INFO - parser.py:292 - Translation completed on ONNX model LSTM_NASDAQ (completion time: 00:00:00.72)
+2025-05-07 13:29:02,162 - INFO - client_runner.py:1876 - Saved HAR to: /home/samuel/grad/git/CSE40500/project/compiled_model/LSTM_NASDAQ.har
+2025-05-07 13:29:06,703 - INFO - parser.py:162 - Translation started on ONNX model LSTM_Tesla
+2025-05-07 13:29:06,722 - INFO - parser.py:197 - Restored ONNX model LSTM_Tesla (completion time: 00:00:00.02)
+2025-05-07 13:29:06,769 - INFO - parser.py:220 - Extracted ONNXRuntime meta-data for Hailo model (completion time: 00:00:00.07)
+2025-05-07 13:29:06,810 - INFO - parser.py:278 - Simplified ONNX model for a parsing retry attempt (completion time: 00:00:00.11)
+2025-05-07 13:29:07,335 - INFO - parser.py:378 - Start nodes mapped from original model: 'input': 'LSTM_Tesla/input_layer1'.
+2025-05-07 13:29:07,335 - INFO - parser.py:379 - End nodes mapped from original model: '/fc/Gemm'.
+2025-05-07 13:29:07,424 - INFO - parser.py:292 - Translation completed on ONNX model LSTM_Tesla (completion time: 00:00:00.72)
+2025-05-07 13:29:09,127 - INFO - client_runner.py:1876 - Saved HAR to: /home/samuel/grad/git/CSE40500/project/compiled_model/LSTM_Tesla.har
+2025-05-07 13:29:13,701 - INFO - parser.py:162 - Translation started on ONNX model LSTM_Samsung
+2025-05-07 13:29:13,723 - INFO - parser.py:197 - Restored ONNX model LSTM_Samsung (completion time: 00:00:00.02)
+2025-05-07 13:29:13,769 - INFO - parser.py:220 - Extracted ONNXRuntime meta-data for Hailo model (completion time: 00:00:00.07)
+2025-05-07 13:29:13,830 - INFO - parser.py:278 - Simplified ONNX model for a parsing retry attempt (completion time: 00:00:00.13)
+2025-05-07 13:29:14,373 - INFO - parser.py:378 - Start nodes mapped from original model: 'input': 'LSTM_Samsung/input_layer1'.
+2025-05-07 13:29:14,373 - INFO - parser.py:379 - End nodes mapped from original model: '/fc/Gemm'.
+2025-05-07 13:29:14,458 - INFO - parser.py:292 - Translation completed on ONNX model LSTM_Samsung (completion time: 00:00:00.76)
+2025-05-07 13:29:16,175 - INFO - client_runner.py:1876 - Saved HAR to: /home/samuel/grad/git/CSE40500/project/compiled_model/LSTM_Samsung.har
+2025-05-07 13:29:20,818 - INFO - parser.py:162 - Translation started on ONNX model BiLSTM_KOSPI
+2025-05-07 13:29:20,824 - INFO - parser.py:197 - Restored ONNX model BiLSTM_KOSPI (completion time: 00:00:00.01)
+2025-05-07 13:29:20,869 - INFO - parser.py:220 - Extracted ONNXRuntime meta-data for Hailo model (completion time: 00:00:00.05)
+2025-05-07 13:29:20,916 - INFO - parser.py:278 - Simplified ONNX model for a parsing retry attempt (completion time: 00:00:00.10)
+2025-05-07 13:29:25,433 - INFO - parser.py:162 - Translation started on ONNX model BiLSTM_Apple
+2025-05-07 13:29:25,441 - INFO - parser.py:197 - Restored ONNX model BiLSTM_Apple (completion time: 00:00:00.01)
+2025-05-07 13:29:25,486 - INFO - parser.py:220 - Extracted ONNXRuntime meta-data for Hailo model (completion time: 00:00:00.05)
+2025-05-07 13:29:25,533 - INFO - parser.py:278 - Simplified ONNX model for a parsing retry attempt (completion time: 00:00:00.10)
+2025-05-07 13:29:27,556 - INFO - parser.py:162 - Translation started on ONNX model BiLSTM_NASDAQ
+2025-05-07 13:29:27,578 - INFO - parser.py:197 - Restored ONNX model BiLSTM_NASDAQ (completion time: 00:00:00.02)
+2025-05-07 13:29:27,629 - INFO - parser.py:220 - Extracted ONNXRuntime meta-data for Hailo model (completion time: 00:00:00.07)
+2025-05-07 13:29:27,674 - INFO - parser.py:278 - Simplified ONNX model for a parsing retry attempt (completion time: 00:00:00.12)
+2025-05-07 13:29:32,286 - INFO - parser.py:162 - Translation started on ONNX model BiLSTM_Tesla
+2025-05-07 13:29:32,303 - INFO - parser.py:197 - Restored ONNX model BiLSTM_Tesla (completion time: 00:00:00.02)
+2025-05-07 13:29:32,346 - INFO - parser.py:220 - Extracted ONNXRuntime meta-data for Hailo model (completion time: 00:00:00.06)
+2025-05-07 13:29:32,390 - INFO - parser.py:278 - Simplified ONNX model for a parsing retry attempt (completion time: 00:00:00.10)
+2025-05-07 13:29:37,414 - INFO - parser.py:162 - Translation started on ONNX model BiLSTM_Samsung
+2025-05-07 13:29:37,421 - INFO - parser.py:197 - Restored ONNX model BiLSTM_Samsung (completion time: 00:00:00.01)
+2025-05-07 13:29:37,455 - INFO - parser.py:220 - Extracted ONNXRuntime meta-data for Hailo model (completion time: 00:00:00.04)
+2025-05-07 13:29:37,490 - INFO - parser.py:278 - Simplified ONNX model for a parsing retry attempt (completion time: 00:00:00.08)
+2025-05-07 13:31:22,537 - IMPORTANT - sdk_backend.py:1191 - Starting Model Optimization
+2025-05-07 13:31:23,111 - WARNING - mo_config.py:168 - Reducing optimization level to 0 (the accuracy won't be optimized and compression won't be used) because there's no available GPU
+2025-05-07 13:31:23,111 - WARNING - mo_config.py:233 - Running model optimization with zero level of optimization is not recommended for production use and might lead to suboptimal accuracy results
+2025-05-07 13:31:23,112 - INFO - mo_script_parser.py:91 - Model received quantization params from the hn
+2025-05-07 13:31:33,215 - INFO - algorithm_base.py:149 - MatmulDecompose skipped
+2025-05-07 13:31:33,861 - INFO - algorithm_base.py:152 - Starting Mixed Precision
+2025-05-07 13:31:36,198 - INFO - algorithm_base.py:168 - Model Optimization Algorithm Mixed Precision is done (completion time is 00:00:02.33)
+2025-05-07 13:31:40,103 - INFO - algorithm_base.py:149 - LayerNorm Decomposition skipped
+2025-05-07 13:31:43,952 - INFO - algorithm_base.py:152 - Starting Statistics Collector
+2025-05-07 13:31:43,956 - INFO - stats_collection.py:77 - Using dataset with 64 entries for calibration
+2025-05-07 13:33:26,036 - INFO - algorithm_base.py:168 - Model Optimization Algorithm Statistics Collector is done (completion time is 00:01:42.08)
+2025-05-07 13:33:28,115 - INFO - algorithm_base.py:152 - Starting Fix zp_comp Encoding
+2025-05-07 13:33:28,117 - INFO - algorithm_base.py:168 - Model Optimization Algorithm Fix zp_comp Encoding is done (completion time is 00:00:00.00)
+2025-05-07 13:33:28,118 - INFO - algorithm_base.py:149 - Matmul Equalization skipped
+2025-05-07 13:33:28,118 - INFO - algorithm_base.py:152 - Starting MatmulDecomposeFix
+2025-05-07 13:33:28,118 - INFO - algorithm_base.py:168 - Model Optimization Algorithm MatmulDecomposeFix is done (completion time is 00:00:00.00)
+2025-05-07 13:34:12,435 - INFO - algorithm_base.py:149 - Finetune encoding skipped
+2025-05-07 13:34:12,438 - INFO - algorithm_base.py:149 - Bias Correction skipped
+2025-05-07 13:34:12,457 - INFO - algorithm_base.py:149 - Adaround skipped
+2025-05-07 13:34:12,474 - INFO - algorithm_base.py:149 - Quantization-Aware Fine-Tuning skipped
+2025-05-07 13:34:41,528 - INFO - algorithm_base.py:149 - Layer Noise Analysis skipped
+2025-05-07 13:35:03,175 - IMPORTANT - sdk_backend.py:1203 - Model Optimization is done
+2025-05-07 13:35:04,564 - INFO - client_runner.py:1876 - Saved HAR to: /home/samuel/grad/git/CSE40500/project/compiled_model/lstm_apple.hef
+2025-05-07 13:35:20,158 - IMPORTANT - sdk_backend.py:1191 - Starting Model Optimization
+2025-05-07 13:35:20,728 - WARNING - mo_config.py:168 - Reducing optimization level to 0 (the accuracy won't be optimized and compression won't be used) because there's no available GPU
+2025-05-07 13:35:20,728 - WARNING - mo_config.py:233 - Running model optimization with zero level of optimization is not recommended for production use and might lead to suboptimal accuracy results
+2025-05-07 13:35:20,729 - INFO - mo_script_parser.py:91 - Model received quantization params from the hn
+2025-05-07 13:35:31,556 - INFO - algorithm_base.py:149 - MatmulDecompose skipped
+2025-05-07 13:35:32,246 - INFO - algorithm_base.py:152 - Starting Mixed Precision
+2025-05-07 13:35:34,684 - INFO - algorithm_base.py:168 - Model Optimization Algorithm Mixed Precision is done (completion time is 00:00:02.43)
+2025-05-07 13:35:38,970 - INFO - algorithm_base.py:149 - LayerNorm Decomposition skipped
+2025-05-07 13:35:43,166 - INFO - algorithm_base.py:152 - Starting Statistics Collector
+2025-05-07 13:35:43,171 - INFO - stats_collection.py:77 - Using dataset with 64 entries for calibration
+2025-05-07 13:37:27,050 - INFO - algorithm_base.py:168 - Model Optimization Algorithm Statistics Collector is done (completion time is 00:01:43.88)
+2025-05-07 13:37:31,613 - INFO - algorithm_base.py:152 - Starting Fix zp_comp Encoding
+2025-05-07 13:37:31,615 - INFO - algorithm_base.py:168 - Model Optimization Algorithm Fix zp_comp Encoding is done (completion time is 00:00:00.00)
+2025-05-07 13:37:31,616 - INFO - algorithm_base.py:149 - Matmul Equalization skipped
+2025-05-07 13:37:31,616 - INFO - algorithm_base.py:152 - Starting MatmulDecomposeFix
+2025-05-07 13:37:31,616 - INFO - algorithm_base.py:168 - Model Optimization Algorithm MatmulDecomposeFix is done (completion time is 00:00:00.00)
+2025-05-07 13:38:07,736 - INFO - algorithm_base.py:149 - Finetune encoding skipped
+2025-05-07 13:38:07,739 - INFO - algorithm_base.py:149 - Bias Correction skipped
+2025-05-07 13:38:07,763 - INFO - algorithm_base.py:149 - Adaround skipped
+2025-05-07 13:38:07,777 - INFO - algorithm_base.py:149 - Quantization-Aware Fine-Tuning skipped
+2025-05-07 13:38:36,531 - INFO - algorithm_base.py:149 - Layer Noise Analysis skipped
+2025-05-07 13:38:58,189 - IMPORTANT - sdk_backend.py:1203 - Model Optimization is done
+2025-05-07 13:38:59,608 - INFO - client_runner.py:1876 - Saved HAR to: /home/samuel/grad/git/CSE40500/project/compiled_model/lstm_kospi.hef
+2025-05-07 13:39:15,278 - IMPORTANT - sdk_backend.py:1191 - Starting Model Optimization
+2025-05-07 13:39:15,907 - WARNING - mo_config.py:168 - Reducing optimization level to 0 (the accuracy won't be optimized and compression won't be used) because there's no available GPU
+2025-05-07 13:39:15,907 - WARNING - mo_config.py:233 - Running model optimization with zero level of optimization is not recommended for production use and might lead to suboptimal accuracy results
+2025-05-07 13:39:15,908 - INFO - mo_script_parser.py:91 - Model received quantization params from the hn
+2025-05-07 13:39:26,804 - INFO - algorithm_base.py:149 - MatmulDecompose skipped
+2025-05-07 13:39:27,512 - INFO - algorithm_base.py:152 - Starting Mixed Precision
+2025-05-07 13:39:29,978 - INFO - algorithm_base.py:168 - Model Optimization Algorithm Mixed Precision is done (completion time is 00:00:02.46)
+2025-05-07 13:39:34,199 - INFO - algorithm_base.py:149 - LayerNorm Decomposition skipped
+2025-05-07 13:39:38,619 - INFO - algorithm_base.py:152 - Starting Statistics Collector
+2025-05-07 13:39:38,624 - INFO - stats_collection.py:77 - Using dataset with 64 entries for calibration
+2025-05-07 13:41:35,187 - INFO - algorithm_base.py:168 - Model Optimization Algorithm Statistics Collector is done (completion time is 00:01:56.56)
+2025-05-07 13:41:39,804 - INFO - algorithm_base.py:152 - Starting Fix zp_comp Encoding
+2025-05-07 13:41:39,806 - INFO - algorithm_base.py:168 - Model Optimization Algorithm Fix zp_comp Encoding is done (completion time is 00:00:00.00)
+2025-05-07 13:41:39,807 - INFO - algorithm_base.py:149 - Matmul Equalization skipped
+2025-05-07 13:41:39,807 - INFO - algorithm_base.py:152 - Starting MatmulDecomposeFix
+2025-05-07 13:41:39,807 - INFO - algorithm_base.py:168 - Model Optimization Algorithm MatmulDecomposeFix is done (completion time is 00:00:00.00)
+2025-05-07 13:42:17,409 - INFO - algorithm_base.py:149 - Finetune encoding skipped
+2025-05-07 13:42:17,425 - INFO - algorithm_base.py:149 - Bias Correction skipped
+2025-05-07 13:42:17,450 - INFO - algorithm_base.py:149 - Adaround skipped
+2025-05-07 13:42:17,464 - INFO - algorithm_base.py:149 - Quantization-Aware Fine-Tuning skipped
+2025-05-07 13:42:44,736 - INFO - algorithm_base.py:149 - Layer Noise Analysis skipped
+2025-05-07 13:43:10,126 - IMPORTANT - sdk_backend.py:1203 - Model Optimization is done
+2025-05-07 13:43:11,504 - INFO - client_runner.py:1876 - Saved HAR to: /home/samuel/grad/git/CSE40500/project/compiled_model/lstm_nasdaq.hef
+2025-05-07 13:43:26,859 - IMPORTANT - sdk_backend.py:1191 - Starting Model Optimization
+2025-05-07 13:43:27,485 - WARNING - mo_config.py:168 - Reducing optimization level to 0 (the accuracy won't be optimized and compression won't be used) because there's no available GPU
+2025-05-07 13:43:27,485 - WARNING - mo_config.py:233 - Running model optimization with zero level of optimization is not recommended for production use and might lead to suboptimal accuracy results
+2025-05-07 13:43:27,486 - INFO - mo_script_parser.py:91 - Model received quantization params from the hn
+2025-05-07 13:43:37,437 - INFO - algorithm_base.py:149 - MatmulDecompose skipped
+2025-05-07 13:43:38,108 - INFO - algorithm_base.py:152 - Starting Mixed Precision
+2025-05-07 13:43:40,530 - INFO - algorithm_base.py:168 - Model Optimization Algorithm Mixed Precision is done (completion time is 00:00:02.42)
+2025-05-07 13:43:44,600 - INFO - algorithm_base.py:149 - LayerNorm Decomposition skipped
+2025-05-07 13:43:48,555 - INFO - algorithm_base.py:152 - Starting Statistics Collector
+2025-05-07 13:43:48,559 - INFO - stats_collection.py:77 - Using dataset with 64 entries for calibration
+2025-05-07 13:45:33,187 - INFO - algorithm_base.py:168 - Model Optimization Algorithm Statistics Collector is done (completion time is 00:01:44.63)
+2025-05-07 13:45:37,845 - INFO - algorithm_base.py:152 - Starting Fix zp_comp Encoding
+2025-05-07 13:45:37,847 - INFO - algorithm_base.py:168 - Model Optimization Algorithm Fix zp_comp Encoding is done (completion time is 00:00:00.00)
+2025-05-07 13:45:37,847 - INFO - algorithm_base.py:149 - Matmul Equalization skipped
+2025-05-07 13:45:37,847 - INFO - algorithm_base.py:152 - Starting MatmulDecomposeFix
+2025-05-07 13:45:37,848 - INFO - algorithm_base.py:168 - Model Optimization Algorithm MatmulDecomposeFix is done (completion time is 00:00:00.00)
+2025-05-07 13:46:26,155 - INFO - algorithm_base.py:149 - Finetune encoding skipped
+2025-05-07 13:46:26,171 - INFO - algorithm_base.py:149 - Bias Correction skipped
+2025-05-07 13:46:26,190 - INFO - algorithm_base.py:149 - Adaround skipped
+2025-05-07 13:46:26,203 - INFO - algorithm_base.py:149 - Quantization-Aware Fine-Tuning skipped
+2025-05-07 13:46:54,411 - INFO - algorithm_base.py:149 - Layer Noise Analysis skipped
+2025-05-07 13:47:21,956 - IMPORTANT - sdk_backend.py:1203 - Model Optimization is done
+2025-05-07 13:47:23,489 - INFO - client_runner.py:1876 - Saved HAR to: /home/samuel/grad/git/CSE40500/project/compiled_model/lstm_samsung.hef
+2025-05-07 13:47:37,264 - IMPORTANT - sdk_backend.py:1191 - Starting Model Optimization
+2025-05-07 13:47:37,831 - WARNING - mo_config.py:168 - Reducing optimization level to 0 (the accuracy won't be optimized and compression won't be used) because there's no available GPU
+2025-05-07 13:47:37,831 - WARNING - mo_config.py:233 - Running model optimization with zero level of optimization is not recommended for production use and might lead to suboptimal accuracy results
+2025-05-07 13:47:37,832 - INFO - mo_script_parser.py:91 - Model received quantization params from the hn
+2025-05-07 13:47:52,375 - INFO - algorithm_base.py:149 - MatmulDecompose skipped
+2025-05-07 13:47:53,121 - INFO - algorithm_base.py:152 - Starting Mixed Precision
+2025-05-07 13:47:55,772 - INFO - algorithm_base.py:168 - Model Optimization Algorithm Mixed Precision is done (completion time is 00:00:02.65)
+2025-05-07 13:47:58,000 - INFO - algorithm_base.py:149 - LayerNorm Decomposition skipped
+2025-05-07 13:48:02,669 - INFO - algorithm_base.py:152 - Starting Statistics Collector
+2025-05-07 13:48:02,674 - INFO - stats_collection.py:77 - Using dataset with 64 entries for calibration
+2025-05-07 13:49:48,740 - INFO - algorithm_base.py:168 - Model Optimization Algorithm Statistics Collector is done (completion time is 00:01:46.07)
+2025-05-07 13:49:53,372 - INFO - algorithm_base.py:152 - Starting Fix zp_comp Encoding
+2025-05-07 13:49:53,374 - INFO - algorithm_base.py:168 - Model Optimization Algorithm Fix zp_comp Encoding is done (completion time is 00:00:00.00)
+2025-05-07 13:49:53,374 - INFO - algorithm_base.py:149 - Matmul Equalization skipped
+2025-05-07 13:49:53,375 - INFO - algorithm_base.py:152 - Starting MatmulDecomposeFix
+2025-05-07 13:49:53,375 - INFO - algorithm_base.py:168 - Model Optimization Algorithm MatmulDecomposeFix is done (completion time is 00:00:00.00)
+2025-05-07 13:50:28,637 - INFO - algorithm_base.py:149 - Finetune encoding skipped
+2025-05-07 13:50:28,653 - INFO - algorithm_base.py:149 - Bias Correction skipped
+2025-05-07 13:50:28,673 - INFO - algorithm_base.py:149 - Adaround skipped
+2025-05-07 13:50:28,685 - INFO - algorithm_base.py:149 - Quantization-Aware Fine-Tuning skipped
+2025-05-07 13:50:58,097 - INFO - algorithm_base.py:149 - Layer Noise Analysis skipped
+2025-05-07 13:51:22,654 - IMPORTANT - sdk_backend.py:1203 - Model Optimization is done
+2025-05-07 13:51:24,028 - INFO - client_runner.py:1876 - Saved HAR to: /home/samuel/grad/git/CSE40500/project/compiled_model/lstm_tesla.hef

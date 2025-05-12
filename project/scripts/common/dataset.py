@@ -5,27 +5,25 @@ from torch.utils.data import Dataset
 
 class StockDataset(Dataset):
     """
-    OHLCV → [N‑seq_len, seq_len, 5]  /  target = 종가(다음 시점)
+    OHLCV → [N, seq_len, 5]  /  target = [종가, 거래량]
     """
     def __init__(self, dataframe, seq_len=60):
         self.seq_len = seq_len
-
         data = dataframe[['Open', 'High', 'Low', 'Close', 'Volume']].values
         self.X, self.y = [], []
 
-        # 마지막 시점의 Close 를 예측 대상으로
         for i in range(len(data) - seq_len):
-            self.X.append(data[i:i+seq_len])
-            self.y.append(data[i+seq_len][3])  # Close 열
+            # N, seq_len, input_size 형태로 맞추기
+            self.X.append(data[i:i+seq_len])  # (seq_len, 5)
+            self.y.append([data[i+seq_len][3], data[i+seq_len][4]])
 
-        self.X = np.array(self.X, dtype=np.float32)
+        self.X = np.array(self.X, dtype=np.float32)  # (N, seq_len, 5)
         self.y = np.array(self.y, dtype=np.float32)
 
     def __len__(self):
         return len(self.X)
 
     def __getitem__(self, idx):
-        X = torch.from_numpy(self.X[idx])
-        y = torch.tensor(self.y[idx], dtype=torch.float32)  # 이 부분 수정
+        X = torch.from_numpy(self.X[idx])  # (seq_len, 5)
+        y = torch.tensor(self.y[idx], dtype=torch.float32)  # [종가, 거래량]
         return X, y
-

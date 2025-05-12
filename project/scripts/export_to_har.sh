@@ -1,25 +1,27 @@
 #!/bin/bash
 
-# Hailo parser 자동 실행 스크립트
-# 변환 대상: GRU, LSTM, BiLSTM 각각의 onnx 모델
+echo "🚀 [Hailo HAR 파일 생성 시작]"
 
-MODELS=("GRU" "LSTM" "BiLSTM")
+MODEL_TYPES=("GRU" "LSTM" "BiLSTM")
 TICKERS=("KOSPI" "Apple" "NASDAQ" "Tesla" "Samsung")
-ARCH="hailo8"
 
-for model in "${MODELS[@]}"; do
-  for ticker in "${TICKERS[@]}"; do
-    ONNX_PATH="./onnx_models/${model}/${ticker}.onnx"
-    HAR_PATH="./compiled_model/${model,,}_${ticker,,}.har"  # 소문자
+mkdir -p ./compiled_model
 
-    if [ -f "$ONNX_PATH" ]; then
-      echo "🔄 Parsing $ONNX_PATH → $HAR_PATH"
-      hailo parser onnx "$ONNX_PATH" \
-        --net-name "${model,,}_${ticker,,}" \
-        --hw-arch $ARCH \
-        --har-path "$HAR_PATH"
-    else
-      echo "❌ File not found: $ONNX_PATH"
-    fi
-  done
+for model_type in "${MODEL_TYPES[@]}"; do
+    for ticker in "${TICKERS[@]}"; do
+        onnx_path="./onnx_models/${model_type}/${ticker}.onnx"
+        har_path="./compiled_model/${model_type}_${ticker}.har"
+
+        if [ -f "$onnx_path" ]; then
+            echo "🔄 Parsing $onnx_path → $har_path"
+            hailo parser onnx "$onnx_path" \
+                --net-name "${model_type}_${ticker}" \
+                --hw-arch hailo8 \
+                --har-path "$har_path"
+        else
+            echo "  ONNX 파일 없음: $onnx_path"
+        fi
+    done
 done
+
+echo "✅ HAR 파일 생성 완료"

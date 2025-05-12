@@ -1,0 +1,10 @@
+network_groups:
+  - name: GRU_Samsung
+    input_tensors:
+      - name: input
+        shape: [1, 10, 5]
+        data_type: float32
+    output_tensors:
+      - name: output
+        shape: [1, 1]
+        data_type: float32
