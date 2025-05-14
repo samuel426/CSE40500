@@ -1957,3 +1957,14 @@
 2025-05-07 13:50:58,097 - INFO - algorithm_base.py:149 - Layer Noise Analysis skipped
 2025-05-07 13:51:22,654 - IMPORTANT - sdk_backend.py:1203 - Model Optimization is done
 2025-05-07 13:51:24,028 - INFO - client_runner.py:1876 - Saved HAR to: /home/samuel/grad/git/CSE40500/project/compiled_model/lstm_tesla.hef
+2025-05-13 18:32:53,270 - INFO - parser.py:162 - Translation started on ONNX model lstm_kospi
+2025-05-13 18:32:53,285 - INFO - parser.py:197 - Restored ONNX model lstm_kospi (completion time: 00:00:00.01)
+2025-05-13 18:32:53,311 - INFO - parser.py:220 - Extracted ONNXRuntime meta-data for Hailo model (completion time: 00:00:00.04)
+2025-05-13 18:32:53,353 - INFO - parser.py:278 - Simplified ONNX model for a parsing retry attempt (completion time: 00:00:00.08)
+2025-05-13 18:33:25,867 - INFO - parser.py:162 - Translation started on ONNX model lstm_kospi
+2025-05-13 18:33:25,872 - INFO - parser.py:197 - Restored ONNX model lstm_kospi (completion time: 00:00:00.01)
+2025-05-13 18:33:25,883 - INFO - parser.py:220 - Extracted ONNXRuntime meta-data for Hailo model (completion time: 00:00:00.02)
+2025-05-13 18:33:56,748 - INFO - parser.py:162 - Translation started on ONNX model lstm_kospi
+2025-05-13 18:33:56,753 - INFO - parser.py:197 - Restored ONNX model lstm_kospi (completion time: 00:00:00.01)
+2025-05-13 18:33:56,764 - INFO - parser.py:220 - Extracted ONNXRuntime meta-data for Hailo model (completion time: 00:00:00.02)
+2025-05-13 18:33:56,782 - INFO - parser.py:278 - Simplified ONNX model for a parsing retry attempt (completion time: 00:00:00.03)

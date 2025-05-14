@@ -1,0 +1,8 @@
+2025-05-13 23:07:44,162 - INFO - hailo_archive_cli.py:337 - Model Name: lstm_samsung
+2025-05-13 23:07:44,166 - INFO - hailo_archive_cli.py:340 - State: Hailo Model
+2025-05-13 23:07:44,166 - INFO - hailo_archive_cli.py:351 - SDK Version (that created the HAR): 3.31.0
+2025-05-13 23:07:44,166 - INFO - hailo_archive_cli.py:356 - Hardware Architecture: hailo8
+2025-05-13 23:07:44,166 - INFO - hailo_archive_cli.py:358 - Files in HAR:
+2025-05-13 23:08:08,804 - INFO - visualize_hn.py:87 - Visualized network saved to: /home/samuel/grad/git/CSE40500/project/compiled_model/lstm_samsung.svg
+2025-05-13 23:28:48,351 - INFO - client_runner.py:1469 - Running profile for lstm_samsung in state hailo_model
+2025-05-13 23:28:49,811 - INFO - profiler.py:71 - Saved Profiler HTML Report to: /home/samuel/grad/git/CSE40500/project/compiled_model/lstm_samsung_hailo_model.html

@@ -1,19 +1,42 @@
-import onnx
+#!/usr/bin/env python3
+# view_onnx_io.py
+import os, onnx
 
-# ONNX 모델 로드
-model = onnx.load("onnx_models/GRU/KOSPI.onnx")
+MODELS = {
+    "GRU"    : "onnx_models/GRU/KOSPI.onnx",
+    "LSTM"   : "onnx_models/LSTM/KOSPI.onnx",
+    "BiLSTM" : "onnx_models/BiLSTM/KOSPI.onnx",
+}
 
-# 입력 텐서 정보 출력
-print("Inputs:")
-for input_tensor in model.graph.input:
-    print(f"Name: {input_tensor.name}")
-    dims = [dim.dim_value if dim.HasField("dim_value") else "?" for dim in input_tensor.type.tensor_type.shape.dim]
-    print(f"Shape: {dims}")
+# 가중치·바이어스 같은 initializers 이름 패턴
+WEIGHT_TOKENS = ("weight", "bias", "W", "R", "B")
 
-# 출력 텐서 정보 출력
-print("\nOutputs:")
-for output_tensor in model.graph.output:
-    print(f"Name: {output_tensor.name}")
-    dims = [dim.dim_value if dim.HasField("dim_value") else "?" for dim in output_tensor.type.tensor_type.shape.dim]
-    print(f"Shape: {dims}")
+def is_weight(name):
+    low = name.lower()
+    return any(tok in low for tok in WEIGHT_TOKENS) or "onnx::" in name
 
+def print_tensor(tensor):
+    shape = [
+        d.dim_value if d.HasField("dim_value") else "?"
+        for d in tensor.type.tensor_type.shape.dim
+    ]
+    print(f"  • {tensor.name:<20}  {shape}")
+
+for tag, path in MODELS.items():
+    if not os.path.exists(path):
+        print(f"❌ {tag}  : file not found — {path}")
+        continue
+
+    model = onnx.load(path)
+    print(f"\n=== {tag}  ({os.path.basename(path)}) ===")
+
+    # 1) 런타임 입력만 (가중치 제외)
+    runtime_inputs = [i for i in model.graph.input if not is_weight(i.name)]
+    print("Inputs:")
+    for t in runtime_inputs:
+        print_tensor(t)
+
+    # 2) 출력
+    print("Outputs:")
+    for t in model.graph.output:
+        print_tensor(t)

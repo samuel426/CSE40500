@@ -3,27 +3,25 @@ import numpy as np
 import torch
 from torch.utils.data import Dataset
 
+
 class StockDataset(Dataset):
     """
-    OHLCV → [N, seq_len, 5]  /  target = [종가, 거래량]
+    OHLCV -> NHWC([1, seq_len, 5])  +  target = Close(price) 1-scalar
+    Height(H)=1, Width(W)=seq_len, Channels(C)=feature_dim
     """
-    def __init__(self, dataframe, seq_len=60):
+    def __init__(self, dataframe, seq_len: int = 5):
         self.seq_len = seq_len
-        data = dataframe[['Open', 'High', 'Low', 'Close', 'Volume']].values
-        self.X, self.y = [], []
+        data = dataframe[['Open', 'High', 'Low', 'Close', 'Volume']].values.astype(np.float32)
 
+        X, y = [], []
         for i in range(len(data) - seq_len):
-            # N, seq_len, input_size 형태로 맞추기
-            self.X.append(data[i:i+seq_len])  # (seq_len, 5)
-            self.y.append([data[i+seq_len][3], data[i+seq_len][4]])
-
-        self.X = np.array(self.X, dtype=np.float32)  # (N, seq_len, 5)
-        self.y = np.array(self.y, dtype=np.float32)
+            X.append(data[i:i + seq_len])       # (seq_len, 5)
+            y.append(data[i + seq_len][3])      # Close price
+        self.X = np.expand_dims(np.array(X, dtype=np.float32), axis=1)   # (N, 1, seq_len, 5)
+        self.y = np.array(y, dtype=np.float32)                           # (N,)
 
     def __len__(self):
         return len(self.X)
 
     def __getitem__(self, idx):
-        X = torch.from_numpy(self.X[idx])  # (seq_len, 5)
-        y = torch.tensor(self.y[idx], dtype=torch.float32)  # [종가, 거래량]
-        return X, y
+        return torch.from_numpy(self.X[idx]), torch.tensor(self.y[idx])
