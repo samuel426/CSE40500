@@ -1,0 +1,6 @@
+[2025-05-23 07:35:46.345] [default] [info] Ran from command: "/local/workspace/hailo_virtualenv/bin/hailo compiler ./compiled_model/optimized/LSTM_NASDAQ_optimized.har --hw-arch hailo8l --output-dir ./compiled_model/hef --model-script performance_param(compiler_optimization_level=1)"
+[2025-05-23 07:35:46.346] [default] [info] Loading network parameters
+[2025-05-23 07:35:46.435] [default] [info] [1;36mStarting Hailo allocation and compilation flow[0m
+[2025-05-23 07:35:46.452] [default] [info] Model name: LSTM_NASDAQ
+[2025-05-23 07:35:46.472] [default] [info] Building optimization options for network layers...
+[2025-05-23 07:35:46.495] [default] [info] Interrupted by user, aborting...

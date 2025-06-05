@@ -1,0 +1,143 @@
+GPT-4.1 문의 결과
+BiLSTM_Apple_optimized.har 모델의 컴파일 실패 원인이 무엇인지 찾아 보고, 해결방안을 알려 줘
+
+woosangwoo: (hailo_virtualenv) hailo@docker-desktop:~/scripts$ ./compile_to_hef.sh
+🚀 [Hailo HEF 파일 컴파일 시작]
+🔄 Compiling ./compiled_model/optimized/BiLSTM_Apple_optimized.har → ./compiled_model/hef/
+[info] Current Time: 22:46:52, 05/18/25
+[info] CPU: Architecture: x86_64, Model: AMD Ryzen 9 5900X 12-Core Processor, Number Of Cores: 24, Utilization: 0.1%
+[info] Memory: Total: 31GB, Available: 29GB
+[info] System info: OS: Linux, Kernel: 5.15.167.4-microsoft-standard-WSL2
+[info] Hailo DFC Version: 3.31.0
+[info] HailoRT Version: 4.21.0
+[info] PCIe: No Hailo PCIe device was found
+[info] Running `hailo compiler ./compiled_model/optimized/BiLSTM_Apple_optimized.har --hw-arch hailo8l --output-dir ./compiled_model/hef --model-script performance_param(compiler_optimization_level=max)`
+[info] ParsedPerformanceParam command, setting optimization_level(max=2)
+[info] Loading model script commands to BiLSTM_Apple from string
+[info] ParsedPerformanceParam command, setting optimization_level(max=2)
+[info] Compiling network
+[info] Loading network parameters
+[info] Starting Hailo allocation and compilation flow
+[info] Building optimization options for network layers...
+[info] Successfully built optimization options - 2s 506ms
+[info] Trying to compile the network in a single context
+[info] Single context flow failed: Recoverable single context error
+[info] Building optimization options for network layers...
+[info] Successfully built optimization options - 1s 296ms
+[info] Using Multi-context flow
+[info] Resources optimization params: max_control_utilization=100%, max_compute_utilization=100%, max_compute_16bit_utilization=100%, max_memory_utilization (weights)=85%, max_input_aligner_utilization=100%, max_apu_utilization=100%
+[info] Finding the best partition to contexts...
+[..................................<==>..] Elapsed: 00:55:40
+[info] Building optimization options for network layers...
+[info] Successfully built optimization options - 3s 24ms
+[info] Using Multi-context flow
+[info] Resources optimization params: max_control_utilization=90%, max_compute_utilization=90%, max_compute_16bit_utilization=90%, max_memory_utilization (weights)=85%, max_input_aligner_utilization=90%, max_apu_utilization=90%
+[info] Finding the best partition to contexts...
+[...............................<==>.....] Elapsed: 00:51:59
+[info] Building optimization options for network layers...
+[info] Successfully built optimization options - 3s 166ms
+[info] Using Multi-context flow
+[info] Resources optimization params: max_control_utilization=80%, max_compute_utilization=80%, max_compute_16bit_utilization=80%, max_memory_utilization (weights)=80%, max_input_aligner_utilization=80%, max_apu_utilization=80%
+[info] Finding the best partition to contexts...
+[.......<==>.............................] Elapsed: 00:45:56
+[info] Building optimization options for network layers...
+[info] Successfully built optimization options - 3s 153ms
+[info] Using Multi-context flow
+[info] Resources optimization params: max_control_utilization=70%, max_compute_utilization=70%, max_compute_16bit_utilization=70%, max_memory_utilization (weights)=70%, max_input_aligner_utilization=70%, max_apu_utilization=70%
+[info] Finding the best partition to contexts...
+[......................<==>..............] Elapsed: 00:38:14
+[info] Building optimization options for network layers...
+[info] Successfully built optimization options - 2s 987ms
+[info] Using Multi-context flow
+[info] Resources optimization params: max_control_utilization=60%, max_compute_utilization=60%, max_compute_16bit_utilization=60%, max_memory_utilization (weights)=60%, max_input_aligner_utilization=60%, max_apu_utilization=60%
+[info] Finding the best partition to contexts...
+[..........<==>..........................] Elapsed: 00:31:51
+[error] Mapping Failed (Timeout, allocation time: 31m 54s)
+No valid partition found
+Mapping Failed (Timeout, allocation time: 31m 54s)
+
+[error] Failed to produce compiled graph
+[error] BackendAllocatorException: Compilation failed: No valid partition found
+Mapping Failed (Timeout, allocation time: 31m 54s)
+✅ HEF 파일 컴파일 완료
+
+BiLSTM_Apple_optimized.har 모델의 컴파일 실패 원인이 무엇인지 찾아 보고, 해결방안을 알려 줘
+
+GitHub Copilot: ### 원인 분석
+
+로그에서 반복적으로 다음 메시지가 나타납니다:
+
+```
+[info] Finding the best partition to contexts...
+[error] Mapping Failed (Timeout, allocation time: 31m 54s)
+No valid partition found
+[error] Failed to produce compiled graph
+[error] BackendAllocatorException: Compilation failed: No valid partition found
+```
+
+#### 주요 원인
+- **BiLSTM 모델이 Hailo의 리소스(메모리, 연산 유닛 등) 한계를 초과**하거나,
+- **BiLSTM 구조(양방향 LSTM, hidden size, 시퀀스 길이 등)가 Hailo 컴파일러가 지원하는 범위를 벗어남**
+- **컨텍스트 분할(멀티컨텍스트)로도 적합한 맵핑을 찾지 못함**
+- **모델이 너무 크거나 복잡해서 Hailo 칩에 올릴 수 없음**
+
+---
+
+### 해결 방안
+
+1. **모델 구조 단순화**
+   - **hidden_size, num_layers, seq_len**을 줄이세요.
+     - 예: hidden_size=4, seq_len=4, num_layers=1 등으로 실험
+   - 입력 feature 수(INPUT_SIZE)도 줄일 수 있다면 줄이세요.
+
+2. **양방향(Bidirectional) 사용 최소화**
+   - 가능하다면 BiLSTM 대신 단방향 LSTM 사용을 고려하세요.
+   - BiLSTM은 리소스 소모가 2배입니다.
+
+3. **출력 레이어(FC) 단순화**
+   - FC 레이어의 in_features, out_features가 Hailo에서 지원하는 값(예: 4, 8, 16 등)인지 확인
+
+4. **모델 최적화 옵션 활용**
+   - 이미 `performance_param(compiler_optimization_level=max)`를 사용 중이므로,  
+     오히려 `basic`이나 `fast`로 낮춰서 시도해 볼 수도 있습니다.
+
+5. **모델을 더 작은 단위로 쪼개서 여러 모델로 분리**
+   - 한 번에 처리하는 시퀀스 길이, feature 수를 줄여서 여러 모델로 나누는 것도 방법입니다.
+
+6. **Hailo 공식 문서/포럼 확인**
+   - BiLSTM, LSTM 등 RNN 계열은 Hailo에서 제한적으로 지원되므로,  
+     공식 지원 범위와 예제 모델을 참고하세요.
+
+---
+
+### 실질적 조치 예시
+
+- **예시: 모델 구조 단순화**
+    ```python
+    class BiLSTMModel(nn.Module):
+        def __init__(self, input_size=4, hidden_size=4, num_layers=1, output_size=1):
+            super().__init__()
+            self.bilstm = nn.LSTM(
+                input_size=input_size,
+                hidden_size=hidden_size,
+                num_layers=num_layers,
+                batch_first=True,
+                bidirectional=True
+            )
+            self.fc_price = nn.Linear(hidden_size * 2, output_size)
+            self.fc_volume = nn.Linear(hidden_size * 2, output_size)
+        # ...
+    ```
+- **ONNX 변환 시 입력 shape도 맞춰서 줄이세요.**
+
+---
+
+### 요약
+
+- **BiLSTM 모델이 Hailo 칩의 리소스 한계를 초과**해서 컴파일이 실패한 것입니다.
+- **모델을 더 작고 단순하게**(hidden_size, seq_len, num_layers, input_size 등) 만들어서 다시 시도하세요.
+- 그래도 안 되면 단방향 LSTM이나 CNN 기반 모델로 변경을 고려하세요.
+
+**참고:**  
+Hailo는 CNN 기반 네트워크에 최적화되어 있으며, RNN/BiLSTM 계열은 지원이 매우 제한적입니다.  
+공식 문서의 지원 모델/예제도 꼭 참고하세요.

@@ -1,0 +1,662 @@
+{
+  "GRU_Apple": {
+    "model": "GRU_Apple",
+    "timestamp": "2025-06-03T03:20:03.527348",
+    "latency": {
+      "mean": 0.07537364959716797,
+      "median": 0.07414817810058594,
+      "min": 0.062465667724609375,
+      "max": 0.11444091796875,
+      "std": 0.008561917575440841,
+      "p95": 0.08872747421264648,
+      "p99": 0.11090040206909181
+    },
+    "throughput_fps": 13267.236034668185,
+    "memory": {
+      "monitor_success": true,
+      "total_lines": 1101,
+      "avg_device_utilization": 30.0,
+      "max_device_utilization": 30.0,
+      "min_device_utilization": 30.0,
+      "device_util_samples": 1,
+      "device_util_values": [
+        30.0
+      ],
+      "avg_gpu_memory_mb": 648.0,
+      "max_gpu_memory_mb": 648.0,
+      "min_gpu_memory_mb": 648.0,
+      "gpu_memory_mb_samples": 1,
+      "gpu_memory_mb_values": [
+        648.0
+      ],
+      "avg_gpu_power_watts": 90.441,
+      "max_gpu_power_watts": 90.441,
+      "min_gpu_power_watts": 90.441,
+      "gpu_power_watts_samples": 1,
+      "gpu_power_watts_values": [
+        90.441
+      ],
+      "avg_model_fps": 13267.236034668185,
+      "max_model_fps": 13267.236034668185,
+      "min_model_fps": 13267.236034668185,
+      "fps_samples": 1,
+      "fps_values": [
+        13267.236034668185
+      ],
+      "avg_model_utilization": 30.0,
+      "max_model_utilization": 30.0,
+      "min_model_utilization": 30.0,
+      "utilization_samples": 1,
+      "utilization_values": [
+        30.0
+      ]
+    },
+    "rmse": 52.1409699253397,
+    "data_samples": 1101
+  },
+  "GRU_KOSPI": {
+    "model": "GRU_KOSPI",
+    "timestamp": "2025-06-03T03:20:14.118345",
+    "latency": {
+      "mean": 0.09194135665893555,
+      "median": 0.09250640869140625,
+      "min": 0.0705718994140625,
+      "max": 0.10204315185546875,
+      "std": 0.00510490368090681,
+      "p95": 0.09918212890625,
+      "p99": 0.10086297988891602
+    },
+    "throughput_fps": 10876.498197754325,
+    "memory": {
+      "monitor_success": true,
+      "total_lines": 1073,
+      "avg_device_utilization": 49.0,
+      "max_device_utilization": 49.0,
+      "min_device_utilization": 49.0,
+      "device_util_samples": 1,
+      "device_util_values": [
+        49.0
+      ],
+      "avg_gpu_memory_mb": 650.0,
+      "max_gpu_memory_mb": 650.0,
+      "min_gpu_memory_mb": 650.0,
+      "gpu_memory_mb_samples": 1,
+      "gpu_memory_mb_values": [
+        650.0
+      ],
+      "avg_gpu_power_watts": 94.185,
+      "max_gpu_power_watts": 94.185,
+      "min_gpu_power_watts": 94.185,
+      "gpu_power_watts_samples": 1,
+      "gpu_power_watts_values": [
+        94.185
+      ],
+      "avg_model_fps": 10876.498197754325,
+      "max_model_fps": 10876.498197754325,
+      "min_model_fps": 10876.498197754325,
+      "fps_samples": 1,
+      "fps_values": [
+        10876.498197754325
+      ],
+      "avg_model_utilization": 49.0,
+      "max_model_utilization": 49.0,
+      "min_model_utilization": 49.0,
+      "utilization_samples": 1,
+      "utilization_values": [
+        49.0
+      ]
+    },
+    "rmse": 61.21985159750234,
+    "data_samples": 1073
+  },
+  "GRU_NASDAQ": {
+    "model": "GRU_NASDAQ",
+    "timestamp": "2025-06-03T03:20:24.831980",
+    "latency": {
+      "mean": 0.06765127182006836,
+      "median": 0.0680685043334961,
+      "min": 0.06198883056640625,
+      "max": 0.10514259338378906,
+      "std": 0.005921558720820008,
+      "p95": 0.07349252700805664,
+      "p99": 0.09475708007812506
+    },
+    "throughput_fps": 14781.688105726873,
+    "memory": {
+      "monitor_success": true,
+      "total_lines": 1101,
+      "avg_device_utilization": 51.0,
+      "max_device_utilization": 51.0,
+      "min_device_utilization": 51.0,
+      "device_util_samples": 1,
+      "device_util_values": [
+        51.0
+      ],
+      "avg_gpu_memory_mb": 650.0,
+      "max_gpu_memory_mb": 650.0,
+      "min_gpu_memory_mb": 650.0,
+      "gpu_memory_mb_samples": 1,
+      "gpu_memory_mb_values": [
+        650.0
+      ],
+      "avg_gpu_power_watts": 93.568,
+      "max_gpu_power_watts": 93.568,
+      "min_gpu_power_watts": 93.568,
+      "gpu_power_watts_samples": 1,
+      "gpu_power_watts_values": [
+        93.568
+      ],
+      "avg_model_fps": 14781.688105726873,
+      "max_model_fps": 14781.688105726873,
+      "min_model_fps": 14781.688105726873,
+      "fps_samples": 1,
+      "fps_values": [
+        14781.688105726873
+      ],
+      "avg_model_utilization": 51.0,
+      "max_model_utilization": 51.0,
+      "min_model_utilization": 51.0,
+      "utilization_samples": 1,
+      "utilization_values": [
+        51.0
+      ]
+    },
+    "rmse": 4377.905767696264,
+    "data_samples": 1101
+  },
+  "GRU_Samsung": {
+    "model": "GRU_Samsung",
+    "timestamp": "2025-06-03T03:20:35.385825",
+    "latency": {
+      "mean": 0.09159564971923828,
+      "median": 0.09298324584960938,
+      "min": 0.06413459777832031,
+      "max": 0.1049041748046875,
+      "std": 0.007729424435303691,
+      "p95": 0.1001596450805664,
+      "p99": 0.10419607162475586
+    },
+    "throughput_fps": 10917.549065542195,
+    "memory": {
+      "monitor_success": true,
+      "total_lines": 1073,
+      "avg_device_utilization": 33.0,
+      "max_device_utilization": 33.0,
+      "min_device_utilization": 33.0,
+      "device_util_samples": 1,
+      "device_util_values": [
+        33.0
+      ],
+      "avg_gpu_memory_mb": 650.0,
+      "max_gpu_memory_mb": 650.0,
+      "min_gpu_memory_mb": 650.0,
+      "gpu_memory_mb_samples": 1,
+      "gpu_memory_mb_values": [
+        650.0
+      ],
+      "avg_gpu_power_watts": 92.101,
+      "max_gpu_power_watts": 92.101,
+      "min_gpu_power_watts": 92.101,
+      "gpu_power_watts_samples": 1,
+      "gpu_power_watts_values": [
+        92.101
+      ],
+      "avg_model_fps": 10917.549065542195,
+      "max_model_fps": 10917.549065542195,
+      "min_model_fps": 10917.549065542195,
+      "fps_samples": 1,
+      "fps_values": [
+        10917.549065542195
+      ],
+      "avg_model_utilization": 33.0,
+      "max_model_utilization": 33.0,
+      "min_model_utilization": 33.0,
+      "utilization_samples": 1,
+      "utilization_values": [
+        33.0
+      ]
+    },
+    "rmse": 4689.581955342983,
+    "data_samples": 1073
+  },
+  "GRU_SnP500": {
+    "model": "GRU_SnP500",
+    "timestamp": "2025-06-03T03:20:46.077903",
+    "latency": {
+      "mean": 0.09325027465820312,
+      "median": 0.09381771087646484,
+      "min": 0.07152557373046875,
+      "max": 0.10991096496582031,
+      "std": 0.006154828147102508,
+      "p95": 0.10207891464233398,
+      "p99": 0.10967493057250977
+    },
+    "throughput_fps": 10723.829003886276,
+    "memory": {
+      "monitor_success": true,
+      "total_lines": 1101,
+      "avg_device_utilization": 17.0,
+      "max_device_utilization": 17.0,
+      "min_device_utilization": 17.0,
+      "device_util_samples": 1,
+      "device_util_values": [
+        17.0
+      ],
+      "avg_gpu_memory_mb": 650.0,
+      "max_gpu_memory_mb": 650.0,
+      "min_gpu_memory_mb": 650.0,
+      "gpu_memory_mb_samples": 1,
+      "gpu_memory_mb_values": [
+        650.0
+      ],
+      "avg_gpu_power_watts": 93.643,
+      "max_gpu_power_watts": 93.643,
+      "min_gpu_power_watts": 93.643,
+      "gpu_power_watts_samples": 1,
+      "gpu_power_watts_values": [
+        93.643
+      ],
+      "avg_model_fps": 10723.829003886276,
+      "max_model_fps": 10723.829003886276,
+      "min_model_fps": 10723.829003886276,
+      "fps_samples": 1,
+      "fps_values": [
+        10723.829003886276
+      ],
+      "avg_model_utilization": 17.0,
+      "max_model_utilization": 17.0,
+      "min_model_utilization": 17.0,
+      "utilization_samples": 1,
+      "utilization_values": [
+        17.0
+      ]
+    },
+    "rmse": 756.7497099506988,
+    "data_samples": 1101
+  },
+  "GRU_Tesla": {
+    "model": "GRU_Tesla",
+    "timestamp": "2025-06-03T03:20:56.839806",
+    "latency": {
+      "mean": 0.08959293365478516,
+      "median": 0.09250640869140625,
+      "min": 0.06318092346191406,
+      "max": 0.10585784912109375,
+      "std": 0.009899602219524958,
+      "p95": 0.10042190551757812,
+      "p99": 0.1056218147277832
+    },
+    "throughput_fps": 11161.594550002661,
+    "memory": {
+      "monitor_success": true,
+      "total_lines": 1101,
+      "avg_device_utilization": 49.0,
+      "max_device_utilization": 49.0,
+      "min_device_utilization": 49.0,
+      "device_util_samples": 1,
+      "device_util_values": [
+        49.0
+      ],
+      "avg_gpu_memory_mb": 650.0,
+      "max_gpu_memory_mb": 650.0,
+      "min_gpu_memory_mb": 650.0,
+      "gpu_memory_mb_samples": 1,
+      "gpu_memory_mb_values": [
+        650.0
+      ],
+      "avg_gpu_power_watts": 92.288,
+      "max_gpu_power_watts": 92.288,
+      "min_gpu_power_watts": 92.288,
+      "gpu_power_watts_samples": 1,
+      "gpu_power_watts_values": [
+        92.288
+      ],
+      "avg_model_fps": 11161.594550002661,
+      "max_model_fps": 11161.594550002661,
+      "min_model_fps": 11161.594550002661,
+      "fps_samples": 1,
+      "fps_values": [
+        11161.594550002661
+      ],
+      "avg_model_utilization": 49.0,
+      "max_model_utilization": 49.0,
+      "min_model_utilization": 49.0,
+      "utilization_samples": 1,
+      "utilization_values": [
+        49.0
+      ]
+    },
+    "rmse": 147.40572618177129,
+    "data_samples": 1101
+  },
+  "LSTM_Apple": {
+    "model": "LSTM_Apple",
+    "timestamp": "2025-06-03T03:21:05.581557",
+    "latency": {
+      "mean": 0.039691925048828125,
+      "median": 0.038623809814453125,
+      "min": 0.03743171691894531,
+      "max": 0.07414817810058594,
+      "std": 0.004586256375705271,
+      "p95": 0.04507303237915039,
+      "p99": 0.05833387374877938
+    },
+    "throughput_fps": 25194.041326285438,
+    "memory": {
+      "monitor_success": true,
+      "total_lines": 1101,
+      "avg_device_utilization": 5.0,
+      "max_device_utilization": 5.0,
+      "min_device_utilization": 5.0,
+      "device_util_samples": 1,
+      "device_util_values": [
+        5.0
+      ],
+      "avg_gpu_memory_mb": 648.0,
+      "max_gpu_memory_mb": 648.0,
+      "min_gpu_memory_mb": 648.0,
+      "gpu_memory_mb_samples": 1,
+      "gpu_memory_mb_values": [
+        648.0
+      ],
+      "avg_gpu_power_watts": 84.522,
+      "max_gpu_power_watts": 84.522,
+      "min_gpu_power_watts": 84.522,
+      "gpu_power_watts_samples": 1,
+      "gpu_power_watts_values": [
+        84.522
+      ],
+      "avg_model_fps": 25194.041326285438,
+      "max_model_fps": 25194.041326285438,
+      "min_model_fps": 25194.041326285438,
+      "fps_samples": 1,
+      "fps_values": [
+        25194.041326285438
+      ],
+      "avg_model_utilization": 5.0,
+      "max_model_utilization": 5.0,
+      "min_model_utilization": 5.0,
+      "utilization_samples": 1,
+      "utilization_values": [
+        5.0
+      ]
+    },
+    "rmse": 64.95015070962612,
+    "data_samples": 1101
+  },
+  "LSTM_KOSPI": {
+    "model": "LSTM_KOSPI",
+    "timestamp": "2025-06-03T03:21:14.248858",
+    "latency": {
+      "mean": 0.03940105438232422,
+      "median": 0.038743019104003906,
+      "min": 0.03695487976074219,
+      "max": 0.05173683166503906,
+      "std": 0.001987221359704449,
+      "p95": 0.043642520904541016,
+      "p99": 0.046072006225585965
+    },
+    "throughput_fps": 25380.031465569406,
+    "memory": {
+      "monitor_success": true,
+      "total_lines": 1073,
+      "avg_device_utilization": 0.0,
+      "max_device_utilization": 0.0,
+      "min_device_utilization": 0.0,
+      "device_util_samples": 1,
+      "device_util_values": [
+        0.0
+      ],
+      "avg_gpu_memory_mb": 648.0,
+      "max_gpu_memory_mb": 648.0,
+      "min_gpu_memory_mb": 648.0,
+      "gpu_memory_mb_samples": 1,
+      "gpu_memory_mb_values": [
+        648.0
+      ],
+      "avg_gpu_power_watts": 84.326,
+      "max_gpu_power_watts": 84.326,
+      "min_gpu_power_watts": 84.326,
+      "gpu_power_watts_samples": 1,
+      "gpu_power_watts_values": [
+        84.326
+      ],
+      "avg_model_fps": 25380.031465569406,
+      "max_model_fps": 25380.031465569406,
+      "min_model_fps": 25380.031465569406,
+      "fps_samples": 1,
+      "fps_values": [
+        25380.031465569406
+      ],
+      "avg_model_utilization": 0.0,
+      "max_model_utilization": 0.0,
+      "min_model_utilization": 0.0,
+      "utilization_samples": 1,
+      "utilization_values": [
+        0.0
+      ]
+    },
+    "rmse": 631.3166750863375,
+    "data_samples": 1073
+  },
+  "LSTM_NASDAQ": {
+    "model": "LSTM_NASDAQ",
+    "timestamp": "2025-06-03T03:21:23.013204",
+    "latency": {
+      "mean": 0.03926515579223633,
+      "median": 0.038623809814453125,
+      "min": 0.036716461181640625,
+      "max": 0.05316734313964844,
+      "std": 0.002148598551386409,
+      "p95": 0.042724609375,
+      "p99": 0.04773855209350589
+    },
+    "throughput_fps": 25467.8729734653,
+    "memory": {
+      "monitor_success": true,
+      "total_lines": 1101,
+      "avg_device_utilization": 5.0,
+      "max_device_utilization": 5.0,
+      "min_device_utilization": 5.0,
+      "device_util_samples": 1,
+      "device_util_values": [
+        5.0
+      ],
+      "avg_gpu_memory_mb": 648.0,
+      "max_gpu_memory_mb": 648.0,
+      "min_gpu_memory_mb": 648.0,
+      "gpu_memory_mb_samples": 1,
+      "gpu_memory_mb_values": [
+        648.0
+      ],
+      "avg_gpu_power_watts": 84.279,
+      "max_gpu_power_watts": 84.279,
+      "min_gpu_power_watts": 84.279,
+      "gpu_power_watts_samples": 1,
+      "gpu_power_watts_values": [
+        84.279
+      ],
+      "avg_model_fps": 25467.8729734653,
+      "max_model_fps": 25467.8729734653,
+      "min_model_fps": 25467.8729734653,
+      "fps_samples": 1,
+      "fps_values": [
+        25467.8729734653
+      ],
+      "avg_model_utilization": 5.0,
+      "max_model_utilization": 5.0,
+      "min_model_utilization": 5.0,
+      "utilization_samples": 1,
+      "utilization_values": [
+        5.0
+      ]
+    },
+    "rmse": 2960.8964229599096,
+    "data_samples": 1101
+  },
+  "LSTM_Samsung": {
+    "model": "LSTM_Samsung",
+    "timestamp": "2025-06-03T03:21:31.668858",
+    "latency": {
+      "mean": 0.043718814849853516,
+      "median": 0.04279613494873047,
+      "min": 0.03743171691894531,
+      "max": 0.07462501525878906,
+      "std": 0.004909993746193141,
+      "p95": 0.05055665969848633,
+      "p99": 0.05692243576049814
+    },
+    "throughput_fps": 22873.447128756066,
+    "memory": {
+      "monitor_success": true,
+      "total_lines": 1073,
+      "avg_device_utilization": 0.0,
+      "max_device_utilization": 0.0,
+      "min_device_utilization": 0.0,
+      "device_util_samples": 1,
+      "device_util_values": [
+        0.0
+      ],
+      "avg_gpu_memory_mb": 648.0,
+      "max_gpu_memory_mb": 648.0,
+      "min_gpu_memory_mb": 648.0,
+      "gpu_memory_mb_samples": 1,
+      "gpu_memory_mb_values": [
+        648.0
+      ],
+      "avg_gpu_power_watts": 83.978,
+      "max_gpu_power_watts": 83.978,
+      "min_gpu_power_watts": 83.978,
+      "gpu_power_watts_samples": 1,
+      "gpu_power_watts_values": [
+        83.978
+      ],
+      "avg_model_fps": 22873.447128756066,
+      "max_model_fps": 22873.447128756066,
+      "min_model_fps": 22873.447128756066,
+      "fps_samples": 1,
+      "fps_values": [
+        22873.447128756066
+      ],
+      "avg_model_utilization": 0.0,
+      "max_model_utilization": 0.0,
+      "min_model_utilization": 0.0,
+      "utilization_samples": 1,
+      "utilization_values": [
+        0.0
+      ]
+    },
+    "rmse": 28339.87886888683,
+    "data_samples": 1073
+  },
+  "LSTM_SnP500": {
+    "model": "LSTM_SnP500",
+    "timestamp": "2025-06-03T03:21:40.446671",
+    "latency": {
+      "mean": 0.04369497299194336,
+      "median": 0.0438690185546875,
+      "min": 0.03719329833984375,
+      "max": 0.059604644775390625,
+      "std": 0.0037715159140342893,
+      "p95": 0.04913806915283203,
+      "p99": 0.05181550979614262
+    },
+    "throughput_fps": 22885.92786599007,
+    "memory": {
+      "monitor_success": true,
+      "total_lines": 1101,
+      "avg_device_utilization": 4.0,
+      "max_device_utilization": 4.0,
+      "min_device_utilization": 4.0,
+      "device_util_samples": 1,
+      "device_util_values": [
+        4.0
+      ],
+      "avg_gpu_memory_mb": 648.0,
+      "max_gpu_memory_mb": 648.0,
+      "min_gpu_memory_mb": 648.0,
+      "gpu_memory_mb_samples": 1,
+      "gpu_memory_mb_values": [
+        648.0
+      ],
+      "avg_gpu_power_watts": 83.883,
+      "max_gpu_power_watts": 83.883,
+      "min_gpu_power_watts": 83.883,
+      "gpu_power_watts_samples": 1,
+      "gpu_power_watts_values": [
+        83.883
+      ],
+      "avg_model_fps": 22885.92786599007,
+      "max_model_fps": 22885.92786599007,
+      "min_model_fps": 22885.92786599007,
+      "fps_samples": 1,
+      "fps_values": [
+        22885.92786599007
+      ],
+      "avg_model_utilization": 4.0,
+      "max_model_utilization": 4.0,
+      "min_model_utilization": 4.0,
+      "utilization_samples": 1,
+      "utilization_values": [
+        4.0
+      ]
+    },
+    "rmse": 1158.3310564091337,
+    "data_samples": 1101
+  },
+  "LSTM_Tesla": {
+    "model": "LSTM_Tesla",
+    "timestamp": "2025-06-03T03:21:49.193240",
+    "latency": {
+      "mean": 0.039637088775634766,
+      "median": 0.03910064697265625,
+      "min": 0.037670135498046875,
+      "max": 0.05626678466796875,
+      "std": 0.002346788602511214,
+      "p95": 0.043892860412597656,
+      "p99": 0.04635334014892583
+    },
+    "throughput_fps": 25228.896240601505,
+    "memory": {
+      "monitor_success": true,
+      "total_lines": 1101,
+      "avg_device_utilization": 5.0,
+      "max_device_utilization": 5.0,
+      "min_device_utilization": 5.0,
+      "device_util_samples": 1,
+      "device_util_values": [
+        5.0
+      ],
+      "avg_gpu_memory_mb": 648.0,
+      "max_gpu_memory_mb": 648.0,
+      "min_gpu_memory_mb": 648.0,
+      "gpu_memory_mb_samples": 1,
+      "gpu_memory_mb_values": [
+        648.0
+      ],
+      "avg_gpu_power_watts": 83.784,
+      "max_gpu_power_watts": 83.784,
+      "min_gpu_power_watts": 83.784,
+      "gpu_power_watts_samples": 1,
+      "gpu_power_watts_values": [
+        83.784
+      ],
+      "avg_model_fps": 25228.896240601505,
+      "max_model_fps": 25228.896240601505,
+      "min_model_fps": 25228.896240601505,
+      "fps_samples": 1,
+      "fps_values": [
+        25228.896240601505
+      ],
+      "avg_model_utilization": 5.0,
+      "max_model_utilization": 5.0,
+      "min_model_utilization": 5.0,
+      "utilization_samples": 1,
+      "utilization_values": [
+        5.0
+      ]
+    },
+    "rmse": 65.09902467633619,
+    "data_samples": 1101
+  }
+}

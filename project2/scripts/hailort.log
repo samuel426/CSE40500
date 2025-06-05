@@ -1,0 +1,140 @@
+[2025-05-16 22:19:03.411] [40959] [HailoRT] [error] [hef.cpp:612] [parse_hef_file] Unsupported hef version 1079009656
+[2025-05-16 22:19:03.411] [40959] [HailoRT] [error] [hef.cpp:1060] [Impl] Failed parsing HEF file
+[2025-05-16 22:19:03.411] [40959] [HailoRT] [error] [hef.cpp:333] [create] Failed creating HEF
+[2025-05-16 22:19:03.412] [40959] [HailoRT] [error] [hef.cpp:168] [create] CHECK_SUCCESS failed with status=HAILO_HEF_NOT_SUPPORTED(92)
+[2025-05-16 22:30:27.264] [41265] [HailoRT] [error] [hef.cpp:612] [parse_hef_file] Unsupported hef version 1079009656
+[2025-05-16 22:30:27.266] [41265] [HailoRT] [error] [hef.cpp:1060] [Impl] Failed parsing HEF file
+[2025-05-16 22:30:27.266] [41265] [HailoRT] [error] [hef.cpp:333] [create] Failed creating HEF
+[2025-05-16 22:30:27.266] [41265] [HailoRT] [error] [hef.cpp:168] [create] CHECK_SUCCESS failed with status=HAILO_HEF_NOT_SUPPORTED(92)
+[2025-05-16 22:30:27.274] [41268] [HailoRT] [error] [hef.cpp:612] [parse_hef_file] Unsupported hef version 1079009656
+[2025-05-16 22:30:27.274] [41268] [HailoRT] [error] [hef.cpp:1060] [Impl] Failed parsing HEF file
+[2025-05-16 22:30:27.274] [41268] [HailoRT] [error] [hef.cpp:333] [create] Failed creating HEF
+[2025-05-16 22:30:27.274] [41268] [HailoRT] [error] [hef.cpp:168] [create] CHECK_SUCCESS failed with status=HAILO_HEF_NOT_SUPPORTED(92)
+[2025-05-16 22:30:27.281] [41271] [HailoRT] [error] [hef.cpp:612] [parse_hef_file] Unsupported hef version 1079009656
+[2025-05-16 22:30:27.281] [41271] [HailoRT] [error] [hef.cpp:1060] [Impl] Failed parsing HEF file
+[2025-05-16 22:30:27.281] [41271] [HailoRT] [error] [hef.cpp:333] [create] Failed creating HEF
+[2025-05-16 22:30:27.281] [41271] [HailoRT] [error] [hef.cpp:168] [create] CHECK_SUCCESS failed with status=HAILO_HEF_NOT_SUPPORTED(92)
+[2025-05-16 22:30:27.287] [41274] [HailoRT] [error] [hef.cpp:612] [parse_hef_file] Unsupported hef version 1079009656
+[2025-05-16 22:30:27.287] [41274] [HailoRT] [error] [hef.cpp:1060] [Impl] Failed parsing HEF file
+[2025-05-16 22:30:27.287] [41274] [HailoRT] [error] [hef.cpp:333] [create] Failed creating HEF
+[2025-05-16 22:30:27.287] [41274] [HailoRT] [error] [hef.cpp:168] [create] CHECK_SUCCESS failed with status=HAILO_HEF_NOT_SUPPORTED(92)
+[2025-05-16 22:30:27.293] [41277] [HailoRT] [error] [hef.cpp:612] [parse_hef_file] Unsupported hef version 1079009656
+[2025-05-16 22:30:27.293] [41277] [HailoRT] [error] [hef.cpp:1060] [Impl] Failed parsing HEF file
+[2025-05-16 22:30:27.293] [41277] [HailoRT] [error] [hef.cpp:333] [create] Failed creating HEF
+[2025-05-16 22:30:27.293] [41277] [HailoRT] [error] [hef.cpp:168] [create] CHECK_SUCCESS failed with status=HAILO_HEF_NOT_SUPPORTED(92)
+[2025-05-16 22:30:27.299] [41280] [HailoRT] [error] [hef.cpp:612] [parse_hef_file] Unsupported hef version 1079009656
+[2025-05-16 22:30:27.299] [41280] [HailoRT] [error] [hef.cpp:1060] [Impl] Failed parsing HEF file
+[2025-05-16 22:30:27.299] [41280] [HailoRT] [error] [hef.cpp:333] [create] Failed creating HEF
+[2025-05-16 22:30:27.299] [41280] [HailoRT] [error] [hef.cpp:168] [create] CHECK_SUCCESS failed with status=HAILO_HEF_NOT_SUPPORTED(92)
+[2025-05-16 22:30:27.304] [41283] [HailoRT] [error] [hef.cpp:612] [parse_hef_file] Unsupported hef version 1079009656
+[2025-05-16 22:30:27.305] [41283] [HailoRT] [error] [hef.cpp:1060] [Impl] Failed parsing HEF file
+[2025-05-16 22:30:27.305] [41283] [HailoRT] [error] [hef.cpp:333] [create] Failed creating HEF
+[2025-05-16 22:30:27.305] [41283] [HailoRT] [error] [hef.cpp:168] [create] CHECK_SUCCESS failed with status=HAILO_HEF_NOT_SUPPORTED(92)
+[2025-05-16 22:30:27.310] [41286] [HailoRT] [error] [hef.cpp:612] [parse_hef_file] Unsupported hef version 1079009656
+[2025-05-16 22:30:27.310] [41286] [HailoRT] [error] [hef.cpp:1060] [Impl] Failed parsing HEF file
+[2025-05-16 22:30:27.310] [41286] [HailoRT] [error] [hef.cpp:333] [create] Failed creating HEF
+[2025-05-16 22:30:27.310] [41286] [HailoRT] [error] [hef.cpp:168] [create] CHECK_SUCCESS failed with status=HAILO_HEF_NOT_SUPPORTED(92)
+[2025-05-16 22:30:27.316] [41289] [HailoRT] [error] [hef.cpp:612] [parse_hef_file] Unsupported hef version 1079009656
+[2025-05-16 22:30:27.316] [41289] [HailoRT] [error] [hef.cpp:1060] [Impl] Failed parsing HEF file
+[2025-05-16 22:30:27.316] [41289] [HailoRT] [error] [hef.cpp:333] [create] Failed creating HEF
+[2025-05-16 22:30:27.316] [41289] [HailoRT] [error] [hef.cpp:168] [create] CHECK_SUCCESS failed with status=HAILO_HEF_NOT_SUPPORTED(92)
+[2025-05-16 22:30:27.323] [41292] [HailoRT] [error] [hef.cpp:612] [parse_hef_file] Unsupported hef version 1079009656
+[2025-05-16 22:30:27.323] [41292] [HailoRT] [error] [hef.cpp:1060] [Impl] Failed parsing HEF file
+[2025-05-16 22:30:27.323] [41292] [HailoRT] [error] [hef.cpp:333] [create] Failed creating HEF
+[2025-05-16 22:30:27.323] [41292] [HailoRT] [error] [hef.cpp:168] [create] CHECK_SUCCESS failed with status=HAILO_HEF_NOT_SUPPORTED(92)
+[2025-05-16 22:30:27.328] [41295] [HailoRT] [error] [hef.cpp:612] [parse_hef_file] Unsupported hef version 1079009656
+[2025-05-16 22:30:27.328] [41295] [HailoRT] [error] [hef.cpp:1060] [Impl] Failed parsing HEF file
+[2025-05-16 22:30:27.328] [41295] [HailoRT] [error] [hef.cpp:333] [create] Failed creating HEF
+[2025-05-16 22:30:27.328] [41295] [HailoRT] [error] [hef.cpp:168] [create] CHECK_SUCCESS failed with status=HAILO_HEF_NOT_SUPPORTED(92)
+[2025-05-16 22:30:27.334] [41298] [HailoRT] [error] [hef.cpp:612] [parse_hef_file] Unsupported hef version 1079009656
+[2025-05-16 22:30:27.334] [41298] [HailoRT] [error] [hef.cpp:1060] [Impl] Failed parsing HEF file
+[2025-05-16 22:30:27.334] [41298] [HailoRT] [error] [hef.cpp:333] [create] Failed creating HEF
+[2025-05-16 22:30:27.334] [41298] [HailoRT] [error] [hef.cpp:168] [create] CHECK_SUCCESS failed with status=HAILO_HEF_NOT_SUPPORTED(92)
+[2025-05-16 22:30:27.340] [41301] [HailoRT] [error] [hef.cpp:612] [parse_hef_file] Unsupported hef version 1079009656
+[2025-05-16 22:30:27.340] [41301] [HailoRT] [error] [hef.cpp:1060] [Impl] Failed parsing HEF file
+[2025-05-16 22:30:27.340] [41301] [HailoRT] [error] [hef.cpp:333] [create] Failed creating HEF
+[2025-05-16 22:30:27.340] [41301] [HailoRT] [error] [hef.cpp:168] [create] CHECK_SUCCESS failed with status=HAILO_HEF_NOT_SUPPORTED(92)
+[2025-05-16 22:30:27.346] [41304] [HailoRT] [error] [hef.cpp:612] [parse_hef_file] Unsupported hef version 1079009656
+[2025-05-16 22:30:27.346] [41304] [HailoRT] [error] [hef.cpp:1060] [Impl] Failed parsing HEF file
+[2025-05-16 22:30:27.346] [41304] [HailoRT] [error] [hef.cpp:333] [create] Failed creating HEF
+[2025-05-16 22:30:27.346] [41304] [HailoRT] [error] [hef.cpp:168] [create] CHECK_SUCCESS failed with status=HAILO_HEF_NOT_SUPPORTED(92)
+[2025-05-16 22:30:27.352] [41307] [HailoRT] [error] [hef.cpp:612] [parse_hef_file] Unsupported hef version 1079009656
+[2025-05-16 22:30:27.352] [41307] [HailoRT] [error] [hef.cpp:1060] [Impl] Failed parsing HEF file
+[2025-05-16 22:30:27.352] [41307] [HailoRT] [error] [hef.cpp:333] [create] Failed creating HEF
+[2025-05-16 22:30:27.352] [41307] [HailoRT] [error] [hef.cpp:168] [create] CHECK_SUCCESS failed with status=HAILO_HEF_NOT_SUPPORTED(92)
+[2025-05-16 22:32:41.935] [41435] [HailoRT] [error] [hef.cpp:612] [parse_hef_file] Unsupported hef version 1079009656
+[2025-05-16 22:32:41.935] [41435] [HailoRT] [error] [hef.cpp:1060] [Impl] Failed parsing HEF file
+[2025-05-16 22:32:41.935] [41435] [HailoRT] [error] [hef.cpp:333] [create] Failed creating HEF
+[2025-05-16 22:32:41.935] [41435] [HailoRT] [error] [hef.cpp:168] [create] CHECK_SUCCESS failed with status=HAILO_HEF_NOT_SUPPORTED(92)
+[2025-05-16 22:32:41.945] [41441] [HailoRT] [error] [hef.cpp:612] [parse_hef_file] Unsupported hef version 1079009656
+[2025-05-16 22:32:41.945] [41441] [HailoRT] [error] [hef.cpp:1060] [Impl] Failed parsing HEF file
+[2025-05-16 22:32:41.945] [41441] [HailoRT] [error] [hef.cpp:333] [create] Failed creating HEF
+[2025-05-16 22:32:41.945] [41441] [HailoRT] [error] [hef.cpp:168] [create] CHECK_SUCCESS failed with status=HAILO_HEF_NOT_SUPPORTED(92)
+[2025-05-16 22:32:41.953] [41447] [HailoRT] [error] [hef.cpp:612] [parse_hef_file] Unsupported hef version 1079009656
+[2025-05-16 22:32:41.953] [41447] [HailoRT] [error] [hef.cpp:1060] [Impl] Failed parsing HEF file
+[2025-05-16 22:32:41.953] [41447] [HailoRT] [error] [hef.cpp:333] [create] Failed creating HEF
+[2025-05-16 22:32:41.953] [41447] [HailoRT] [error] [hef.cpp:168] [create] CHECK_SUCCESS failed with status=HAILO_HEF_NOT_SUPPORTED(92)
+[2025-05-16 22:32:41.961] [41453] [HailoRT] [error] [hef.cpp:612] [parse_hef_file] Unsupported hef version 1079009656
+[2025-05-16 22:32:41.961] [41453] [HailoRT] [error] [hef.cpp:1060] [Impl] Failed parsing HEF file
+[2025-05-16 22:32:41.961] [41453] [HailoRT] [error] [hef.cpp:333] [create] Failed creating HEF
+[2025-05-16 22:32:41.961] [41453] [HailoRT] [error] [hef.cpp:168] [create] CHECK_SUCCESS failed with status=HAILO_HEF_NOT_SUPPORTED(92)
+[2025-05-16 22:32:41.968] [41459] [HailoRT] [error] [hef.cpp:612] [parse_hef_file] Unsupported hef version 1079009656
+[2025-05-16 22:32:41.969] [41459] [HailoRT] [error] [hef.cpp:1060] [Impl] Failed parsing HEF file
+[2025-05-16 22:32:41.969] [41459] [HailoRT] [error] [hef.cpp:333] [create] Failed creating HEF
+[2025-05-16 22:32:41.969] [41459] [HailoRT] [error] [hef.cpp:168] [create] CHECK_SUCCESS failed with status=HAILO_HEF_NOT_SUPPORTED(92)
+[2025-05-16 22:32:41.976] [41465] [HailoRT] [error] [hef.cpp:612] [parse_hef_file] Unsupported hef version 1079009656
+[2025-05-16 22:32:41.977] [41465] [HailoRT] [error] [hef.cpp:1060] [Impl] Failed parsing HEF file
+[2025-05-16 22:32:41.977] [41465] [HailoRT] [error] [hef.cpp:333] [create] Failed creating HEF
+[2025-05-16 22:32:41.977] [41465] [HailoRT] [error] [hef.cpp:168] [create] CHECK_SUCCESS failed with status=HAILO_HEF_NOT_SUPPORTED(92)
+[2025-05-16 22:32:41.984] [41471] [HailoRT] [error] [hef.cpp:612] [parse_hef_file] Unsupported hef version 1079009656
+[2025-05-16 22:32:41.984] [41471] [HailoRT] [error] [hef.cpp:1060] [Impl] Failed parsing HEF file
+[2025-05-16 22:32:41.984] [41471] [HailoRT] [error] [hef.cpp:333] [create] Failed creating HEF
+[2025-05-16 22:32:41.984] [41471] [HailoRT] [error] [hef.cpp:168] [create] CHECK_SUCCESS failed with status=HAILO_HEF_NOT_SUPPORTED(92)
+[2025-05-16 22:32:41.991] [41477] [HailoRT] [error] [hef.cpp:612] [parse_hef_file] Unsupported hef version 1079009656
+[2025-05-16 22:32:41.992] [41477] [HailoRT] [error] [hef.cpp:1060] [Impl] Failed parsing HEF file
+[2025-05-16 22:32:41.992] [41477] [HailoRT] [error] [hef.cpp:333] [create] Failed creating HEF
+[2025-05-16 22:32:41.992] [41477] [HailoRT] [error] [hef.cpp:168] [create] CHECK_SUCCESS failed with status=HAILO_HEF_NOT_SUPPORTED(92)
+[2025-05-16 22:32:41.999] [41483] [HailoRT] [error] [hef.cpp:612] [parse_hef_file] Unsupported hef version 1079009656
+[2025-05-16 22:32:41.999] [41483] [HailoRT] [error] [hef.cpp:1060] [Impl] Failed parsing HEF file
+[2025-05-16 22:32:41.999] [41483] [HailoRT] [error] [hef.cpp:333] [create] Failed creating HEF
+[2025-05-16 22:32:41.999] [41483] [HailoRT] [error] [hef.cpp:168] [create] CHECK_SUCCESS failed with status=HAILO_HEF_NOT_SUPPORTED(92)
+[2025-05-16 22:32:42.006] [41489] [HailoRT] [error] [hef.cpp:612] [parse_hef_file] Unsupported hef version 1079009656
+[2025-05-16 22:32:42.006] [41489] [HailoRT] [error] [hef.cpp:1060] [Impl] Failed parsing HEF file
+[2025-05-16 22:32:42.007] [41489] [HailoRT] [error] [hef.cpp:333] [create] Failed creating HEF
+[2025-05-16 22:32:42.007] [41489] [HailoRT] [error] [hef.cpp:168] [create] CHECK_SUCCESS failed with status=HAILO_HEF_NOT_SUPPORTED(92)
+[2025-05-16 22:32:42.014] [41495] [HailoRT] [error] [hef.cpp:612] [parse_hef_file] Unsupported hef version 1079009656
+[2025-05-16 22:32:42.014] [41495] [HailoRT] [error] [hef.cpp:1060] [Impl] Failed parsing HEF file
+[2025-05-16 22:32:42.014] [41495] [HailoRT] [error] [hef.cpp:333] [create] Failed creating HEF
+[2025-05-16 22:32:42.014] [41495] [HailoRT] [error] [hef.cpp:168] [create] CHECK_SUCCESS failed with status=HAILO_HEF_NOT_SUPPORTED(92)
+[2025-05-16 22:32:42.022] [41501] [HailoRT] [error] [hef.cpp:612] [parse_hef_file] Unsupported hef version 1079009656
+[2025-05-16 22:32:42.022] [41501] [HailoRT] [error] [hef.cpp:1060] [Impl] Failed parsing HEF file
+[2025-05-16 22:32:42.022] [41501] [HailoRT] [error] [hef.cpp:333] [create] Failed creating HEF
+[2025-05-16 22:32:42.022] [41501] [HailoRT] [error] [hef.cpp:168] [create] CHECK_SUCCESS failed with status=HAILO_HEF_NOT_SUPPORTED(92)
+[2025-05-16 22:32:42.030] [41507] [HailoRT] [error] [hef.cpp:612] [parse_hef_file] Unsupported hef version 1079009656
+[2025-05-16 22:32:42.030] [41507] [HailoRT] [error] [hef.cpp:1060] [Impl] Failed parsing HEF file
+[2025-05-16 22:32:42.030] [41507] [HailoRT] [error] [hef.cpp:333] [create] Failed creating HEF
+[2025-05-16 22:32:42.030] [41507] [HailoRT] [error] [hef.cpp:168] [create] CHECK_SUCCESS failed with status=HAILO_HEF_NOT_SUPPORTED(92)
+[2025-05-16 22:32:42.037] [41513] [HailoRT] [error] [hef.cpp:612] [parse_hef_file] Unsupported hef version 1079009656
+[2025-05-16 22:32:42.037] [41513] [HailoRT] [error] [hef.cpp:1060] [Impl] Failed parsing HEF file
+[2025-05-16 22:32:42.037] [41513] [HailoRT] [error] [hef.cpp:333] [create] Failed creating HEF
+[2025-05-16 22:32:42.037] [41513] [HailoRT] [error] [hef.cpp:168] [create] CHECK_SUCCESS failed with status=HAILO_HEF_NOT_SUPPORTED(92)
+[2025-05-16 22:32:42.045] [41519] [HailoRT] [error] [hef.cpp:612] [parse_hef_file] Unsupported hef version 1079009656
+[2025-05-16 22:32:42.045] [41519] [HailoRT] [error] [hef.cpp:1060] [Impl] Failed parsing HEF file
+[2025-05-16 22:32:42.045] [41519] [HailoRT] [error] [hef.cpp:333] [create] Failed creating HEF
+[2025-05-16 22:32:42.045] [41519] [HailoRT] [error] [hef.cpp:168] [create] CHECK_SUCCESS failed with status=HAILO_HEF_NOT_SUPPORTED(92)
+[2025-05-16 23:00:33.571] [44475] [HailoRT] [error] [hef.cpp:612] [parse_hef_file] Unsupported hef version 1079009656
+[2025-05-16 23:00:33.571] [44475] [HailoRT] [error] [hef.cpp:1060] [Impl] Failed parsing HEF file
+[2025-05-16 23:00:33.571] [44475] [HailoRT] [error] [hef.cpp:333] [create] Failed creating HEF
+[2025-05-16 23:00:33.571] [44475] [HailoRT] [error] [hef.cpp:168] [create] CHECK_SUCCESS failed with status=HAILO_HEF_NOT_SUPPORTED(92)
+[2025-05-16 23:00:38.459] [44477] [HailoRT] [error] [hef.cpp:612] [parse_hef_file] Unsupported hef version 1079009656
+[2025-05-16 23:00:38.459] [44477] [HailoRT] [error] [hef.cpp:1060] [Impl] Failed parsing HEF file
+[2025-05-16 23:00:38.459] [44477] [HailoRT] [error] [hef.cpp:333] [create] Failed creating HEF
+[2025-05-16 23:00:38.459] [44477] [HailoRT] [error] [hef.cpp:168] [create] CHECK_SUCCESS failed with status=HAILO_HEF_NOT_SUPPORTED(92)
+[2025-05-16 23:09:52.801] [45122] [HailoRT] [error] [hef.cpp:612] [parse_hef_file] Unsupported hef version 1079009656
+[2025-05-16 23:09:52.802] [45122] [HailoRT] [error] [hef.cpp:1060] [Impl] Failed parsing HEF file
+[2025-05-16 23:09:52.802] [45122] [HailoRT] [error] [hef.cpp:333] [create] Failed creating HEF
+[2025-05-16 23:09:52.803] [45122] [HailoRT] [error] [hef.cpp:168] [create] CHECK_SUCCESS failed with status=HAILO_HEF_NOT_SUPPORTED(92)
+[2025-05-16 23:13:03.846] [52668] [HailoRT] [error] [hef.cpp:612] [parse_hef_file] Unsupported hef version 1079009656
+[2025-05-16 23:13:03.846] [52668] [HailoRT] [error] [hef.cpp:1060] [Impl] Failed parsing HEF file
+[2025-05-16 23:13:03.846] [52668] [HailoRT] [error] [hef.cpp:333] [create] Failed creating HEF
+[2025-05-16 23:13:03.846] [52668] [HailoRT] [error] [hef.cpp:168] [create] CHECK_SUCCESS failed with status=HAILO_HEF_NOT_SUPPORTED(92)

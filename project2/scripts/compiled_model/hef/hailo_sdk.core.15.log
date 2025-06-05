@@ -1,0 +1,635 @@
+[2025-05-23 07:34:43.135] [default] [info] Ran from command: "/local/workspace/hailo_virtualenv/bin/hailo compiler ./compiled_model/optimized/LSTM_Apple_optimized.har --hw-arch hailo8l --output-dir ./compiled_model/hef --model-script performance_param(compiler_optimization_level=1)"
+[2025-05-23 07:34:43.136] [default] [info] Loading network parameters
+[2025-05-23 07:34:43.225] [default] [info] [1;36mStarting Hailo allocation and compilation flow[0m
+[2025-05-23 07:34:43.242] [default] [info] Model name: LSTM_Apple
+[2025-05-23 07:34:43.262] [default] [info] Building optimization options for network layers...
+[2025-05-23 07:34:44.245] [default] [info] Successfully built optimization options - 0s 982ms
+[2025-05-23 07:34:44.246] [default] [info] Trying to compile the network in a single context
+[2025-05-23 07:34:44.246] [default] [info] Trying to solve in single context
+[2025-05-23 07:34:44.257] [default] [info] Single context flow failed: Recoverable single context error
+[2025-05-23 07:34:44.265] [default] [info] Building optimization options for network layers...
+[2025-05-23 07:34:45.374] [default] [info] Successfully built optimization options - 1s 109ms
+[2025-05-23 07:34:45.374] [default] [info] Using Multi-context flow
+[2025-05-23 07:34:45.375] [default] [info] Resources optimization params: max_control_utilization=60%, max_compute_utilization=60%, max_compute_16bit_utilization=60%, max_memory_utilization (weights)=60%, max_input_aligner_utilization=60%, max_apu_utilization=60%
+[2025-05-23 07:34:45.375] [default] [info] [1;36mFinding the best partition to contexts...[0m
+[2025-05-23 07:34:45.725] [default] [info] Iteration failed on: Automri finished with too many resources on context_1
+[2025-05-23 07:34:45.843] [default] [info] Iteration failed on: Automri finished with too many resources on context_1
+[2025-05-23 07:34:46.955] [default] [info] Partition iteration #2:
+Fast Unikorn FPS: 62,952.5
+Contexts Info:
+LSTM_Apple_context_0 info - Status: VALID, bottleneck fps: 2.5641e+06, solution depleted.
+LSTM_Apple_context_1 info - Status: FAILED, bottleneck fps: 5.12821e+06
+LSTM_Apple_context_2 info - Status: NEEDS_VALIDATION, bottleneck fps: 5.12821e+06
+Partition failed on: Splitter failed to find a possible solution
+
+[2025-05-23 07:34:46.955] [default] [info] Iteration failed on: Splitter failed to find a possible solution
+[2025-05-23 07:34:47.735] [default] [info] Partition iteration #3:
+Fast Unikorn FPS: 62,952.5
+Contexts Info:
+LSTM_Apple_context_0 info - Status: VALID, bottleneck fps: 2.5641e+06, solution depleted.
+LSTM_Apple_context_1 info - Status: FAILED, bottleneck fps: 5.12821e+06
+LSTM_Apple_context_2 info - Status: NEEDS_VALIDATION, bottleneck fps: 5.12821e+06
+Partition failed on: Splitter failed to find a possible solution
+
+[2025-05-23 07:34:47.735] [default] [info] Iteration failed on: Splitter failed to find a possible solution
+[2025-05-23 07:34:48.476] [default] [info] Partition iteration #4:
+Fast Unikorn FPS: 62,952.5
+Contexts Info:
+LSTM_Apple_context_0 info - Status: VALID, bottleneck fps: 2.5641e+06, solution depleted.
+LSTM_Apple_context_1 info - Status: FAILED, bottleneck fps: 5.12821e+06
+LSTM_Apple_context_2 info - Status: NEEDS_VALIDATION, bottleneck fps: 5.12821e+06
+Partition failed on: Splitter failed to find a possible solution
+
+[2025-05-23 07:34:48.476] [default] [info] Iteration failed on: Splitter failed to find a possible solution
+[2025-05-23 07:34:49.231] [default] [info] Partition iteration #5:
+Fast Unikorn FPS: 62,952.5
+Contexts Info:
+LSTM_Apple_context_0 info - Status: VALID, bottleneck fps: 2.5641e+06, solution depleted.
+LSTM_Apple_context_1 info - Status: FAILED, bottleneck fps: 5.12821e+06
+LSTM_Apple_context_2 info - Status: NEEDS_VALIDATION, bottleneck fps: 5.12821e+06
+Partition failed on: Splitter failed to find a possible solution
+
+[2025-05-23 07:34:49.231] [default] [info] Iteration failed on: Splitter failed to find a possible solution
+[2025-05-23 07:34:50.129] [default] [info] Partition iteration #6:
+Fast Unikorn FPS: 61,900.3
+Contexts Info:
+LSTM_Apple_context_0 info - Status: VALID, bottleneck fps: 2.5641e+06, solution depleted.
+LSTM_Apple_context_1 info - Status: FAILED, bottleneck fps: 5.12821e+06
+LSTM_Apple_context_2 info - Status: NEEDS_VALIDATION, bottleneck fps: 5.12821e+06
+Partition failed on: Splitter failed to find a possible solution
+
+[2025-05-23 07:34:50.129] [default] [info] Iteration failed on: Splitter failed to find a possible solution
+[2025-05-23 07:34:50.921] [default] [info] Partition iteration #7:
+Fast Unikorn FPS: 62,952.5
+Contexts Info:
+LSTM_Apple_context_0 info - Status: VALID, bottleneck fps: 2.5641e+06, solution depleted.
+LSTM_Apple_context_1 info - Status: FAILED, bottleneck fps: 5.12821e+06
+LSTM_Apple_context_2 info - Status: NEEDS_VALIDATION, bottleneck fps: 5.12821e+06
+Partition failed on: Splitter failed to find a possible solution
+
+[2025-05-23 07:34:50.921] [default] [info] Iteration failed on: Splitter failed to find a possible solution
+[2025-05-23 07:34:51.858] [default] [info] Partition iteration #8:
+Fast Unikorn FPS: 62,952.5
+Contexts Info:
+LSTM_Apple_context_0 info - Status: VALID, bottleneck fps: 2.5641e+06, solution depleted.
+LSTM_Apple_context_1 info - Status: FAILED, bottleneck fps: 5.12821e+06
+LSTM_Apple_context_2 info - Status: NEEDS_VALIDATION, bottleneck fps: 5.12821e+06
+Partition failed on: Splitter failed to find a possible solution
+
+[2025-05-23 07:34:51.858] [default] [info] Iteration failed on: Splitter failed to find a possible solution
+[2025-05-23 07:34:51.988] [default] [info] Iteration failed on: Automri finished with too many resources on context_2
+[2025-05-23 07:34:52.922] [default] [info] Partition iteration #10:
+Fast Unikorn FPS: 62,344.1
+Contexts Info:
+LSTM_Apple_context_0 info - Status: VALID, bottleneck fps: 2.5641e+06, solution depleted.
+LSTM_Apple_context_1 info - Status: FAILED, bottleneck fps: 5.12821e+06
+LSTM_Apple_context_2 info - Status: NEEDS_VALIDATION, bottleneck fps: 5.12821e+06
+LSTM_Apple_context_3 info - Status: NEEDS_VALIDATION, bottleneck fps: 6.89655e+06, solution depleted.
+Partition failed on: Splitter failed to find a possible solution
+
+[2025-05-23 07:34:52.922] [default] [info] Iteration failed on: Splitter failed to find a possible solution
+[2025-05-23 07:34:52.937] [default] [info] Iteration failed on: Automri finished with too many resources on context_2
+[2025-05-23 07:34:53.862] [default] [info] Partition iteration #12:
+Fast Unikorn FPS: 60,901.3
+Contexts Info:
+LSTM_Apple_context_0 info - Status: VALID, bottleneck fps: 2.5641e+06, solution depleted.
+LSTM_Apple_context_1 info - Status: FAILED, bottleneck fps: 5.12821e+06
+LSTM_Apple_context_2 info - Status: NEEDS_VALIDATION, bottleneck fps: 5.12821e+06
+LSTM_Apple_context_3 info - Status: NEEDS_VALIDATION, bottleneck fps: 6.89655e+06, solution depleted.
+Partition failed on: Splitter failed to find a possible solution
+
+[2025-05-23 07:34:53.862] [default] [info] Iteration failed on: Splitter failed to find a possible solution
+[2025-05-23 07:34:53.876] [default] [info] Iteration failed on: Automri finished with too many resources on context_2
+[2025-05-23 07:34:54.804] [default] [info] Partition iteration #14:
+Fast Unikorn FPS: 63,562.7
+Contexts Info:
+LSTM_Apple_context_0 info - Status: VALID, bottleneck fps: 2.5641e+06, solution depleted.
+LSTM_Apple_context_1 info - Status: FAILED, bottleneck fps: 5.12821e+06
+LSTM_Apple_context_2 info - Status: NEEDS_VALIDATION, bottleneck fps: 5.12821e+06
+LSTM_Apple_context_3 info - Status: NEEDS_VALIDATION, bottleneck fps: 6.55738e+06, solution depleted.
+Partition failed on: Splitter failed to find a possible solution
+
+[2025-05-23 07:34:54.804] [default] [info] Iteration failed on: Splitter failed to find a possible solution
+[2025-05-23 07:34:54.934] [default] [info] Iteration failed on: Automri finished with too many resources on context_2
+[2025-05-23 07:34:55.738] [default] [info] Partition iteration #16:
+Fast Unikorn FPS: 63,562.7
+Contexts Info:
+LSTM_Apple_context_0 info - Status: VALID, bottleneck fps: 2.5641e+06, solution depleted.
+LSTM_Apple_context_1 info - Status: FAILED, bottleneck fps: 5.12821e+06
+LSTM_Apple_context_2 info - Status: NEEDS_VALIDATION, bottleneck fps: 5.12821e+06
+LSTM_Apple_context_3 info - Status: NEEDS_VALIDATION, bottleneck fps: 6.55738e+06, solution depleted.
+Partition failed on: Splitter failed to find a possible solution
+
+[2025-05-23 07:34:55.738] [default] [info] Iteration failed on: Splitter failed to find a possible solution
+[2025-05-23 07:34:55.754] [default] [info] Iteration failed on: Automri finished with too many resources on context_2
+[2025-05-23 07:34:56.564] [default] [info] Partition iteration #18:
+Fast Unikorn FPS: 63,562.7
+Contexts Info:
+LSTM_Apple_context_0 info - Status: VALID, bottleneck fps: 2.5641e+06, solution depleted.
+LSTM_Apple_context_1 info - Status: FAILED, bottleneck fps: 5.12821e+06
+LSTM_Apple_context_2 info - Status: NEEDS_VALIDATION, bottleneck fps: 5.12821e+06
+LSTM_Apple_context_3 info - Status: NEEDS_VALIDATION, bottleneck fps: 6.55738e+06, solution depleted.
+Partition failed on: Splitter failed to find a possible solution
+
+[2025-05-23 07:34:56.564] [default] [info] Iteration failed on: Splitter failed to find a possible solution
+[2025-05-23 07:34:56.579] [default] [info] Iteration failed on: Automri finished with too many resources on context_2
+[2025-05-23 07:34:57.388] [default] [info] Partition iteration #20:
+Fast Unikorn FPS: 63,562.7
+Contexts Info:
+LSTM_Apple_context_0 info - Status: VALID, bottleneck fps: 2.5641e+06, solution depleted.
+LSTM_Apple_context_1 info - Status: FAILED, bottleneck fps: 5.12821e+06
+LSTM_Apple_context_2 info - Status: NEEDS_VALIDATION, bottleneck fps: 5.12821e+06
+LSTM_Apple_context_3 info - Status: NEEDS_VALIDATION, bottleneck fps: 6.55738e+06, solution depleted.
+Partition failed on: Splitter failed to find a possible solution
+
+[2025-05-23 07:34:57.388] [default] [info] Iteration failed on: Splitter failed to find a possible solution
+[2025-05-23 07:34:57.404] [default] [info] Iteration failed on: Automri finished with too many resources on context_2
+[2025-05-23 07:34:58.222] [default] [info] Partition iteration #22:
+Fast Unikorn FPS: 63,562.7
+Contexts Info:
+LSTM_Apple_context_0 info - Status: VALID, bottleneck fps: 2.5641e+06, solution depleted.
+LSTM_Apple_context_1 info - Status: FAILED, bottleneck fps: 5.12821e+06
+LSTM_Apple_context_2 info - Status: NEEDS_VALIDATION, bottleneck fps: 5.12821e+06
+LSTM_Apple_context_3 info - Status: NEEDS_VALIDATION, bottleneck fps: 6.55738e+06, solution depleted.
+Partition failed on: Splitter failed to find a possible solution
+
+[2025-05-23 07:34:58.222] [default] [info] Iteration failed on: Splitter failed to find a possible solution
+[2025-05-23 07:34:58.353] [default] [info] Iteration failed on: Automri finished with too many resources on context_2
+[2025-05-23 07:34:59.212] [default] [info] Partition iteration #24:
+Fast Unikorn FPS: 62,490.2
+Contexts Info:
+LSTM_Apple_context_0 info - Status: VALID, bottleneck fps: 2.5641e+06, solution depleted.
+LSTM_Apple_context_1 info - Status: FAILED, bottleneck fps: 5.12821e+06
+LSTM_Apple_context_2 info - Status: NEEDS_VALIDATION, bottleneck fps: 5.12821e+06
+LSTM_Apple_context_3 info - Status: NEEDS_VALIDATION, bottleneck fps: 6.55738e+06, solution depleted.
+Partition failed on: Splitter failed to find a possible solution
+
+[2025-05-23 07:34:59.212] [default] [info] Iteration failed on: Splitter failed to find a possible solution
+[2025-05-23 07:34:59.228] [default] [info] Iteration failed on: Automri finished with too many resources on context_2
+[2025-05-23 07:35:00.084] [default] [info] Partition iteration #26:
+Fast Unikorn FPS: 62,490.2
+Contexts Info:
+LSTM_Apple_context_0 info - Status: VALID, bottleneck fps: 2.5641e+06, solution depleted.
+LSTM_Apple_context_1 info - Status: FAILED, bottleneck fps: 5.12821e+06
+LSTM_Apple_context_2 info - Status: NEEDS_VALIDATION, bottleneck fps: 5.12821e+06
+LSTM_Apple_context_3 info - Status: NEEDS_VALIDATION, bottleneck fps: 6.55738e+06, solution depleted.
+Partition failed on: Splitter failed to find a possible solution
+
+[2025-05-23 07:35:00.084] [default] [info] Iteration failed on: Splitter failed to find a possible solution
+[2025-05-23 07:35:00.100] [default] [info] Iteration failed on: Automri finished with too many resources on context_2
+[2025-05-23 07:35:01.091] [default] [info] Partition iteration #28:
+Fast Unikorn FPS: 63,562.7
+Contexts Info:
+LSTM_Apple_context_0 info - Status: VALID, bottleneck fps: 2.5641e+06, solution depleted.
+LSTM_Apple_context_1 info - Status: FAILED, bottleneck fps: 5.12821e+06
+LSTM_Apple_context_2 info - Status: NEEDS_VALIDATION, bottleneck fps: 5.12821e+06
+LSTM_Apple_context_3 info - Status: NEEDS_VALIDATION, bottleneck fps: 6.55738e+06, solution depleted.
+Partition failed on: Splitter failed to find a possible solution
+
+[2025-05-23 07:35:01.091] [default] [info] Iteration failed on: Splitter failed to find a possible solution
+[2025-05-23 07:35:01.107] [default] [info] Iteration failed on: Automri finished with too many resources on context_2
+[2025-05-23 07:35:02.252] [default] [info] Partition iteration #30:
+Fast Unikorn FPS: 62,353.9
+Contexts Info:
+LSTM_Apple_context_0 info - Status: VALID, bottleneck fps: 2.5641e+06, solution depleted.
+LSTM_Apple_context_1 info - Status: FAILED, bottleneck fps: 5.12821e+06
+LSTM_Apple_context_2 info - Status: NEEDS_VALIDATION, bottleneck fps: 5.12821e+06
+LSTM_Apple_context_3 info - Status: NEEDS_VALIDATION, bottleneck fps: 6.55738e+06
+Partition failed on: Splitter failed to find a possible solution
+
+[2025-05-23 07:35:02.252] [default] [info] Iteration failed on: Splitter failed to find a possible solution
+[2025-05-23 07:35:02.269] [default] [info] Iteration failed on: Automri finished with too many resources on context_2
+[2025-05-23 07:35:03.008] [default] [info] Iteration failed on: Too many inputs/outputs for LSTM_Apple_context_1, try to reduce number of inputs or outputs
+Number of DDRs: 0
+Number of inputs: 9
+Number of outputs: 16
+
+[2025-05-23 07:35:03.024] [default] [info] Iteration failed on: Automri finished with too many resources on context_2
+[2025-05-23 07:35:03.650] [default] [info] Iteration failed on: Too many inputs/outputs for LSTM_Apple_context_1, try to reduce number of inputs or outputs
+Number of DDRs: 0
+Number of inputs: 9
+Number of outputs: 16
+
+[2025-05-23 07:35:03.667] [default] [info] Iteration failed on: Automri finished with too many resources on context_2
+[2025-05-23 07:35:04.300] [default] [info] Iteration failed on: Too many inputs/outputs for LSTM_Apple_context_1, try to reduce number of inputs or outputs
+Number of DDRs: 0
+Number of inputs: 9
+Number of outputs: 15
+
+[2025-05-23 07:35:04.317] [default] [info] Iteration failed on: Automri finished with too many resources on context_2
+[2025-05-23 07:35:04.825] [default] [info] Iteration failed on: Too many inputs/outputs for LSTM_Apple_context_1, try to reduce number of inputs or outputs
+Number of DDRs: 0
+Number of inputs: 9
+Number of outputs: 16
+
+[2025-05-23 07:35:04.842] [default] [info] Iteration failed on: Automri finished with too many resources on context_2
+[2025-05-23 07:35:05.347] [default] [info] Iteration failed on: Too many inputs/outputs for LSTM_Apple_context_1, try to reduce number of inputs or outputs
+Number of DDRs: 0
+Number of inputs: 9
+Number of outputs: 15
+
+[2025-05-23 07:35:05.364] [default] [info] Iteration failed on: Automri finished with too many resources on context_2
+[2025-05-23 07:35:05.879] [default] [info] Iteration failed on: Too many inputs/outputs for LSTM_Apple_context_1, try to reduce number of inputs or outputs
+Number of DDRs: 0
+Number of inputs: 9
+Number of outputs: 16
+
+[2025-05-23 07:35:05.894] [default] [info] Iteration failed on: Automri finished with too many resources on context_2
+[2025-05-23 07:35:06.416] [default] [info] Iteration failed on: Too many inputs/outputs for LSTM_Apple_context_1, try to reduce number of inputs or outputs
+Number of DDRs: 0
+Number of inputs: 9
+Number of outputs: 17
+
+[2025-05-23 07:35:06.433] [default] [info] Iteration failed on: Automri finished with too many resources on context_2
+[2025-05-23 07:35:06.946] [default] [info] Iteration failed on: Too many inputs/outputs for LSTM_Apple_context_1, try to reduce number of inputs or outputs
+Number of DDRs: 0
+Number of inputs: 9
+Number of outputs: 18
+
+[2025-05-23 07:35:06.963] [default] [info] Iteration failed on: Automri finished with too many resources on context_2
+[2025-05-23 07:35:07.479] [default] [info] Iteration failed on: Too many inputs/outputs for LSTM_Apple_context_1, try to reduce number of inputs or outputs
+Number of DDRs: 0
+Number of inputs: 9
+Number of outputs: 19
+
+[2025-05-23 07:35:07.496] [default] [info] Iteration failed on: Automri finished with too many resources on context_2
+[2025-05-23 07:35:07.987] [default] [info] Iteration failed on: Too many inputs/outputs for LSTM_Apple_context_1, try to reduce number of inputs or outputs
+Number of DDRs: 0
+Number of inputs: 9
+Number of outputs: 19
+
+[2025-05-23 07:35:08.004] [default] [info] Iteration failed on: Automri finished with too many resources on context_2
+[2025-05-23 07:35:08.487] [default] [info] Iteration failed on: Too many inputs/outputs for LSTM_Apple_context_1, try to reduce number of inputs or outputs
+Number of DDRs: 0
+Number of inputs: 9
+Number of outputs: 19
+
+[2025-05-23 07:35:08.503] [default] [info] Iteration failed on: Automri finished with too many resources on context_2
+[2025-05-23 07:35:08.970] [default] [info] Iteration failed on: Too many inputs/outputs for LSTM_Apple_context_1, try to reduce number of inputs or outputs
+Number of DDRs: 0
+Number of inputs: 9
+Number of outputs: 19
+
+[2025-05-23 07:35:08.986] [default] [info] Iteration failed on: Automri finished with too many resources on context_2
+[2025-05-23 07:35:09.408] [default] [info] Iteration failed on: Too many inputs/outputs for LSTM_Apple_context_1, try to reduce number of inputs or outputs
+Number of DDRs: 0
+Number of inputs: 9
+Number of outputs: 18
+
+[2025-05-23 07:35:09.425] [default] [info] Iteration failed on: Automri finished with too many resources on context_2
+[2025-05-23 07:35:09.831] [default] [info] Iteration failed on: Too many inputs/outputs for LSTM_Apple_context_1, try to reduce number of inputs or outputs
+Number of DDRs: 0
+Number of inputs: 8
+Number of outputs: 18
+
+[2025-05-23 07:35:09.847] [default] [info] Iteration failed on: Automri finished with too many resources on context_2
+[2025-05-23 07:35:10.247] [default] [info] Iteration failed on: Too many inputs/outputs for LSTM_Apple_context_1, try to reduce number of inputs or outputs
+Number of DDRs: 0
+Number of inputs: 8
+Number of outputs: 17
+
+[2025-05-23 07:35:10.262] [default] [info] Iteration failed on: Automri finished with too many resources on context_2
+[2025-05-23 07:35:10.668] [default] [info] Iteration failed on: Too many inputs/outputs for LSTM_Apple_context_1, try to reduce number of inputs or outputs
+Number of DDRs: 0
+Number of inputs: 8
+Number of outputs: 18
+
+[2025-05-23 07:35:10.683] [default] [info] Iteration failed on: Automri finished with too many resources on context_2
+[2025-05-23 07:35:11.085] [default] [info] Iteration failed on: Too many inputs/outputs for LSTM_Apple_context_1, try to reduce number of inputs or outputs
+Number of DDRs: 0
+Number of inputs: 6
+Number of outputs: 17
+
+[2025-05-23 07:35:11.100] [default] [info] Iteration failed on: Automri finished with too many resources on context_2
+[2025-05-23 07:35:11.496] [default] [info] Iteration failed on: Too many inputs/outputs for LSTM_Apple_context_1, try to reduce number of inputs or outputs
+Number of DDRs: 0
+Number of inputs: 4
+Number of outputs: 16
+
+[2025-05-23 07:35:11.511] [default] [info] Iteration failed on: Automri finished with too many resources on context_2
+[2025-05-23 07:35:11.925] [default] [info] Iteration failed on: Too many inputs/outputs for LSTM_Apple_context_2, try to reduce number of inputs or outputs
+Number of DDRs: 0
+Number of inputs: 21
+Number of outputs: 12
+
+[2025-05-23 07:35:12.349] [default] [info] Iteration failed on: Too many inputs/outputs for LSTM_Apple_context_2, try to reduce number of inputs or outputs
+Number of DDRs: 0
+Number of inputs: 21
+Number of outputs: 13
+
+[2025-05-23 07:35:12.786] [default] [info] Iteration failed on: Too many inputs/outputs for LSTM_Apple_context_2, try to reduce number of inputs or outputs
+Number of DDRs: 0
+Number of inputs: 21
+Number of outputs: 14
+
+[2025-05-23 07:35:13.215] [default] [info] Iteration failed on: Too many inputs/outputs for LSTM_Apple_context_2, try to reduce number of inputs or outputs
+Number of DDRs: 0
+Number of inputs: 21
+Number of outputs: 15
+
+[2025-05-23 07:35:13.644] [default] [info] Iteration failed on: Too many inputs/outputs for LSTM_Apple_context_2, try to reduce number of inputs or outputs
+Number of DDRs: 0
+Number of inputs: 20
+Number of outputs: 15
+
+[2025-05-23 07:35:14.069] [default] [info] Iteration failed on: Too many inputs/outputs for LSTM_Apple_context_2, try to reduce number of inputs or outputs
+Number of DDRs: 0
+Number of inputs: 19
+Number of outputs: 14
+
+[2025-05-23 07:35:14.487] [default] [info] Iteration failed on: Too many inputs/outputs for LSTM_Apple_context_2, try to reduce number of inputs or outputs
+Number of DDRs: 0
+Number of inputs: 18
+Number of outputs: 13
+
+[2025-05-23 07:35:14.894] [default] [info] Iteration failed on: Too many inputs/outputs for LSTM_Apple_context_2, try to reduce number of inputs or outputs
+Number of DDRs: 0
+Number of inputs: 17
+Number of outputs: 12
+
+[2025-05-23 07:35:15.302] [default] [info] Iteration failed on: Too many inputs/outputs for LSTM_Apple_context_2, try to reduce number of inputs or outputs
+Number of DDRs: 0
+Number of inputs: 17
+Number of outputs: 12
+
+[2025-05-23 07:35:15.715] [default] [info] Iteration failed on: Too many inputs/outputs for LSTM_Apple_context_2, try to reduce number of inputs or outputs
+Number of DDRs: 0
+Number of inputs: 17
+Number of outputs: 11
+
+[2025-05-23 07:35:15.731] [default] [info] Iteration failed on: Automri finished with too many resources on context_3
+[2025-05-23 07:35:16.142] [default] [info] Iteration failed on: Too many inputs/outputs for LSTM_Apple_context_2, try to reduce number of inputs or outputs
+Number of DDRs: 0
+Number of inputs: 17
+Number of outputs: 12
+
+[2025-05-23 07:35:16.159] [default] [info] Iteration failed on: Automri finished with too many resources on context_3
+[2025-05-23 07:35:16.574] [default] [info] Iteration failed on: Too many inputs/outputs for LSTM_Apple_context_2, try to reduce number of inputs or outputs
+Number of DDRs: 0
+Number of inputs: 17
+Number of outputs: 11
+
+[2025-05-23 07:35:16.589] [default] [info] Iteration failed on: Automri finished with too many resources on context_3
+[2025-05-23 07:35:17.011] [default] [info] Iteration failed on: Too many inputs/outputs for LSTM_Apple_context_2, try to reduce number of inputs or outputs
+Number of DDRs: 0
+Number of inputs: 17
+Number of outputs: 12
+
+[2025-05-23 07:35:17.027] [default] [info] Iteration failed on: Automri finished with too many resources on context_3
+[2025-05-23 07:35:17.448] [default] [info] Iteration failed on: Too many inputs/outputs for LSTM_Apple_context_2, try to reduce number of inputs or outputs
+Number of DDRs: 0
+Number of inputs: 17
+Number of outputs: 13
+
+[2025-05-23 07:35:17.465] [default] [info] Iteration failed on: Automri finished with too many resources on context_3
+[2025-05-23 07:35:17.896] [default] [info] Iteration failed on: Too many inputs/outputs for LSTM_Apple_context_2, try to reduce number of inputs or outputs
+Number of DDRs: 0
+Number of inputs: 17
+Number of outputs: 14
+
+[2025-05-23 07:35:17.916] [default] [info] Iteration failed on: Automri finished with too many resources on context_3
+[2025-05-23 07:35:18.343] [default] [info] Iteration failed on: Too many inputs/outputs for LSTM_Apple_context_2, try to reduce number of inputs or outputs
+Number of DDRs: 0
+Number of inputs: 16
+Number of outputs: 14
+
+[2025-05-23 07:35:18.359] [default] [info] Iteration failed on: Automri finished with too many resources on context_3
+[2025-05-23 07:35:18.779] [default] [info] Iteration failed on: Too many inputs/outputs for LSTM_Apple_context_2, try to reduce number of inputs or outputs
+Number of DDRs: 0
+Number of inputs: 15
+Number of outputs: 13
+
+[2025-05-23 07:35:18.797] [default] [info] Iteration failed on: Automri finished with too many resources on context_3
+[2025-05-23 07:35:19.272] [default] [info] Iteration failed on: Too many inputs/outputs for LSTM_Apple_context_2, try to reduce number of inputs or outputs
+Number of DDRs: 0
+Number of inputs: 14
+Number of outputs: 12
+
+[2025-05-23 07:35:19.291] [default] [info] Iteration failed on: Automri finished with too many resources on context_3
+[2025-05-23 07:35:19.753] [default] [info] Iteration failed on: Too many inputs/outputs for LSTM_Apple_context_2, try to reduce number of inputs or outputs
+Number of DDRs: 0
+Number of inputs: 13
+Number of outputs: 11
+
+[2025-05-23 07:35:19.771] [default] [info] Iteration failed on: Automri finished with too many resources on context_3
+[2025-05-23 07:35:20.271] [default] [info] Iteration failed on: Too many inputs/outputs for LSTM_Apple_context_2, try to reduce number of inputs or outputs
+Number of DDRs: 0
+Number of inputs: 11
+Number of outputs: 12
+
+[2025-05-23 07:35:20.289] [default] [info] Iteration failed on: Automri finished with too many resources on context_3
+[2025-05-23 07:35:20.811] [default] [info] Iteration failed on: Too many inputs/outputs for LSTM_Apple_context_2, try to reduce number of inputs or outputs
+Number of DDRs: 0
+Number of inputs: 11
+Number of outputs: 12
+
+[2025-05-23 07:35:20.830] [default] [info] Iteration failed on: Automri finished with too many resources on context_3
+[2025-05-23 07:35:21.350] [default] [info] Iteration failed on: Too many inputs/outputs for LSTM_Apple_context_2, try to reduce number of inputs or outputs
+Number of DDRs: 0
+Number of inputs: 11
+Number of outputs: 11
+
+[2025-05-23 07:35:21.368] [default] [info] Iteration failed on: Automri finished with too many resources on context_3
+[2025-05-23 07:35:21.908] [default] [info] Iteration failed on: Too many inputs/outputs for LSTM_Apple_context_2, try to reduce number of inputs or outputs
+Number of DDRs: 0
+Number of inputs: 11
+Number of outputs: 12
+
+[2025-05-23 07:35:21.927] [default] [info] Iteration failed on: Automri finished with too many resources on context_3
+[2025-05-23 07:35:22.492] [default] [info] Iteration failed on: Too many inputs/outputs for LSTM_Apple_context_2, try to reduce number of inputs or outputs
+Number of DDRs: 0
+Number of inputs: 11
+Number of outputs: 11
+
+[2025-05-23 07:35:22.511] [default] [info] Iteration failed on: Automri finished with too many resources on context_3
+[2025-05-23 07:35:23.054] [default] [info] Iteration failed on: Too many inputs/outputs for LSTM_Apple_context_2, try to reduce number of inputs or outputs
+Number of DDRs: 0
+Number of inputs: 11
+Number of outputs: 12
+
+[2025-05-23 07:35:23.071] [default] [info] Iteration failed on: Automri finished with too many resources on context_3
+[2025-05-23 07:35:23.622] [default] [info] Iteration failed on: Too many inputs/outputs for LSTM_Apple_context_2, try to reduce number of inputs or outputs
+Number of DDRs: 0
+Number of inputs: 11
+Number of outputs: 13
+
+[2025-05-23 07:35:23.640] [default] [info] Iteration failed on: Automri finished with too many resources on context_3
+[2025-05-23 07:35:24.187] [default] [info] Iteration failed on: Too many inputs/outputs for LSTM_Apple_context_2, try to reduce number of inputs or outputs
+Number of DDRs: 0
+Number of inputs: 11
+Number of outputs: 14
+
+[2025-05-23 07:35:24.205] [default] [info] Iteration failed on: Automri finished with too many resources on context_3
+[2025-05-23 07:35:24.737] [default] [info] Iteration failed on: Too many inputs/outputs for LSTM_Apple_context_2, try to reduce number of inputs or outputs
+Number of DDRs: 0
+Number of inputs: 10
+Number of outputs: 14
+
+[2025-05-23 07:35:24.755] [default] [info] Iteration failed on: Automri finished with too many resources on context_3
+[2025-05-23 07:35:25.276] [default] [info] Iteration failed on: Too many inputs/outputs for LSTM_Apple_context_2, try to reduce number of inputs or outputs
+Number of DDRs: 0
+Number of inputs: 9
+Number of outputs: 13
+
+[2025-05-23 07:35:25.295] [default] [info] Iteration failed on: Automri finished with too many resources on context_3
+[2025-05-23 07:35:25.806] [default] [info] Iteration failed on: Too many inputs/outputs for LSTM_Apple_context_2, try to reduce number of inputs or outputs
+Number of DDRs: 0
+Number of inputs: 8
+Number of outputs: 12
+
+[2025-05-23 07:35:25.823] [default] [info] Iteration failed on: Automri finished with too many resources on context_3
+[2025-05-23 07:35:26.302] [default] [info] Iteration failed on: Too many inputs/outputs for LSTM_Apple_context_2, try to reduce number of inputs or outputs
+Number of DDRs: 0
+Number of inputs: 7
+Number of outputs: 11
+
+[2025-05-23 07:35:26.319] [default] [info] Iteration failed on: Automri finished with too many resources on context_3
+[2025-05-23 07:35:26.804] [default] [info] Iteration failed on: Too many inputs/outputs for LSTM_Apple_context_2, try to reduce number of inputs or outputs
+Number of DDRs: 0
+Number of inputs: 7
+Number of outputs: 11
+
+[2025-05-23 07:35:26.821] [default] [info] Iteration failed on: Automri finished with too many resources on context_3
+[2025-05-23 07:35:27.310] [default] [info] Iteration failed on: Too many inputs/outputs for LSTM_Apple_context_2, try to reduce number of inputs or outputs
+Number of DDRs: 0
+Number of inputs: 7
+Number of outputs: 10
+
+[2025-05-23 07:35:27.329] [default] [info] Iteration failed on: Automri finished with too many resources on context_3
+[2025-05-23 07:35:27.772] [default] [info] Iteration failed on: Too many inputs/outputs for LSTM_Apple_context_3, try to reduce number of inputs or outputs
+Number of DDRs: 0
+Number of inputs: 19
+Number of outputs: 7
+
+[2025-05-23 07:35:28.216] [default] [info] Iteration failed on: Too many inputs/outputs for LSTM_Apple_context_3, try to reduce number of inputs or outputs
+Number of DDRs: 0
+Number of inputs: 18
+Number of outputs: 6
+
+[2025-05-23 07:35:28.654] [default] [info] Iteration failed on: Too many inputs/outputs for LSTM_Apple_context_3, try to reduce number of inputs or outputs
+Number of DDRs: 0
+Number of inputs: 17
+Number of outputs: 5
+
+[2025-05-23 07:35:29.087] [default] [info] Iteration failed on: Too many inputs/outputs for LSTM_Apple_context_3, try to reduce number of inputs or outputs
+Number of DDRs: 0
+Number of inputs: 17
+Number of outputs: 5
+
+[2025-05-23 07:35:29.520] [default] [info] Iteration failed on: Too many inputs/outputs for LSTM_Apple_context_3, try to reduce number of inputs or outputs
+Number of DDRs: 0
+Number of inputs: 17
+Number of outputs: 4
+
+[2025-05-23 07:35:29.955] [default] [info] Iteration failed on: Too many inputs/outputs for LSTM_Apple_context_3, try to reduce number of inputs or outputs
+Number of DDRs: 0
+Number of inputs: 17
+Number of outputs: 5
+
+[2025-05-23 07:35:30.383] [default] [info] Iteration failed on: Too many inputs/outputs for LSTM_Apple_context_3, try to reduce number of inputs or outputs
+Number of DDRs: 0
+Number of inputs: 17
+Number of outputs: 4
+
+[2025-05-23 07:35:30.833] [default] [info] Iteration failed on: Too many inputs/outputs for LSTM_Apple_context_3, try to reduce number of inputs or outputs
+Number of DDRs: 0
+Number of inputs: 17
+Number of outputs: 5
+
+[2025-05-23 07:35:31.277] [default] [info] Iteration failed on: Too many inputs/outputs for LSTM_Apple_context_3, try to reduce number of inputs or outputs
+Number of DDRs: 0
+Number of inputs: 17
+Number of outputs: 6
+
+[2025-05-23 07:35:31.718] [default] [info] Iteration failed on: Too many inputs/outputs for LSTM_Apple_context_3, try to reduce number of inputs or outputs
+Number of DDRs: 0
+Number of inputs: 17
+Number of outputs: 7
+
+[2025-05-23 07:35:32.607] [default] [info] Partition iteration #135:
+Fast Unikorn FPS: 60,551
+Contexts Info:
+LSTM_Apple_context_0 info - Status: VALID, bottleneck fps: 2.5641e+06, solution depleted.
+LSTM_Apple_context_1 info - Status: FAILED, bottleneck fps: 6.34921e+06, solution depleted.
+LSTM_Apple_context_2 info - Status: NEEDS_VALIDATION, bottleneck fps: 6.34921e+06, solution depleted.
+LSTM_Apple_context_3 info - Status: NEEDS_VALIDATION, bottleneck fps: 5.12821e+06
+LSTM_Apple_context_4 info - Status: NEEDS_VALIDATION, bottleneck fps: 5.12821e+06
+Partition failed on: Splitter failed to find a possible solution
+
+[2025-05-23 07:35:32.607] [default] [info] Iteration failed on: Splitter failed to find a possible solution
+[2025-05-23 07:35:33.524] [default] [info] Partition iteration #136:
+Fast Unikorn FPS: 60,551
+Contexts Info:
+LSTM_Apple_context_0 info - Status: VALID, bottleneck fps: 2.5641e+06, solution depleted.
+LSTM_Apple_context_1 info - Status: FAILED, bottleneck fps: 6.34921e+06, solution depleted.
+LSTM_Apple_context_2 info - Status: NEEDS_VALIDATION, bottleneck fps: 6.34921e+06, solution depleted.
+LSTM_Apple_context_3 info - Status: NEEDS_VALIDATION, bottleneck fps: 5.12821e+06
+LSTM_Apple_context_4 info - Status: NEEDS_VALIDATION, bottleneck fps: 5.12821e+06
+Partition failed on: Splitter failed to find a possible solution
+
+[2025-05-23 07:35:33.524] [default] [info] Iteration failed on: Splitter failed to find a possible solution
+[2025-05-23 07:35:33.962] [default] [info] Iteration failed on: Too many inputs/outputs for LSTM_Apple_context_2, try to reduce number of inputs or outputs
+Number of DDRs: 0
+Number of inputs: 8
+Number of outputs: 18
+
+[2025-05-23 07:35:34.396] [default] [info] Iteration failed on: Too many inputs/outputs for LSTM_Apple_context_2, try to reduce number of inputs or outputs
+Number of DDRs: 0
+Number of inputs: 8
+Number of outputs: 17
+
+[2025-05-23 07:35:34.829] [default] [info] Iteration failed on: Too many inputs/outputs for LSTM_Apple_context_2, try to reduce number of inputs or outputs
+Number of DDRs: 0
+Number of inputs: 8
+Number of outputs: 18
+
+[2025-05-23 07:35:35.255] [default] [info] Iteration failed on: Too many inputs/outputs for LSTM_Apple_context_2, try to reduce number of inputs or outputs
+Number of DDRs: 0
+Number of inputs: 6
+Number of outputs: 17
+
+[2025-05-23 07:35:35.677] [default] [info] Iteration failed on: Too many inputs/outputs for LSTM_Apple_context_2, try to reduce number of inputs or outputs
+Number of DDRs: 0
+Number of inputs: 4
+Number of outputs: 16
+
+[2025-05-23 07:35:36.119] [default] [info] Iteration failed on: Too many inputs/outputs for LSTM_Apple_context_3, try to reduce number of inputs or outputs
+Number of DDRs: 0
+Number of inputs: 19
+Number of outputs: 11
+
+[2025-05-23 07:35:36.560] [default] [info] Iteration failed on: Too many inputs/outputs for LSTM_Apple_context_3, try to reduce number of inputs or outputs
+Number of DDRs: 0
+Number of inputs: 18
+Number of outputs: 10
+
+[2025-05-23 07:35:36.993] [default] [info] Iteration failed on: Too many inputs/outputs for LSTM_Apple_context_3, try to reduce number of inputs or outputs
+Number of DDRs: 0
+Number of inputs: 17
+Number of outputs: 9
+
+[2025-05-23 07:35:37.423] [default] [info] Iteration failed on: Too many inputs/outputs for LSTM_Apple_context_3, try to reduce number of inputs or outputs
+Number of DDRs: 0
+Number of inputs: 16
+Number of outputs: 8
+
+[2025-05-23 07:35:37.847] [default] [info] Iteration failed on: Too many inputs/outputs for LSTM_Apple_context_3, try to reduce number of inputs or outputs
+Number of DDRs: 0
+Number of inputs: 16
+Number of outputs: 8
+
+[2025-05-23 07:35:38.707] [default] [info] Partition iteration #147:
+Fast Unikorn FPS: 60,551
+Contexts Info:
+LSTM_Apple_context_0 info - Status: VALID, bottleneck fps: 2.5641e+06, solution depleted.
+LSTM_Apple_context_1 info - Status: FAILED, bottleneck fps: 6.34921e+06, solution depleted.
+LSTM_Apple_context_2 info - Status: NEEDS_VALIDATION, bottleneck fps: 6.34921e+06, solution depleted.
+LSTM_Apple_context_3 info - Status: NEEDS_VALIDATION, bottleneck fps: 5.12821e+06
+LSTM_Apple_context_4 info - Status: NEEDS_VALIDATION, bottleneck fps: 5.12821e+06
+Partition failed on: Splitter failed to find a possible solution
+
+[2025-05-23 07:35:38.707] [default] [info] Iteration failed on: Splitter failed to find a possible solution
+[2025-05-23 07:35:38.707] [default] [info] Slowest context (LSTM_Apple_context_1) has 1 layer (feature_splitter5)
+[2025-05-23 07:35:38.767] [default] [info] [1;41mMapping Failed (allocation time: 54s)[0m
+[2025-05-23 07:35:38.768] [default] [info] Builder fail with status 94: Compiler could not find a valid partition to contexts. Most common error is: Automri finished with too many resources on context_2 with 30/148 failures.
+[2025-05-23 07:35:38.768] [default] [info] Compiler could not find a valid partition to contexts. Most common error is: Automri finished with too many resources on context_2 with 30/148 failures.

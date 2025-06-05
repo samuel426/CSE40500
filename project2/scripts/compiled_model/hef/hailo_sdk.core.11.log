@@ -1,0 +1,635 @@
+[2025-05-23 07:50:15.283] [default] [info] Ran from command: "/local/workspace/hailo_virtualenv/bin/hailo compiler ./compiled_model/optimized/LSTM_KOSPI_optimized.har --hw-arch hailo8l --output-dir ./compiled_model/hef --model-script performance_param(compiler_optimization_level=0)"
+[2025-05-23 07:50:15.284] [default] [info] Loading network parameters
+[2025-05-23 07:50:15.377] [default] [info] [1;36mStarting Hailo allocation and compilation flow[0m
+[2025-05-23 07:50:15.394] [default] [info] Model name: LSTM_KOSPI
+[2025-05-23 07:50:15.415] [default] [info] Building optimization options for network layers...
+[2025-05-23 07:50:16.400] [default] [info] Successfully built optimization options - 0s 985ms
+[2025-05-23 07:50:16.401] [default] [info] Trying to compile the network in a single context
+[2025-05-23 07:50:16.401] [default] [info] Trying to solve in single context
+[2025-05-23 07:50:16.412] [default] [info] Single context flow failed: Recoverable single context error
+[2025-05-23 07:50:16.421] [default] [info] Building optimization options for network layers...
+[2025-05-23 07:50:17.515] [default] [info] Successfully built optimization options - 1s 94ms
+[2025-05-23 07:50:17.515] [default] [info] Using Multi-context flow
+[2025-05-23 07:50:17.515] [default] [info] Resources optimization params: max_control_utilization=60%, max_compute_utilization=60%, max_compute_16bit_utilization=60%, max_memory_utilization (weights)=60%, max_input_aligner_utilization=60%, max_apu_utilization=60%
+[2025-05-23 07:50:17.515] [default] [info] [1;36mFinding the best partition to contexts...[0m
+[2025-05-23 07:50:17.871] [default] [info] Iteration failed on: Automri finished with too many resources on context_1
+[2025-05-23 07:50:17.992] [default] [info] Iteration failed on: Automri finished with too many resources on context_1
+[2025-05-23 07:50:19.113] [default] [info] Partition iteration #2:
+Fast Unikorn FPS: 62,952.5
+Contexts Info:
+LSTM_KOSPI_context_0 info - Status: VALID, bottleneck fps: 2.5641e+06, solution depleted.
+LSTM_KOSPI_context_1 info - Status: FAILED, bottleneck fps: 5.12821e+06
+LSTM_KOSPI_context_2 info - Status: NEEDS_VALIDATION, bottleneck fps: 5.12821e+06
+Partition failed on: Splitter failed to find a possible solution
+
+[2025-05-23 07:50:19.113] [default] [info] Iteration failed on: Splitter failed to find a possible solution
+[2025-05-23 07:50:19.883] [default] [info] Partition iteration #3:
+Fast Unikorn FPS: 62,952.5
+Contexts Info:
+LSTM_KOSPI_context_0 info - Status: VALID, bottleneck fps: 2.5641e+06, solution depleted.
+LSTM_KOSPI_context_1 info - Status: FAILED, bottleneck fps: 5.12821e+06
+LSTM_KOSPI_context_2 info - Status: NEEDS_VALIDATION, bottleneck fps: 5.12821e+06
+Partition failed on: Splitter failed to find a possible solution
+
+[2025-05-23 07:50:19.883] [default] [info] Iteration failed on: Splitter failed to find a possible solution
+[2025-05-23 07:50:20.627] [default] [info] Partition iteration #4:
+Fast Unikorn FPS: 62,952.5
+Contexts Info:
+LSTM_KOSPI_context_0 info - Status: VALID, bottleneck fps: 2.5641e+06, solution depleted.
+LSTM_KOSPI_context_1 info - Status: FAILED, bottleneck fps: 5.12821e+06
+LSTM_KOSPI_context_2 info - Status: NEEDS_VALIDATION, bottleneck fps: 5.12821e+06
+Partition failed on: Splitter failed to find a possible solution
+
+[2025-05-23 07:50:20.627] [default] [info] Iteration failed on: Splitter failed to find a possible solution
+[2025-05-23 07:50:21.382] [default] [info] Partition iteration #5:
+Fast Unikorn FPS: 62,952.5
+Contexts Info:
+LSTM_KOSPI_context_0 info - Status: VALID, bottleneck fps: 2.5641e+06, solution depleted.
+LSTM_KOSPI_context_1 info - Status: FAILED, bottleneck fps: 5.12821e+06
+LSTM_KOSPI_context_2 info - Status: NEEDS_VALIDATION, bottleneck fps: 5.12821e+06
+Partition failed on: Splitter failed to find a possible solution
+
+[2025-05-23 07:50:21.382] [default] [info] Iteration failed on: Splitter failed to find a possible solution
+[2025-05-23 07:50:22.285] [default] [info] Partition iteration #6:
+Fast Unikorn FPS: 61,900.3
+Contexts Info:
+LSTM_KOSPI_context_0 info - Status: VALID, bottleneck fps: 2.5641e+06, solution depleted.
+LSTM_KOSPI_context_1 info - Status: FAILED, bottleneck fps: 5.12821e+06
+LSTM_KOSPI_context_2 info - Status: NEEDS_VALIDATION, bottleneck fps: 5.12821e+06
+Partition failed on: Splitter failed to find a possible solution
+
+[2025-05-23 07:50:22.285] [default] [info] Iteration failed on: Splitter failed to find a possible solution
+[2025-05-23 07:50:23.078] [default] [info] Partition iteration #7:
+Fast Unikorn FPS: 62,952.5
+Contexts Info:
+LSTM_KOSPI_context_0 info - Status: VALID, bottleneck fps: 2.5641e+06, solution depleted.
+LSTM_KOSPI_context_1 info - Status: FAILED, bottleneck fps: 5.12821e+06
+LSTM_KOSPI_context_2 info - Status: NEEDS_VALIDATION, bottleneck fps: 5.12821e+06
+Partition failed on: Splitter failed to find a possible solution
+
+[2025-05-23 07:50:23.078] [default] [info] Iteration failed on: Splitter failed to find a possible solution
+[2025-05-23 07:50:24.003] [default] [info] Partition iteration #8:
+Fast Unikorn FPS: 62,952.5
+Contexts Info:
+LSTM_KOSPI_context_0 info - Status: VALID, bottleneck fps: 2.5641e+06, solution depleted.
+LSTM_KOSPI_context_1 info - Status: FAILED, bottleneck fps: 5.12821e+06
+LSTM_KOSPI_context_2 info - Status: NEEDS_VALIDATION, bottleneck fps: 5.12821e+06
+Partition failed on: Splitter failed to find a possible solution
+
+[2025-05-23 07:50:24.003] [default] [info] Iteration failed on: Splitter failed to find a possible solution
+[2025-05-23 07:50:24.129] [default] [info] Iteration failed on: Automri finished with too many resources on context_2
+[2025-05-23 07:50:25.063] [default] [info] Partition iteration #10:
+Fast Unikorn FPS: 62,344.1
+Contexts Info:
+LSTM_KOSPI_context_0 info - Status: VALID, bottleneck fps: 2.5641e+06, solution depleted.
+LSTM_KOSPI_context_1 info - Status: FAILED, bottleneck fps: 5.12821e+06
+LSTM_KOSPI_context_2 info - Status: NEEDS_VALIDATION, bottleneck fps: 5.12821e+06
+LSTM_KOSPI_context_3 info - Status: NEEDS_VALIDATION, bottleneck fps: 6.89655e+06, solution depleted.
+Partition failed on: Splitter failed to find a possible solution
+
+[2025-05-23 07:50:25.063] [default] [info] Iteration failed on: Splitter failed to find a possible solution
+[2025-05-23 07:50:25.076] [default] [info] Iteration failed on: Automri finished with too many resources on context_2
+[2025-05-23 07:50:26.027] [default] [info] Partition iteration #12:
+Fast Unikorn FPS: 60,901.3
+Contexts Info:
+LSTM_KOSPI_context_0 info - Status: VALID, bottleneck fps: 2.5641e+06, solution depleted.
+LSTM_KOSPI_context_1 info - Status: FAILED, bottleneck fps: 5.12821e+06
+LSTM_KOSPI_context_2 info - Status: NEEDS_VALIDATION, bottleneck fps: 5.12821e+06
+LSTM_KOSPI_context_3 info - Status: NEEDS_VALIDATION, bottleneck fps: 6.89655e+06, solution depleted.
+Partition failed on: Splitter failed to find a possible solution
+
+[2025-05-23 07:50:26.027] [default] [info] Iteration failed on: Splitter failed to find a possible solution
+[2025-05-23 07:50:26.042] [default] [info] Iteration failed on: Automri finished with too many resources on context_2
+[2025-05-23 07:50:26.969] [default] [info] Partition iteration #14:
+Fast Unikorn FPS: 63,562.7
+Contexts Info:
+LSTM_KOSPI_context_0 info - Status: VALID, bottleneck fps: 2.5641e+06, solution depleted.
+LSTM_KOSPI_context_1 info - Status: FAILED, bottleneck fps: 5.12821e+06
+LSTM_KOSPI_context_2 info - Status: NEEDS_VALIDATION, bottleneck fps: 5.12821e+06
+LSTM_KOSPI_context_3 info - Status: NEEDS_VALIDATION, bottleneck fps: 6.55738e+06, solution depleted.
+Partition failed on: Splitter failed to find a possible solution
+
+[2025-05-23 07:50:26.969] [default] [info] Iteration failed on: Splitter failed to find a possible solution
+[2025-05-23 07:50:27.104] [default] [info] Iteration failed on: Automri finished with too many resources on context_2
+[2025-05-23 07:50:27.910] [default] [info] Partition iteration #16:
+Fast Unikorn FPS: 63,562.7
+Contexts Info:
+LSTM_KOSPI_context_0 info - Status: VALID, bottleneck fps: 2.5641e+06, solution depleted.
+LSTM_KOSPI_context_1 info - Status: FAILED, bottleneck fps: 5.12821e+06
+LSTM_KOSPI_context_2 info - Status: NEEDS_VALIDATION, bottleneck fps: 5.12821e+06
+LSTM_KOSPI_context_3 info - Status: NEEDS_VALIDATION, bottleneck fps: 6.55738e+06, solution depleted.
+Partition failed on: Splitter failed to find a possible solution
+
+[2025-05-23 07:50:27.910] [default] [info] Iteration failed on: Splitter failed to find a possible solution
+[2025-05-23 07:50:27.925] [default] [info] Iteration failed on: Automri finished with too many resources on context_2
+[2025-05-23 07:50:28.748] [default] [info] Partition iteration #18:
+Fast Unikorn FPS: 63,562.7
+Contexts Info:
+LSTM_KOSPI_context_0 info - Status: VALID, bottleneck fps: 2.5641e+06, solution depleted.
+LSTM_KOSPI_context_1 info - Status: FAILED, bottleneck fps: 5.12821e+06
+LSTM_KOSPI_context_2 info - Status: NEEDS_VALIDATION, bottleneck fps: 5.12821e+06
+LSTM_KOSPI_context_3 info - Status: NEEDS_VALIDATION, bottleneck fps: 6.55738e+06, solution depleted.
+Partition failed on: Splitter failed to find a possible solution
+
+[2025-05-23 07:50:28.748] [default] [info] Iteration failed on: Splitter failed to find a possible solution
+[2025-05-23 07:50:28.764] [default] [info] Iteration failed on: Automri finished with too many resources on context_2
+[2025-05-23 07:50:29.569] [default] [info] Partition iteration #20:
+Fast Unikorn FPS: 63,562.7
+Contexts Info:
+LSTM_KOSPI_context_0 info - Status: VALID, bottleneck fps: 2.5641e+06, solution depleted.
+LSTM_KOSPI_context_1 info - Status: FAILED, bottleneck fps: 5.12821e+06
+LSTM_KOSPI_context_2 info - Status: NEEDS_VALIDATION, bottleneck fps: 5.12821e+06
+LSTM_KOSPI_context_3 info - Status: NEEDS_VALIDATION, bottleneck fps: 6.55738e+06, solution depleted.
+Partition failed on: Splitter failed to find a possible solution
+
+[2025-05-23 07:50:29.569] [default] [info] Iteration failed on: Splitter failed to find a possible solution
+[2025-05-23 07:50:29.584] [default] [info] Iteration failed on: Automri finished with too many resources on context_2
+[2025-05-23 07:50:30.411] [default] [info] Partition iteration #22:
+Fast Unikorn FPS: 63,562.7
+Contexts Info:
+LSTM_KOSPI_context_0 info - Status: VALID, bottleneck fps: 2.5641e+06, solution depleted.
+LSTM_KOSPI_context_1 info - Status: FAILED, bottleneck fps: 5.12821e+06
+LSTM_KOSPI_context_2 info - Status: NEEDS_VALIDATION, bottleneck fps: 5.12821e+06
+LSTM_KOSPI_context_3 info - Status: NEEDS_VALIDATION, bottleneck fps: 6.55738e+06, solution depleted.
+Partition failed on: Splitter failed to find a possible solution
+
+[2025-05-23 07:50:30.411] [default] [info] Iteration failed on: Splitter failed to find a possible solution
+[2025-05-23 07:50:30.543] [default] [info] Iteration failed on: Automri finished with too many resources on context_2
+[2025-05-23 07:50:31.398] [default] [info] Partition iteration #24:
+Fast Unikorn FPS: 62,490.2
+Contexts Info:
+LSTM_KOSPI_context_0 info - Status: VALID, bottleneck fps: 2.5641e+06, solution depleted.
+LSTM_KOSPI_context_1 info - Status: FAILED, bottleneck fps: 5.12821e+06
+LSTM_KOSPI_context_2 info - Status: NEEDS_VALIDATION, bottleneck fps: 5.12821e+06
+LSTM_KOSPI_context_3 info - Status: NEEDS_VALIDATION, bottleneck fps: 6.55738e+06, solution depleted.
+Partition failed on: Splitter failed to find a possible solution
+
+[2025-05-23 07:50:31.398] [default] [info] Iteration failed on: Splitter failed to find a possible solution
+[2025-05-23 07:50:31.414] [default] [info] Iteration failed on: Automri finished with too many resources on context_2
+[2025-05-23 07:50:32.278] [default] [info] Partition iteration #26:
+Fast Unikorn FPS: 62,490.2
+Contexts Info:
+LSTM_KOSPI_context_0 info - Status: VALID, bottleneck fps: 2.5641e+06, solution depleted.
+LSTM_KOSPI_context_1 info - Status: FAILED, bottleneck fps: 5.12821e+06
+LSTM_KOSPI_context_2 info - Status: NEEDS_VALIDATION, bottleneck fps: 5.12821e+06
+LSTM_KOSPI_context_3 info - Status: NEEDS_VALIDATION, bottleneck fps: 6.55738e+06, solution depleted.
+Partition failed on: Splitter failed to find a possible solution
+
+[2025-05-23 07:50:32.278] [default] [info] Iteration failed on: Splitter failed to find a possible solution
+[2025-05-23 07:50:32.294] [default] [info] Iteration failed on: Automri finished with too many resources on context_2
+[2025-05-23 07:50:33.284] [default] [info] Partition iteration #28:
+Fast Unikorn FPS: 63,562.7
+Contexts Info:
+LSTM_KOSPI_context_0 info - Status: VALID, bottleneck fps: 2.5641e+06, solution depleted.
+LSTM_KOSPI_context_1 info - Status: FAILED, bottleneck fps: 5.12821e+06
+LSTM_KOSPI_context_2 info - Status: NEEDS_VALIDATION, bottleneck fps: 5.12821e+06
+LSTM_KOSPI_context_3 info - Status: NEEDS_VALIDATION, bottleneck fps: 6.55738e+06, solution depleted.
+Partition failed on: Splitter failed to find a possible solution
+
+[2025-05-23 07:50:33.284] [default] [info] Iteration failed on: Splitter failed to find a possible solution
+[2025-05-23 07:50:33.301] [default] [info] Iteration failed on: Automri finished with too many resources on context_2
+[2025-05-23 07:50:34.450] [default] [info] Partition iteration #30:
+Fast Unikorn FPS: 62,353.9
+Contexts Info:
+LSTM_KOSPI_context_0 info - Status: VALID, bottleneck fps: 2.5641e+06, solution depleted.
+LSTM_KOSPI_context_1 info - Status: FAILED, bottleneck fps: 5.12821e+06
+LSTM_KOSPI_context_2 info - Status: NEEDS_VALIDATION, bottleneck fps: 5.12821e+06
+LSTM_KOSPI_context_3 info - Status: NEEDS_VALIDATION, bottleneck fps: 6.55738e+06
+Partition failed on: Splitter failed to find a possible solution
+
+[2025-05-23 07:50:34.450] [default] [info] Iteration failed on: Splitter failed to find a possible solution
+[2025-05-23 07:50:34.469] [default] [info] Iteration failed on: Automri finished with too many resources on context_2
+[2025-05-23 07:50:35.206] [default] [info] Iteration failed on: Too many inputs/outputs for LSTM_KOSPI_context_1, try to reduce number of inputs or outputs
+Number of DDRs: 0
+Number of inputs: 9
+Number of outputs: 16
+
+[2025-05-23 07:50:35.222] [default] [info] Iteration failed on: Automri finished with too many resources on context_2
+[2025-05-23 07:50:35.857] [default] [info] Iteration failed on: Too many inputs/outputs for LSTM_KOSPI_context_1, try to reduce number of inputs or outputs
+Number of DDRs: 0
+Number of inputs: 9
+Number of outputs: 16
+
+[2025-05-23 07:50:35.874] [default] [info] Iteration failed on: Automri finished with too many resources on context_2
+[2025-05-23 07:50:36.508] [default] [info] Iteration failed on: Too many inputs/outputs for LSTM_KOSPI_context_1, try to reduce number of inputs or outputs
+Number of DDRs: 0
+Number of inputs: 9
+Number of outputs: 15
+
+[2025-05-23 07:50:36.524] [default] [info] Iteration failed on: Automri finished with too many resources on context_2
+[2025-05-23 07:50:37.032] [default] [info] Iteration failed on: Too many inputs/outputs for LSTM_KOSPI_context_1, try to reduce number of inputs or outputs
+Number of DDRs: 0
+Number of inputs: 9
+Number of outputs: 16
+
+[2025-05-23 07:50:37.048] [default] [info] Iteration failed on: Automri finished with too many resources on context_2
+[2025-05-23 07:50:37.558] [default] [info] Iteration failed on: Too many inputs/outputs for LSTM_KOSPI_context_1, try to reduce number of inputs or outputs
+Number of DDRs: 0
+Number of inputs: 9
+Number of outputs: 15
+
+[2025-05-23 07:50:37.576] [default] [info] Iteration failed on: Automri finished with too many resources on context_2
+[2025-05-23 07:50:38.083] [default] [info] Iteration failed on: Too many inputs/outputs for LSTM_KOSPI_context_1, try to reduce number of inputs or outputs
+Number of DDRs: 0
+Number of inputs: 9
+Number of outputs: 16
+
+[2025-05-23 07:50:38.099] [default] [info] Iteration failed on: Automri finished with too many resources on context_2
+[2025-05-23 07:50:38.623] [default] [info] Iteration failed on: Too many inputs/outputs for LSTM_KOSPI_context_1, try to reduce number of inputs or outputs
+Number of DDRs: 0
+Number of inputs: 9
+Number of outputs: 17
+
+[2025-05-23 07:50:38.638] [default] [info] Iteration failed on: Automri finished with too many resources on context_2
+[2025-05-23 07:50:39.155] [default] [info] Iteration failed on: Too many inputs/outputs for LSTM_KOSPI_context_1, try to reduce number of inputs or outputs
+Number of DDRs: 0
+Number of inputs: 9
+Number of outputs: 18
+
+[2025-05-23 07:50:39.171] [default] [info] Iteration failed on: Automri finished with too many resources on context_2
+[2025-05-23 07:50:39.685] [default] [info] Iteration failed on: Too many inputs/outputs for LSTM_KOSPI_context_1, try to reduce number of inputs or outputs
+Number of DDRs: 0
+Number of inputs: 9
+Number of outputs: 19
+
+[2025-05-23 07:50:39.702] [default] [info] Iteration failed on: Automri finished with too many resources on context_2
+[2025-05-23 07:50:40.189] [default] [info] Iteration failed on: Too many inputs/outputs for LSTM_KOSPI_context_1, try to reduce number of inputs or outputs
+Number of DDRs: 0
+Number of inputs: 9
+Number of outputs: 19
+
+[2025-05-23 07:50:40.205] [default] [info] Iteration failed on: Automri finished with too many resources on context_2
+[2025-05-23 07:50:40.685] [default] [info] Iteration failed on: Too many inputs/outputs for LSTM_KOSPI_context_1, try to reduce number of inputs or outputs
+Number of DDRs: 0
+Number of inputs: 9
+Number of outputs: 19
+
+[2025-05-23 07:50:40.702] [default] [info] Iteration failed on: Automri finished with too many resources on context_2
+[2025-05-23 07:50:41.168] [default] [info] Iteration failed on: Too many inputs/outputs for LSTM_KOSPI_context_1, try to reduce number of inputs or outputs
+Number of DDRs: 0
+Number of inputs: 9
+Number of outputs: 19
+
+[2025-05-23 07:50:41.184] [default] [info] Iteration failed on: Automri finished with too many resources on context_2
+[2025-05-23 07:50:41.604] [default] [info] Iteration failed on: Too many inputs/outputs for LSTM_KOSPI_context_1, try to reduce number of inputs or outputs
+Number of DDRs: 0
+Number of inputs: 9
+Number of outputs: 18
+
+[2025-05-23 07:50:41.620] [default] [info] Iteration failed on: Automri finished with too many resources on context_2
+[2025-05-23 07:50:42.025] [default] [info] Iteration failed on: Too many inputs/outputs for LSTM_KOSPI_context_1, try to reduce number of inputs or outputs
+Number of DDRs: 0
+Number of inputs: 8
+Number of outputs: 18
+
+[2025-05-23 07:50:42.040] [default] [info] Iteration failed on: Automri finished with too many resources on context_2
+[2025-05-23 07:50:42.446] [default] [info] Iteration failed on: Too many inputs/outputs for LSTM_KOSPI_context_1, try to reduce number of inputs or outputs
+Number of DDRs: 0
+Number of inputs: 8
+Number of outputs: 17
+
+[2025-05-23 07:50:42.461] [default] [info] Iteration failed on: Automri finished with too many resources on context_2
+[2025-05-23 07:50:42.862] [default] [info] Iteration failed on: Too many inputs/outputs for LSTM_KOSPI_context_1, try to reduce number of inputs or outputs
+Number of DDRs: 0
+Number of inputs: 8
+Number of outputs: 18
+
+[2025-05-23 07:50:42.877] [default] [info] Iteration failed on: Automri finished with too many resources on context_2
+[2025-05-23 07:50:43.278] [default] [info] Iteration failed on: Too many inputs/outputs for LSTM_KOSPI_context_1, try to reduce number of inputs or outputs
+Number of DDRs: 0
+Number of inputs: 6
+Number of outputs: 17
+
+[2025-05-23 07:50:43.293] [default] [info] Iteration failed on: Automri finished with too many resources on context_2
+[2025-05-23 07:50:43.685] [default] [info] Iteration failed on: Too many inputs/outputs for LSTM_KOSPI_context_1, try to reduce number of inputs or outputs
+Number of DDRs: 0
+Number of inputs: 4
+Number of outputs: 16
+
+[2025-05-23 07:50:43.700] [default] [info] Iteration failed on: Automri finished with too many resources on context_2
+[2025-05-23 07:50:44.112] [default] [info] Iteration failed on: Too many inputs/outputs for LSTM_KOSPI_context_2, try to reduce number of inputs or outputs
+Number of DDRs: 0
+Number of inputs: 21
+Number of outputs: 12
+
+[2025-05-23 07:50:44.530] [default] [info] Iteration failed on: Too many inputs/outputs for LSTM_KOSPI_context_2, try to reduce number of inputs or outputs
+Number of DDRs: 0
+Number of inputs: 21
+Number of outputs: 13
+
+[2025-05-23 07:50:44.961] [default] [info] Iteration failed on: Too many inputs/outputs for LSTM_KOSPI_context_2, try to reduce number of inputs or outputs
+Number of DDRs: 0
+Number of inputs: 21
+Number of outputs: 14
+
+[2025-05-23 07:50:45.393] [default] [info] Iteration failed on: Too many inputs/outputs for LSTM_KOSPI_context_2, try to reduce number of inputs or outputs
+Number of DDRs: 0
+Number of inputs: 21
+Number of outputs: 15
+
+[2025-05-23 07:50:45.824] [default] [info] Iteration failed on: Too many inputs/outputs for LSTM_KOSPI_context_2, try to reduce number of inputs or outputs
+Number of DDRs: 0
+Number of inputs: 20
+Number of outputs: 15
+
+[2025-05-23 07:50:46.241] [default] [info] Iteration failed on: Too many inputs/outputs for LSTM_KOSPI_context_2, try to reduce number of inputs or outputs
+Number of DDRs: 0
+Number of inputs: 19
+Number of outputs: 14
+
+[2025-05-23 07:50:46.652] [default] [info] Iteration failed on: Too many inputs/outputs for LSTM_KOSPI_context_2, try to reduce number of inputs or outputs
+Number of DDRs: 0
+Number of inputs: 18
+Number of outputs: 13
+
+[2025-05-23 07:50:47.060] [default] [info] Iteration failed on: Too many inputs/outputs for LSTM_KOSPI_context_2, try to reduce number of inputs or outputs
+Number of DDRs: 0
+Number of inputs: 17
+Number of outputs: 12
+
+[2025-05-23 07:50:47.478] [default] [info] Iteration failed on: Too many inputs/outputs for LSTM_KOSPI_context_2, try to reduce number of inputs or outputs
+Number of DDRs: 0
+Number of inputs: 17
+Number of outputs: 12
+
+[2025-05-23 07:50:47.894] [default] [info] Iteration failed on: Too many inputs/outputs for LSTM_KOSPI_context_2, try to reduce number of inputs or outputs
+Number of DDRs: 0
+Number of inputs: 17
+Number of outputs: 11
+
+[2025-05-23 07:50:47.910] [default] [info] Iteration failed on: Automri finished with too many resources on context_3
+[2025-05-23 07:50:48.326] [default] [info] Iteration failed on: Too many inputs/outputs for LSTM_KOSPI_context_2, try to reduce number of inputs or outputs
+Number of DDRs: 0
+Number of inputs: 17
+Number of outputs: 12
+
+[2025-05-23 07:50:48.341] [default] [info] Iteration failed on: Automri finished with too many resources on context_3
+[2025-05-23 07:50:48.763] [default] [info] Iteration failed on: Too many inputs/outputs for LSTM_KOSPI_context_2, try to reduce number of inputs or outputs
+Number of DDRs: 0
+Number of inputs: 17
+Number of outputs: 11
+
+[2025-05-23 07:50:48.780] [default] [info] Iteration failed on: Automri finished with too many resources on context_3
+[2025-05-23 07:50:49.204] [default] [info] Iteration failed on: Too many inputs/outputs for LSTM_KOSPI_context_2, try to reduce number of inputs or outputs
+Number of DDRs: 0
+Number of inputs: 17
+Number of outputs: 12
+
+[2025-05-23 07:50:49.220] [default] [info] Iteration failed on: Automri finished with too many resources on context_3
+[2025-05-23 07:50:49.649] [default] [info] Iteration failed on: Too many inputs/outputs for LSTM_KOSPI_context_2, try to reduce number of inputs or outputs
+Number of DDRs: 0
+Number of inputs: 17
+Number of outputs: 13
+
+[2025-05-23 07:50:49.665] [default] [info] Iteration failed on: Automri finished with too many resources on context_3
+[2025-05-23 07:50:50.094] [default] [info] Iteration failed on: Too many inputs/outputs for LSTM_KOSPI_context_2, try to reduce number of inputs or outputs
+Number of DDRs: 0
+Number of inputs: 17
+Number of outputs: 14
+
+[2025-05-23 07:50:50.110] [default] [info] Iteration failed on: Automri finished with too many resources on context_3
+[2025-05-23 07:50:50.541] [default] [info] Iteration failed on: Too many inputs/outputs for LSTM_KOSPI_context_2, try to reduce number of inputs or outputs
+Number of DDRs: 0
+Number of inputs: 16
+Number of outputs: 14
+
+[2025-05-23 07:50:50.558] [default] [info] Iteration failed on: Automri finished with too many resources on context_3
+[2025-05-23 07:50:50.985] [default] [info] Iteration failed on: Too many inputs/outputs for LSTM_KOSPI_context_2, try to reduce number of inputs or outputs
+Number of DDRs: 0
+Number of inputs: 15
+Number of outputs: 13
+
+[2025-05-23 07:50:51.002] [default] [info] Iteration failed on: Automri finished with too many resources on context_3
+[2025-05-23 07:50:51.480] [default] [info] Iteration failed on: Too many inputs/outputs for LSTM_KOSPI_context_2, try to reduce number of inputs or outputs
+Number of DDRs: 0
+Number of inputs: 14
+Number of outputs: 12
+
+[2025-05-23 07:50:51.506] [default] [info] Iteration failed on: Automri finished with too many resources on context_3
+[2025-05-23 07:50:51.972] [default] [info] Iteration failed on: Too many inputs/outputs for LSTM_KOSPI_context_2, try to reduce number of inputs or outputs
+Number of DDRs: 0
+Number of inputs: 13
+Number of outputs: 11
+
+[2025-05-23 07:50:51.990] [default] [info] Iteration failed on: Automri finished with too many resources on context_3
+[2025-05-23 07:50:52.488] [default] [info] Iteration failed on: Too many inputs/outputs for LSTM_KOSPI_context_2, try to reduce number of inputs or outputs
+Number of DDRs: 0
+Number of inputs: 11
+Number of outputs: 12
+
+[2025-05-23 07:50:52.507] [default] [info] Iteration failed on: Automri finished with too many resources on context_3
+[2025-05-23 07:50:53.026] [default] [info] Iteration failed on: Too many inputs/outputs for LSTM_KOSPI_context_2, try to reduce number of inputs or outputs
+Number of DDRs: 0
+Number of inputs: 11
+Number of outputs: 12
+
+[2025-05-23 07:50:53.046] [default] [info] Iteration failed on: Automri finished with too many resources on context_3
+[2025-05-23 07:50:53.569] [default] [info] Iteration failed on: Too many inputs/outputs for LSTM_KOSPI_context_2, try to reduce number of inputs or outputs
+Number of DDRs: 0
+Number of inputs: 11
+Number of outputs: 11
+
+[2025-05-23 07:50:53.588] [default] [info] Iteration failed on: Automri finished with too many resources on context_3
+[2025-05-23 07:50:54.127] [default] [info] Iteration failed on: Too many inputs/outputs for LSTM_KOSPI_context_2, try to reduce number of inputs or outputs
+Number of DDRs: 0
+Number of inputs: 11
+Number of outputs: 12
+
+[2025-05-23 07:50:54.145] [default] [info] Iteration failed on: Automri finished with too many resources on context_3
+[2025-05-23 07:50:54.702] [default] [info] Iteration failed on: Too many inputs/outputs for LSTM_KOSPI_context_2, try to reduce number of inputs or outputs
+Number of DDRs: 0
+Number of inputs: 11
+Number of outputs: 11
+
+[2025-05-23 07:50:54.721] [default] [info] Iteration failed on: Automri finished with too many resources on context_3
+[2025-05-23 07:50:55.268] [default] [info] Iteration failed on: Too many inputs/outputs for LSTM_KOSPI_context_2, try to reduce number of inputs or outputs
+Number of DDRs: 0
+Number of inputs: 11
+Number of outputs: 12
+
+[2025-05-23 07:50:55.286] [default] [info] Iteration failed on: Automri finished with too many resources on context_3
+[2025-05-23 07:50:55.825] [default] [info] Iteration failed on: Too many inputs/outputs for LSTM_KOSPI_context_2, try to reduce number of inputs or outputs
+Number of DDRs: 0
+Number of inputs: 11
+Number of outputs: 13
+
+[2025-05-23 07:50:55.842] [default] [info] Iteration failed on: Automri finished with too many resources on context_3
+[2025-05-23 07:50:56.381] [default] [info] Iteration failed on: Too many inputs/outputs for LSTM_KOSPI_context_2, try to reduce number of inputs or outputs
+Number of DDRs: 0
+Number of inputs: 11
+Number of outputs: 14
+
+[2025-05-23 07:50:56.400] [default] [info] Iteration failed on: Automri finished with too many resources on context_3
+[2025-05-23 07:50:56.942] [default] [info] Iteration failed on: Too many inputs/outputs for LSTM_KOSPI_context_2, try to reduce number of inputs or outputs
+Number of DDRs: 0
+Number of inputs: 10
+Number of outputs: 14
+
+[2025-05-23 07:50:56.959] [default] [info] Iteration failed on: Automri finished with too many resources on context_3
+[2025-05-23 07:50:57.483] [default] [info] Iteration failed on: Too many inputs/outputs for LSTM_KOSPI_context_2, try to reduce number of inputs or outputs
+Number of DDRs: 0
+Number of inputs: 9
+Number of outputs: 13
+
+[2025-05-23 07:50:57.502] [default] [info] Iteration failed on: Automri finished with too many resources on context_3
+[2025-05-23 07:50:58.003] [default] [info] Iteration failed on: Too many inputs/outputs for LSTM_KOSPI_context_2, try to reduce number of inputs or outputs
+Number of DDRs: 0
+Number of inputs: 8
+Number of outputs: 12
+
+[2025-05-23 07:50:58.021] [default] [info] Iteration failed on: Automri finished with too many resources on context_3
+[2025-05-23 07:50:58.500] [default] [info] Iteration failed on: Too many inputs/outputs for LSTM_KOSPI_context_2, try to reduce number of inputs or outputs
+Number of DDRs: 0
+Number of inputs: 7
+Number of outputs: 11
+
+[2025-05-23 07:50:58.517] [default] [info] Iteration failed on: Automri finished with too many resources on context_3
+[2025-05-23 07:50:59.001] [default] [info] Iteration failed on: Too many inputs/outputs for LSTM_KOSPI_context_2, try to reduce number of inputs or outputs
+Number of DDRs: 0
+Number of inputs: 7
+Number of outputs: 11
+
+[2025-05-23 07:50:59.019] [default] [info] Iteration failed on: Automri finished with too many resources on context_3
+[2025-05-23 07:50:59.497] [default] [info] Iteration failed on: Too many inputs/outputs for LSTM_KOSPI_context_2, try to reduce number of inputs or outputs
+Number of DDRs: 0
+Number of inputs: 7
+Number of outputs: 10
+
+[2025-05-23 07:50:59.517] [default] [info] Iteration failed on: Automri finished with too many resources on context_3
+[2025-05-23 07:50:59.957] [default] [info] Iteration failed on: Too many inputs/outputs for LSTM_KOSPI_context_3, try to reduce number of inputs or outputs
+Number of DDRs: 0
+Number of inputs: 19
+Number of outputs: 7
+
+[2025-05-23 07:51:00.399] [default] [info] Iteration failed on: Too many inputs/outputs for LSTM_KOSPI_context_3, try to reduce number of inputs or outputs
+Number of DDRs: 0
+Number of inputs: 18
+Number of outputs: 6
+
+[2025-05-23 07:51:00.836] [default] [info] Iteration failed on: Too many inputs/outputs for LSTM_KOSPI_context_3, try to reduce number of inputs or outputs
+Number of DDRs: 0
+Number of inputs: 17
+Number of outputs: 5
+
+[2025-05-23 07:51:01.276] [default] [info] Iteration failed on: Too many inputs/outputs for LSTM_KOSPI_context_3, try to reduce number of inputs or outputs
+Number of DDRs: 0
+Number of inputs: 17
+Number of outputs: 5
+
+[2025-05-23 07:51:01.716] [default] [info] Iteration failed on: Too many inputs/outputs for LSTM_KOSPI_context_3, try to reduce number of inputs or outputs
+Number of DDRs: 0
+Number of inputs: 17
+Number of outputs: 4
+
+[2025-05-23 07:51:02.154] [default] [info] Iteration failed on: Too many inputs/outputs for LSTM_KOSPI_context_3, try to reduce number of inputs or outputs
+Number of DDRs: 0
+Number of inputs: 17
+Number of outputs: 5
+
+[2025-05-23 07:51:02.589] [default] [info] Iteration failed on: Too many inputs/outputs for LSTM_KOSPI_context_3, try to reduce number of inputs or outputs
+Number of DDRs: 0
+Number of inputs: 17
+Number of outputs: 4
+
+[2025-05-23 07:51:03.021] [default] [info] Iteration failed on: Too many inputs/outputs for LSTM_KOSPI_context_3, try to reduce number of inputs or outputs
+Number of DDRs: 0
+Number of inputs: 17
+Number of outputs: 5
+
+[2025-05-23 07:51:03.466] [default] [info] Iteration failed on: Too many inputs/outputs for LSTM_KOSPI_context_3, try to reduce number of inputs or outputs
+Number of DDRs: 0
+Number of inputs: 17
+Number of outputs: 6
+
+[2025-05-23 07:51:03.911] [default] [info] Iteration failed on: Too many inputs/outputs for LSTM_KOSPI_context_3, try to reduce number of inputs or outputs
+Number of DDRs: 0
+Number of inputs: 17
+Number of outputs: 7
+
+[2025-05-23 07:51:04.795] [default] [info] Partition iteration #135:
+Fast Unikorn FPS: 60,551
+Contexts Info:
+LSTM_KOSPI_context_0 info - Status: VALID, bottleneck fps: 2.5641e+06, solution depleted.
+LSTM_KOSPI_context_1 info - Status: FAILED, bottleneck fps: 6.34921e+06, solution depleted.
+LSTM_KOSPI_context_2 info - Status: NEEDS_VALIDATION, bottleneck fps: 6.34921e+06, solution depleted.
+LSTM_KOSPI_context_3 info - Status: NEEDS_VALIDATION, bottleneck fps: 5.12821e+06
+LSTM_KOSPI_context_4 info - Status: NEEDS_VALIDATION, bottleneck fps: 5.12821e+06
+Partition failed on: Splitter failed to find a possible solution
+
+[2025-05-23 07:51:04.795] [default] [info] Iteration failed on: Splitter failed to find a possible solution
+[2025-05-23 07:51:05.713] [default] [info] Partition iteration #136:
+Fast Unikorn FPS: 60,551
+Contexts Info:
+LSTM_KOSPI_context_0 info - Status: VALID, bottleneck fps: 2.5641e+06, solution depleted.
+LSTM_KOSPI_context_1 info - Status: FAILED, bottleneck fps: 6.34921e+06, solution depleted.
+LSTM_KOSPI_context_2 info - Status: NEEDS_VALIDATION, bottleneck fps: 6.34921e+06, solution depleted.
+LSTM_KOSPI_context_3 info - Status: NEEDS_VALIDATION, bottleneck fps: 5.12821e+06
+LSTM_KOSPI_context_4 info - Status: NEEDS_VALIDATION, bottleneck fps: 5.12821e+06
+Partition failed on: Splitter failed to find a possible solution
+
+[2025-05-23 07:51:05.713] [default] [info] Iteration failed on: Splitter failed to find a possible solution
+[2025-05-23 07:51:06.150] [default] [info] Iteration failed on: Too many inputs/outputs for LSTM_KOSPI_context_2, try to reduce number of inputs or outputs
+Number of DDRs: 0
+Number of inputs: 8
+Number of outputs: 18
+
+[2025-05-23 07:51:06.572] [default] [info] Iteration failed on: Too many inputs/outputs for LSTM_KOSPI_context_2, try to reduce number of inputs or outputs
+Number of DDRs: 0
+Number of inputs: 8
+Number of outputs: 17
+
+[2025-05-23 07:51:07.004] [default] [info] Iteration failed on: Too many inputs/outputs for LSTM_KOSPI_context_2, try to reduce number of inputs or outputs
+Number of DDRs: 0
+Number of inputs: 8
+Number of outputs: 18
+
+[2025-05-23 07:51:07.443] [default] [info] Iteration failed on: Too many inputs/outputs for LSTM_KOSPI_context_2, try to reduce number of inputs or outputs
+Number of DDRs: 0
+Number of inputs: 6
+Number of outputs: 17
+
+[2025-05-23 07:51:07.866] [default] [info] Iteration failed on: Too many inputs/outputs for LSTM_KOSPI_context_2, try to reduce number of inputs or outputs
+Number of DDRs: 0
+Number of inputs: 4
+Number of outputs: 16
+
+[2025-05-23 07:51:08.301] [default] [info] Iteration failed on: Too many inputs/outputs for LSTM_KOSPI_context_3, try to reduce number of inputs or outputs
+Number of DDRs: 0
+Number of inputs: 19
+Number of outputs: 11
+
+[2025-05-23 07:51:08.739] [default] [info] Iteration failed on: Too many inputs/outputs for LSTM_KOSPI_context_3, try to reduce number of inputs or outputs
+Number of DDRs: 0
+Number of inputs: 18
+Number of outputs: 10
+
+[2025-05-23 07:51:09.182] [default] [info] Iteration failed on: Too many inputs/outputs for LSTM_KOSPI_context_3, try to reduce number of inputs or outputs
+Number of DDRs: 0
+Number of inputs: 17
+Number of outputs: 9
+
+[2025-05-23 07:51:09.607] [default] [info] Iteration failed on: Too many inputs/outputs for LSTM_KOSPI_context_3, try to reduce number of inputs or outputs
+Number of DDRs: 0
+Number of inputs: 16
+Number of outputs: 8
+
+[2025-05-23 07:51:10.031] [default] [info] Iteration failed on: Too many inputs/outputs for LSTM_KOSPI_context_3, try to reduce number of inputs or outputs
+Number of DDRs: 0
+Number of inputs: 16
+Number of outputs: 8
+
+[2025-05-23 07:51:10.900] [default] [info] Partition iteration #147:
+Fast Unikorn FPS: 60,551
+Contexts Info:
+LSTM_KOSPI_context_0 info - Status: VALID, bottleneck fps: 2.5641e+06, solution depleted.
+LSTM_KOSPI_context_1 info - Status: FAILED, bottleneck fps: 6.34921e+06, solution depleted.
+LSTM_KOSPI_context_2 info - Status: NEEDS_VALIDATION, bottleneck fps: 6.34921e+06, solution depleted.
+LSTM_KOSPI_context_3 info - Status: NEEDS_VALIDATION, bottleneck fps: 5.12821e+06
+LSTM_KOSPI_context_4 info - Status: NEEDS_VALIDATION, bottleneck fps: 5.12821e+06
+Partition failed on: Splitter failed to find a possible solution
+
+[2025-05-23 07:51:10.900] [default] [info] Iteration failed on: Splitter failed to find a possible solution
+[2025-05-23 07:51:10.900] [default] [info] Slowest context (LSTM_KOSPI_context_1) has 1 layer (feature_splitter5)
+[2025-05-23 07:51:11.010] [default] [info] [1;41mMapping Failed (allocation time: 54s)[0m
+[2025-05-23 07:51:11.011] [default] [info] Builder fail with status 94: Compiler could not find a valid partition to contexts. Most common error is: Automri finished with too many resources on context_2 with 30/148 failures.
+[2025-05-23 07:51:11.011] [default] [info] Compiler could not find a valid partition to contexts. Most common error is: Automri finished with too many resources on context_2 with 30/148 failures.

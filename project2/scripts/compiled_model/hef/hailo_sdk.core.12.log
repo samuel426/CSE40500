@@ -1,0 +1,104 @@
+[2025-05-23 07:43:31.404] [default] [info] Ran from command: "/local/workspace/hailo_virtualenv/bin/hailo compiler ./compiled_model/optimized/LSTM_Apple_optimized.har --hw-arch hailo8l --output-dir ./compiled_model/hef --model-script performance_param(compiler_optimization_level=max)"
+[2025-05-23 07:43:31.405] [default] [info] Loading network parameters
+[2025-05-23 07:43:31.496] [default] [info] [1;36mStarting Hailo allocation and compilation flow[0m
+[2025-05-23 07:43:31.512] [default] [info] Model name: LSTM_Apple
+[2025-05-23 07:43:31.533] [default] [info] Building optimization options for network layers...
+[2025-05-23 07:43:32.528] [default] [info] Successfully built optimization options - 0s 995ms
+[2025-05-23 07:43:32.529] [default] [info] Trying to compile the network in a single context
+[2025-05-23 07:43:32.529] [default] [info] Trying to solve in single context
+[2025-05-23 07:43:32.541] [default] [info] Single context flow failed: Recoverable single context error
+[2025-05-23 07:43:32.549] [default] [info] Building optimization options for network layers...
+[2025-05-23 07:43:33.656] [default] [info] Successfully built optimization options - 1s 106ms
+[2025-05-23 07:43:33.656] [default] [info] Using Multi-context flow
+[2025-05-23 07:43:33.656] [default] [info] Resources optimization params: max_control_utilization=100%, max_compute_utilization=100%, max_compute_16bit_utilization=100%, max_memory_utilization (weights)=85%, max_input_aligner_utilization=100%, max_apu_utilization=100%
+[2025-05-23 07:43:33.657] [default] [info] [1;36mFinding the best partition to contexts...[0m
+[2025-05-23 07:43:33.677] [default] [info] Iteration failed on: Automri finished with too many resources on context_0
+[2025-05-23 07:43:34.102] [default] [info] Partition iteration #1:
+Fast Unikorn FPS: 63,151.2
+Contexts Info:
+LSTM_Apple_context_0 info - Status: FAILED, bottleneck fps: 2.5641e+06, solution depleted.
+LSTM_Apple_context_1 info - Status: NEEDS_VALIDATION, bottleneck fps: 2.94118e+06, solution depleted.
+Partition failed on: Splitter failed to find a possible solution
+
+[2025-05-23 07:43:34.102] [default] [info] Iteration failed on: Splitter failed to find a possible solution
+[2025-05-23 07:43:34.512] [default] [info] Partition iteration #2:
+Fast Unikorn FPS: 63,151.2
+Contexts Info:
+LSTM_Apple_context_0 info - Status: FAILED, bottleneck fps: 2.5641e+06, solution depleted.
+LSTM_Apple_context_1 info - Status: NEEDS_VALIDATION, bottleneck fps: 2.94118e+06, solution depleted.
+Partition failed on: Splitter failed to find a possible solution
+
+[2025-05-23 07:43:34.512] [default] [info] Iteration failed on: Splitter failed to find a possible solution
+[2025-05-23 07:43:34.898] [default] [info] Partition iteration #3:
+Fast Unikorn FPS: 63,151.2
+Contexts Info:
+LSTM_Apple_context_0 info - Status: FAILED, bottleneck fps: 2.5641e+06, solution depleted.
+LSTM_Apple_context_1 info - Status: NEEDS_VALIDATION, bottleneck fps: 2.94118e+06, solution depleted.
+Partition failed on: Splitter failed to find a possible solution
+
+[2025-05-23 07:43:34.898] [default] [info] Iteration failed on: Splitter failed to find a possible solution
+[2025-05-23 07:43:35.282] [default] [info] Partition iteration #4:
+Fast Unikorn FPS: 63,151.2
+Contexts Info:
+LSTM_Apple_context_0 info - Status: FAILED, bottleneck fps: 2.5641e+06, solution depleted.
+LSTM_Apple_context_1 info - Status: NEEDS_VALIDATION, bottleneck fps: 2.94118e+06, solution depleted.
+Partition failed on: Splitter failed to find a possible solution
+
+[2025-05-23 07:43:35.282] [default] [info] Iteration failed on: Splitter failed to find a possible solution
+[2025-05-23 07:43:35.680] [default] [info] Partition iteration #5:
+Fast Unikorn FPS: 63,151.2
+Contexts Info:
+LSTM_Apple_context_0 info - Status: FAILED, bottleneck fps: 2.5641e+06, solution depleted.
+LSTM_Apple_context_1 info - Status: NEEDS_VALIDATION, bottleneck fps: 2.94118e+06, solution depleted.
+Partition failed on: Splitter failed to find a possible solution
+
+[2025-05-23 07:43:35.680] [default] [info] Iteration failed on: Splitter failed to find a possible solution
+[2025-05-23 07:43:36.073] [default] [info] Partition iteration #6:
+Fast Unikorn FPS: 62,092.5
+Contexts Info:
+LSTM_Apple_context_0 info - Status: FAILED, bottleneck fps: 2.5641e+06, solution depleted.
+LSTM_Apple_context_1 info - Status: NEEDS_VALIDATION, bottleneck fps: 2.94118e+06, solution depleted.
+Partition failed on: Splitter failed to find a possible solution
+
+[2025-05-23 07:43:36.073] [default] [info] Iteration failed on: Splitter failed to find a possible solution
+[2025-05-23 07:43:36.702] [default] [info] Partition iteration #7:
+Fast Unikorn FPS: 63,151.2
+Contexts Info:
+LSTM_Apple_context_0 info - Status: FAILED, bottleneck fps: 2.5641e+06, solution depleted.
+LSTM_Apple_context_1 info - Status: NEEDS_VALIDATION, bottleneck fps: 2.94118e+06, solution depleted.
+Partition failed on: Splitter failed to find a possible solution
+
+[2025-05-23 07:43:36.702] [default] [info] Iteration failed on: Splitter failed to find a possible solution
+[2025-05-23 07:43:37.348] [default] [info] Partition iteration #8:
+Fast Unikorn FPS: 63,151.2
+Contexts Info:
+LSTM_Apple_context_0 info - Status: FAILED, bottleneck fps: 2.5641e+06, solution depleted.
+LSTM_Apple_context_1 info - Status: NEEDS_VALIDATION, bottleneck fps: 2.94118e+06, solution depleted.
+Partition failed on: Splitter failed to find a possible solution
+
+[2025-05-23 07:43:37.348] [default] [info] Iteration failed on: Splitter failed to find a possible solution
+[2025-05-23 07:43:37.989] [default] [info] Partition iteration #9:
+Fast Unikorn FPS: 61,633.3
+Contexts Info:
+LSTM_Apple_context_0 info - Status: FAILED, bottleneck fps: 2.5641e+06, solution depleted.
+LSTM_Apple_context_1 info - Status: NEEDS_VALIDATION, bottleneck fps: 2.94118e+06, solution depleted.
+Partition failed on: Splitter failed to find a possible solution
+
+[2025-05-23 07:43:37.989] [default] [info] Iteration failed on: Splitter failed to find a possible solution
+[2025-05-23 07:43:38.686] [default] [info] Partition iteration #10:
+Fast Unikorn FPS: 61,633.3
+Contexts Info:
+LSTM_Apple_context_0 info - Status: FAILED, bottleneck fps: 2.5641e+06, solution depleted.
+LSTM_Apple_context_1 info - Status: NEEDS_VALIDATION, bottleneck fps: 2.94118e+06, solution depleted.
+Partition failed on: Splitter failed to find a possible solution
+
+[2025-05-23 07:43:38.686] [default] [info] Iteration failed on: Splitter failed to find a possible solution
+[2025-05-23 07:43:39.389] [default] [info] Partition iteration #11:
+Fast Unikorn FPS: 63,151.2
+Contexts Info:
+LSTM_Apple_context_0 info - Status: FAILED, bottleneck fps: 2.5641e+06, solution depleted.
+LSTM_Apple_context_1 info - Status: NEEDS_VALIDATION, bottleneck fps: 2.94118e+06, solution depleted.
+Partition failed on: Splitter failed to find a possible solution
+
+[2025-05-23 07:43:39.389] [default] [info] Iteration failed on: Splitter failed to find a possible solution
+[2025-05-23 07:43:39.454] [default] [info] Interrupted by user, aborting...
