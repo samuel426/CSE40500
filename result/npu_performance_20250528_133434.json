@@ -1,0 +1,728 @@
+{
+  "GRU_Apple": {
+    "model": "GRU_Apple",
+    "timestamp": "2025-05-28T13:29:18.793224",
+    "latency": {
+      "mean": 1.3140955427661538,
+      "median": 1.3086950057186186,
+      "min": 1.2774820206686854,
+      "max": 1.3898160541430116,
+      "std": 0.02509276490488483,
+      "p95": 1.365796651225537,
+      "p99": 1.388699826784432
+    },
+    "throughput_fps": 761.4493130092162,
+    "memory": {
+      "monitor_success": true,
+      "total_lines": 104,
+      "avg_device_utilization": 22.74285714285715,
+      "max_device_utilization": 74.9,
+      "min_device_utilization": 1.8,
+      "device_util_samples": 7,
+      "device_util_values": [
+        74.9,
+        74.9,
+        1.9,
+        1.9,
+        1.9,
+        1.9,
+        1.8
+      ],
+      "avg_model_fps": 46.69714285714286,
+      "max_model_fps": 762.0,
+      "min_model_fps": 0.5,
+      "fps_samples": 35,
+      "fps_values": [
+        762.0,
+        0.5,
+        0.5,
+        0.5,
+        0.5,
+        762.0,
+        0.5,
+        0.5,
+        0.5,
+        0.5
+      ],
+      "avg_model_utilization": 22.74285714285715,
+      "max_model_utilization": 74.9,
+      "min_model_utilization": 1.8,
+      "utilization_samples": 7,
+      "utilization_values": [
+        74.9,
+        74.9,
+        1.9,
+        1.9,
+        1.9,
+        1.9,
+        1.8
+      ]
+    },
+    "rmse": 54.90470034859235,
+    "data_samples": 1094
+  },
+  "LSTM_Apple": {
+    "model": "LSTM_Apple",
+    "timestamp": "2025-05-28T13:29:47.218724",
+    "latency": {
+      "mean": 0.9986452176235616,
+      "median": 1.0048890253528953,
+      "min": 0.925796921364963,
+      "max": 1.0285560274496675,
+      "std": 0.017898462902854358,
+      "p95": 1.0234302608296275,
+      "p99": 1.0268503124825656
+    },
+    "throughput_fps": 990.7445846844752,
+    "memory": {
+      "monitor_success": true,
+      "total_lines": 95,
+      "avg_device_utilization": 13.050000000000002,
+      "max_device_utilization": 72.3,
+      "min_device_utilization": 1.2,
+      "device_util_samples": 6,
+      "device_util_values": [
+        72.3,
+        1.2,
+        1.2,
+        1.2,
+        1.2,
+        1.2
+      ],
+      "avg_model_fps": 45.729166666666664,
+      "max_model_fps": 990.8,
+      "min_model_fps": 0.5,
+      "fps_samples": 24,
+      "fps_values": [
+        990.8,
+        0.5,
+        0.5,
+        0.5,
+        19.0,
+        0.5,
+        0.5,
+        0.5,
+        20.0,
+        0.5
+      ],
+      "avg_model_utilization": 13.050000000000002,
+      "max_model_utilization": 72.3,
+      "min_model_utilization": 1.2,
+      "utilization_samples": 6,
+      "utilization_values": [
+        72.3,
+        1.2,
+        1.2,
+        1.2,
+        1.2,
+        1.2
+      ]
+    },
+    "rmse": 76.579576059104,
+    "data_samples": 1094
+  },
+  "GRU_KOSPI": {
+    "model": "GRU_KOSPI",
+    "timestamp": "2025-05-28T13:30:15.729807",
+    "latency": {
+      "mean": 1.3153442298062146,
+      "median": 1.3083524536341429,
+      "min": 1.2745930580422282,
+      "max": 1.4470939058810472,
+      "std": 0.033220485125672966,
+      "p95": 1.3855079014319927,
+      "p99": 1.4215958572458476
+    },
+    "throughput_fps": 763.3288230174346,
+    "memory": {
+      "monitor_success": true,
+      "total_lines": 104,
+      "avg_device_utilization": 22.78571428571429,
+      "max_device_utilization": 75.0,
+      "min_device_utilization": 1.9,
+      "device_util_samples": 7,
+      "device_util_values": [
+        75.0,
+        75.0,
+        1.9,
+        1.9,
+        1.9,
+        1.9,
+        1.9
+      ],
+      "avg_model_fps": 46.834285714285706,
+      "max_model_fps": 764.3,
+      "min_model_fps": 0.5,
+      "fps_samples": 35,
+      "fps_values": [
+        764.3,
+        0.5,
+        0.5,
+        0.5,
+        0.5,
+        764.3,
+        0.5,
+        0.5,
+        0.5,
+        0.5
+      ],
+      "avg_model_utilization": 22.78571428571429,
+      "max_model_utilization": 75.0,
+      "min_model_utilization": 1.9,
+      "utilization_samples": 7,
+      "utilization_values": [
+        75.0,
+        75.0,
+        1.9,
+        1.9,
+        1.9,
+        1.9,
+        1.9
+      ]
+    },
+    "rmse": 241.0931088059207,
+    "data_samples": 1066
+  },
+  "LSTM_KOSPI": {
+    "model": "LSTM_KOSPI",
+    "timestamp": "2025-05-28T13:30:44.154729",
+    "latency": {
+      "mean": 0.9988226788118482,
+      "median": 1.0045095114037395,
+      "min": 0.9104820201173425,
+      "max": 1.0361300082877278,
+      "std": 0.018022749892846333,
+      "p95": 1.0154239076655358,
+      "p99": 1.0275550000369549
+    },
+    "throughput_fps": 990.7935510959757,
+    "memory": {
+      "monitor_success": true,
+      "total_lines": 92,
+      "avg_device_utilization": 1.2,
+      "max_device_utilization": 1.2,
+      "min_device_utilization": 1.2,
+      "device_util_samples": 5,
+      "device_util_values": [
+        1.2,
+        1.2,
+        1.2,
+        1.2,
+        1.2
+      ],
+      "avg_model_fps": 5.255,
+      "max_model_fps": 20.0,
+      "min_model_fps": 0.5,
+      "fps_samples": 20,
+      "fps_values": [
+        19.0,
+        0.5,
+        0.5,
+        0.5,
+        20.0,
+        0.5,
+        0.5,
+        0.5,
+        19.9,
+        0.5
+      ],
+      "avg_model_utilization": 1.2,
+      "max_model_utilization": 1.2,
+      "min_model_utilization": 1.2,
+      "utilization_samples": 5,
+      "utilization_values": [
+        1.2,
+        1.2,
+        1.2,
+        1.2,
+        1.2
+      ]
+    },
+    "rmse": 236.562286264514,
+    "data_samples": 1066
+  },
+  "GRU_NASDAQ": {
+    "model": "GRU_NASDAQ",
+    "timestamp": "2025-05-28T13:31:12.670846",
+    "latency": {
+      "mean": 1.3240788481198251,
+      "median": 1.3183709816075861,
+      "min": 1.2835750821977854,
+      "max": 1.4387040864676237,
+      "std": 0.029841937664816586,
+      "p95": 1.3858534512110054,
+      "p99": 1.419939510524273
+    },
+    "throughput_fps": 762.7312791465785,
+    "memory": {
+      "monitor_success": true,
+      "total_lines": 102,
+      "avg_device_utilization": 14.06666666666667,
+      "max_device_utilization": 74.9,
+      "min_device_utilization": 1.8,
+      "device_util_samples": 6,
+      "device_util_values": [
+        74.9,
+        1.9,
+        1.9,
+        1.8,
+        2.0,
+        1.9
+      ],
+      "avg_model_fps": 29.08,
+      "max_model_fps": 763.7,
+      "min_model_fps": 0.5,
+      "fps_samples": 30,
+      "fps_values": [
+        763.7,
+        0.5,
+        0.5,
+        0.5,
+        0.5,
+        19.0,
+        0.5,
+        0.5,
+        0.5,
+        0.5
+      ],
+      "avg_model_utilization": 14.06666666666667,
+      "max_model_utilization": 74.9,
+      "min_model_utilization": 1.8,
+      "utilization_samples": 6,
+      "utilization_values": [
+        74.9,
+        1.9,
+        1.9,
+        1.8,
+        2.0,
+        1.9
+      ]
+    },
+    "rmse": 2957.6925331234975,
+    "data_samples": 1094
+  },
+  "LSTM_NASDAQ": {
+    "model": "LSTM_NASDAQ",
+    "timestamp": "2025-05-28T13:31:41.100748",
+    "latency": {
+      "mean": 0.9981013066135347,
+      "median": 1.0034730075858533,
+      "min": 0.9035930270329118,
+      "max": 1.0253520449623466,
+      "std": 0.01833786936061258,
+      "p95": 1.0093606484588236,
+      "p99": 1.020425083115697
+    },
+    "throughput_fps": 990.6455585953578,
+    "memory": {
+      "monitor_success": true,
+      "total_lines": 95,
+      "avg_device_utilization": 13.000000000000002,
+      "max_device_utilization": 72.0,
+      "min_device_utilization": 1.2,
+      "device_util_samples": 6,
+      "device_util_values": [
+        72.0,
+        1.2,
+        1.2,
+        1.2,
+        1.2,
+        1.2
+      ],
+      "avg_model_fps": 45.708333333333336,
+      "max_model_fps": 990.4,
+      "min_model_fps": 0.5,
+      "fps_samples": 24,
+      "fps_values": [
+        990.4,
+        0.5,
+        0.5,
+        0.5,
+        19.0,
+        0.5,
+        0.5,
+        0.5,
+        20.0,
+        0.5
+      ],
+      "avg_model_utilization": 13.000000000000002,
+      "max_model_utilization": 72.0,
+      "min_model_utilization": 1.2,
+      "utilization_samples": 6,
+      "utilization_values": [
+        72.0,
+        1.2,
+        1.2,
+        1.2,
+        1.2,
+        1.2
+      ]
+    },
+    "rmse": 680.3375772992126,
+    "data_samples": 1094
+  },
+  "GRU_Samsung": {
+    "model": "GRU_Samsung",
+    "timestamp": "2025-05-28T13:32:09.615801",
+    "latency": {
+      "mean": 1.3241201196797192,
+      "median": 1.3147874851711094,
+      "min": 1.2777970405295491,
+      "max": 1.4828710118308663,
+      "std": 0.038753863887690684,
+      "p95": 1.4039251604117453,
+      "p99": 1.466429076390341
+    },
+    "throughput_fps": 763.1107767284137,
+    "memory": {
+      "monitor_success": true,
+      "total_lines": 102,
+      "avg_device_utilization": 14.100000000000003,
+      "max_device_utilization": 74.9,
+      "min_device_utilization": 1.9,
+      "device_util_samples": 6,
+      "device_util_values": [
+        74.9,
+        1.9,
+        2.0,
+        1.9,
+        2.0,
+        1.9
+      ],
+      "avg_model_fps": 29.03666666666667,
+      "max_model_fps": 762.5,
+      "min_model_fps": 0.5,
+      "fps_samples": 30,
+      "fps_values": [
+        762.5,
+        0.5,
+        0.5,
+        0.5,
+        0.5,
+        18.7,
+        0.5,
+        0.5,
+        0.5,
+        0.5
+      ],
+      "avg_model_utilization": 14.100000000000003,
+      "max_model_utilization": 74.9,
+      "min_model_utilization": 1.9,
+      "utilization_samples": 6,
+      "utilization_values": [
+        74.9,
+        1.9,
+        2.0,
+        1.9,
+        2.0,
+        1.9
+      ]
+    },
+    "rmse": 8862.633292619728,
+    "data_samples": 1066
+  },
+  "LSTM_Samsung": {
+    "model": "LSTM_Samsung",
+    "timestamp": "2025-05-28T13:32:38.041748",
+    "latency": {
+      "mean": 0.9986169380135834,
+      "median": 1.0043615475296974,
+      "min": 0.940000987611711,
+      "max": 1.017722999677062,
+      "std": 0.015028945680295135,
+      "p95": 1.013082219287753,
+      "p99": 1.0172967135440558
+    },
+    "throughput_fps": 990.774252130155,
+    "memory": {
+      "monitor_success": true,
+      "total_lines": 95,
+      "avg_device_utilization": 12.983333333333336,
+      "max_device_utilization": 71.9,
+      "min_device_utilization": 1.2,
+      "device_util_samples": 6,
+      "device_util_values": [
+        71.9,
+        1.2,
+        1.2,
+        1.2,
+        1.2,
+        1.2
+      ],
+      "avg_model_fps": 45.73333333333333,
+      "max_model_fps": 990.6,
+      "min_model_fps": 0.5,
+      "fps_samples": 24,
+      "fps_values": [
+        990.6,
+        0.5,
+        0.5,
+        0.5,
+        19.0,
+        0.5,
+        0.5,
+        0.5,
+        19.9,
+        0.5
+      ],
+      "avg_model_utilization": 12.983333333333336,
+      "max_model_utilization": 71.9,
+      "min_model_utilization": 1.2,
+      "utilization_samples": 6,
+      "utilization_values": [
+        71.9,
+        1.2,
+        1.2,
+        1.2,
+        1.2,
+        1.2
+      ]
+    },
+    "rmse": 25248.751963193758,
+    "data_samples": 1066
+  },
+  "GRU_Tesla": {
+    "model": "GRU_Tesla",
+    "timestamp": "2025-05-28T13:33:06.560812",
+    "latency": {
+      "mean": 1.3236261159181595,
+      "median": 1.314203953370452,
+      "min": 1.2787969317287207,
+      "max": 1.4329820405691862,
+      "std": 0.029733491627716543,
+      "p95": 1.3810269825626165,
+      "p99": 1.4158957416657358
+    },
+    "throughput_fps": 763.1448697816029,
+    "memory": {
+      "monitor_success": true,
+      "total_lines": 104,
+      "avg_device_utilization": 22.78571428571429,
+      "max_device_utilization": 74.9,
+      "min_device_utilization": 1.9,
+      "device_util_samples": 7,
+      "device_util_values": [
+        74.9,
+        74.9,
+        1.9,
+        1.9,
+        2.0,
+        1.9,
+        2.0
+      ],
+      "avg_model_fps": 46.76857142857143,
+      "max_model_fps": 762.9,
+      "min_model_fps": 0.5,
+      "fps_samples": 35,
+      "fps_values": [
+        762.9,
+        0.5,
+        0.5,
+        0.5,
+        0.5,
+        762.9,
+        0.5,
+        0.5,
+        0.5,
+        0.5
+      ],
+      "avg_model_utilization": 22.78571428571429,
+      "max_model_utilization": 74.9,
+      "min_model_utilization": 1.9,
+      "utilization_samples": 7,
+      "utilization_values": [
+        74.9,
+        74.9,
+        1.9,
+        1.9,
+        2.0,
+        1.9,
+        2.0
+      ]
+    },
+    "rmse": 64.11103408959544,
+    "data_samples": 1094
+  },
+  "LSTM_Tesla": {
+    "model": "LSTM_Tesla",
+    "timestamp": "2025-05-28T13:33:34.992718",
+    "latency": {
+      "mean": 0.9990382147952914,
+      "median": 1.0034360457211733,
+      "min": 0.9375569643452764,
+      "max": 1.0330940131098032,
+      "std": 0.015810491883260107,
+      "p95": 1.0129389411304146,
+      "p99": 1.0251721530221403
+    },
+    "throughput_fps": 990.7745355856571,
+    "memory": {
+      "monitor_success": true,
+      "total_lines": 95,
+      "avg_device_utilization": 13.000000000000002,
+      "max_device_utilization": 72.0,
+      "min_device_utilization": 1.2,
+      "device_util_samples": 6,
+      "device_util_values": [
+        72.0,
+        1.2,
+        1.2,
+        1.2,
+        1.2,
+        1.2
+      ],
+      "avg_model_fps": 45.737500000000004,
+      "max_model_fps": 991.1,
+      "min_model_fps": 0.5,
+      "fps_samples": 24,
+      "fps_values": [
+        991.1,
+        0.5,
+        0.5,
+        0.5,
+        19.0,
+        0.5,
+        0.5,
+        0.5,
+        19.9,
+        0.5
+      ],
+      "avg_model_utilization": 13.000000000000002,
+      "max_model_utilization": 72.0,
+      "min_model_utilization": 1.2,
+      "utilization_samples": 6,
+      "utilization_values": [
+        72.0,
+        1.2,
+        1.2,
+        1.2,
+        1.2,
+        1.2
+      ]
+    },
+    "rmse": 148.45037259936336,
+    "data_samples": 1094
+  },
+  "GRU_SnP500": {
+    "model": "GRU_SnP500",
+    "timestamp": "2025-05-28T13:34:03.505808",
+    "latency": {
+      "mean": 1.3243195344693959,
+      "median": 1.3145009870640934,
+      "min": 1.2844819575548172,
+      "max": 1.5126309590414166,
+      "std": 0.036233891213668275,
+      "p95": 1.3855244731530547,
+      "p99": 1.4609448064584283
+    },
+    "throughput_fps": 762.0155557560169,
+    "memory": {
+      "monitor_success": true,
+      "total_lines": 102,
+      "avg_device_utilization": 14.06666666666667,
+      "max_device_utilization": 74.8,
+      "min_device_utilization": 1.9,
+      "device_util_samples": 6,
+      "device_util_values": [
+        74.8,
+        1.9,
+        1.9,
+        1.9,
+        2.0,
+        1.9
+      ],
+      "avg_model_fps": 29.009999999999998,
+      "max_model_fps": 761.7,
+      "min_model_fps": 0.5,
+      "fps_samples": 30,
+      "fps_values": [
+        761.7,
+        0.5,
+        0.5,
+        0.5,
+        0.5,
+        19.0,
+        0.5,
+        0.5,
+        0.5,
+        0.5
+      ],
+      "avg_model_utilization": 14.06666666666667,
+      "max_model_utilization": 74.8,
+      "min_model_utilization": 1.9,
+      "utilization_samples": 6,
+      "utilization_values": [
+        74.8,
+        1.9,
+        1.9,
+        1.9,
+        2.0,
+        1.9
+      ]
+    },
+    "rmse": 568.840479288635,
+    "data_samples": 1094
+  },
+  "LSTM_SnP500": {
+    "model": "LSTM_SnP500",
+    "timestamp": "2025-05-28T13:34:31.929710",
+    "latency": {
+      "mean": 0.9977082489058375,
+      "median": 1.0048529948107898,
+      "min": 0.9068530052900314,
+      "max": 1.0302229784429073,
+      "std": 0.02135020522555004,
+      "p95": 1.0180509649217129,
+      "p99": 1.0261579439975321
+    },
+    "throughput_fps": 990.7710868880665,
+    "memory": {
+      "monitor_success": true,
+      "total_lines": 98,
+      "avg_device_utilization": 21.485714285714277,
+      "max_device_utilization": 72.2,
+      "min_device_utilization": 1.2,
+      "device_util_samples": 7,
+      "device_util_values": [
+        72.2,
+        72.2,
+        1.2,
+        1.2,
+        1.2,
+        1.2,
+        1.2
+      ],
+      "avg_model_fps": 74.59285714285714,
+      "max_model_fps": 990.1,
+      "min_model_fps": 0.5,
+      "fps_samples": 28,
+      "fps_values": [
+        990.1,
+        0.5,
+        0.5,
+        0.5,
+        990.1,
+        0.5,
+        0.5,
+        0.5,
+        19.0,
+        0.5
+      ],
+      "avg_model_utilization": 21.485714285714277,
+      "max_model_utilization": 72.2,
+      "min_model_utilization": 1.2,
+      "utilization_samples": 7,
+      "utilization_values": [
+        72.2,
+        72.2,
+        1.2,
+        1.2,
+        1.2,
+        1.2,
+        1.2
+      ]
+    },
+    "rmse": 1970.6702074378347,
+    "data_samples": 1094
+  }
+}
